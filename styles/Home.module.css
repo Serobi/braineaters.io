@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; 
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.header {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  background-color: #1a1a1a;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logoImage {
+  height: 100px;       /* adjust depending on your logo */
+  width: auto;
+  display: block;
+}
+
+
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.banner {
+  background-image: url('/images/Banner.jpg');
+  height: 400px;
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #1a1a1a;
+}
+
+.main {
+  flex: 1; /* pushes footer down */
+  display: flex;
+  justify-content: center;
+  /*padding: 40px 20px;*/
+  background-color: #1a1a1a;
+}
+
+.contentSection {
+  max-width: 800px;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  margin-top: -20px;
+  color: #c0392b;
+}
+
+.description {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #b9b9b9;
+}
+
+.ctaButton {
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-bottom: 1rem;
+  margin-top: -10px;
+}
+
+.ctaButton:hover {
+  background-color: #e74c3c;
+}
+
+.contentSection {
+  padding: 40px 40px;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  width: 100%;
+  padding: 20px 5%;
+  border-top: 1px solid #eaeaea;
+  text-align: center;
+  background-color: #1a1a1a;
+  color: #bbb;
+  font-size: 0.85rem;
+}
