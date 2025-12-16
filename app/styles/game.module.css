@@ -1,0 +1,90 @@
+/* ----------- GAME INTRO ----------- */
+
+.gameIntro {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding: 0 24px;
+  text-align: center;
+}
+.title {
+  position: relative;
+  display: inline-block;
+
+  font-family:fantasy, 'Arial Black', sans-serif;
+  font-size: 44px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+
+  background: linear-gradient(
+    90deg,
+    #e8c07a 40%,
+    #fff3b0 50%,
+    #e8c07a 60%
+  );
+
+  background-size: 200% 100%;
+  background-position: 0% center;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shineLeftToRight 4s ease-in-out infinite;
+}
+
+@keyframes shineLeftToRight {
+  0% {
+    background-position: 100% center;   /* start just outside left */
+  }
+  10% {
+    background-position: -80% center;   /* exit fully on the right */
+  }
+  100% {
+    background-position: -80% center;   /* pause offscreen */
+  }
+}
+
+
+
+
+/* Reuse or simplify your bar */
+.titleBar {
+  display: block;
+  position: relative;
+  margin: 20px auto 0;
+  width: 420px;
+  height: 3px;
+  background: linear-gradient(90deg, #e8c07a 0%, #B8860B 50%, #e8c07a 100%);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(232, 192, 122, 0.3);
+}
+
+
+.description {
+  font-size: 19px;
+  line-height: 1.6;
+  color: #cfcfcf;
+  max-width: 780px;
+  margin: 40px auto;
+}
+
+.description strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+
+@media (max-width: 768px) {
+  .gameIntro {
+    margin-top: 80px;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}

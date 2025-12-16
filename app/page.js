@@ -1,54 +1,59 @@
+"use client";
+
 import Head from 'next/head';
-import styles from '../styles/Home.module.css'; // Assuming you have or will create this CSS file
+import styles from './styles/Home.module.css';
+import { useState } from "react";
 
 export default function Home() {
+  const [hovering, setHovering] = useState(false);
+  
   return (
-    <div className={styles.container}>
+    <div className={styles.homePage}>
       <Head>
         <title>Brain Eaters | Official Website</title>
-        <meta name="description" content="Official website for Brain Eaters - The next generation of digital experience." />
+        <meta 
+          name="description" 
+          content="Brain Eaters is a post-apocalyptic cooperative survival strategy game." 
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className={styles.header}>
-        <a href="/" className={styles.logoLink}>
-  <img src="\images\logo.png" alt="Brain Eaters Logo" className={styles.logoImage} />
-</a>
-        <nav className={styles.nav}>
-          <a href="#about" className={styles.navLink}>About</a>
-          <a href="#projects" className={styles.navLink}>Projects</a>
-          <a href="#contact" className={styles.navLink}>Contact</a>
-        </nav>
-      </header>
+<section className={styles.bannerSection}>
 
-<div className={styles.container}>
+  <div className={`${styles.fogContainer} ${hovering ? styles.fogReveal : ""}`}>
+    <div className={`${styles.fogLayer} ${styles.fog}`}></div>
+    <div className={`${styles.fogLayer} ${styles.fog1}`}></div>
+    <div className={`${styles.fogLayer} ${styles.fog2}`}></div>
 
-  <div className={styles.banner}>
-    {/* Banner background only */}
+    <img
+      src="/images/hunter_eyes.png"
+      className={`${styles.hunterEyes} ${hovering ? styles.fadeIn : ""}`}
+    />
   </div>
 
-  <main className={styles.main}>
-    <div className={styles.contentSection}>
-      <h2 className={styles.title}>Survival Exploration Cooperation</h2>
-      <button className={styles.ctaButton}>
-        Discover the game
-      </button>
-
-      <p className={styles.description}>
-        Brain Eaters is the first ever cooperative survival strategy game.<br />
-        Play with your friends, defend your city, explore the Wastelands, 
-        gather resources and survive in this world full of dangers.
-      </p>
-    </div>
-  </main>
-
-</div>
+</section>
 
 
+      <main className={styles.main}>
 
-      <footer className={styles.footer}>
-        <p>&copy; {new Date().getFullYear()} Brain Eaters. All rights reserved.</p>
-      </footer>
+        <p className={styles.introText}>
+          <span>Many have entered the Wastelands.</span>
+          <span>None survived.</span>
+          <span>Do you have what it takes?</span>
+        </p>
+
+
+        <a
+          href="/game"
+          className={styles.discoverButton}
+          onMouseEnter={() => setHovering(true)}
+          onMouseLeave={() => setHovering(false)}
+        >
+          Discover the Game
+        </a>
+      </main>
+
+
     </div>
   );
 }

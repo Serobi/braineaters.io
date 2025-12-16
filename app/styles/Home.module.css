@@ -1,0 +1,349 @@
+/* ----------- GLOBAL PAGE LAYOUT ----------- */
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ----------- BANNER ----------- */
+
+.bannerSection {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  margin-top: 20px;
+  pointer-events: none;
+}
+
+
+
+.hunterEyes {
+  position: absolute;
+  top: 0%;
+  left: 32%;
+  width: 400px;
+
+  opacity: 0;
+  transform: scale(0.9);
+
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+
+  filter:
+    drop-shadow(0 0 15px rgba(150, 0, 255, 0.4))
+    brightness(1.05)
+    contrast(1.1);
+
+  mix-blend-mode: screen;
+
+  z-index: 3;
+}
+
+
+
+.hunterEyes::after {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 0px;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.9));
+  filter: blur(20px);
+}
+
+.fadeIn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+
+.main {
+  margin-top: 40px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.introText {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.introText span {
+  display: block;
+  font-size: 18px;
+  line-height: 1.55;
+  font-family: fantasy, 'Arial Black', sans-serif;
+  margin-bottom: 6px;
+
+  background: linear-gradient(
+    90deg,
+    #0b0b0b 30%,
+    #fff3b0 50%,
+    #0b0b0b 70%
+  );
+  background-size: 200% 100%;
+  background-position: 100% center;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  opacity: 0;
+  animation: lineShine 10s ease-in-out infinite;
+}
+
+
+.introText span:nth-child(1) { animation-delay: 1s; }
+.introText span:nth-child(2) { animation-delay: 4s; }
+.introText span:nth-child(3) { animation-delay: 7s; }
+
+
+
+@keyframes lineShine {
+
+  0%   { opacity: 0; background-position: 100% center; }
+  10%  { opacity: 0; }
+
+
+  20%  { opacity: 1; }
+  50%  { background-position: -80% center; opacity: 1; }
+
+  60%  { opacity: 1; }
+
+  70%  { opacity: 0; }
+
+  100% { opacity: 0; background-position: 110% center; }
+}
+
+
+/* ----------- DISCOVER BUTTON ----------- */
+
+.discoverButton {
+  display: inline-block;
+  margin-top: 35px;
+  padding: 14px 32px;
+  background: #0d001a; 
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 1px solid #a855f7;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
+}
+
+.discoverButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right, 
+    transparent, 
+    rgba(255, 255, 255, 0.3),
+    rgba(168, 85, 247, 0.4),
+    transparent
+  );
+  transform: skewX(-25deg);
+  animation: autoShine 3s infinite ease-in-out;
+}
+
+.discoverButton::after {
+  content: "";
+  position: absolute;
+  inset: 50% 50%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    rgba(168, 85, 247, 0.4),
+    transparent
+  );
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+
+@keyframes autoShine {
+  0% { left: -150%; }
+  25% { left: 150%; }
+  26%, 100% { left: 150%; }
+}
+@keyframes CenterBurst {
+  0% {
+    inset: 50% 50%;
+    opacity: 0.8;
+  }
+  60% {
+    inset: -30% -30%;
+    opacity: 0.15;
+  }
+  100% {
+    inset: 0 0;
+    opacity: 0;
+  }
+}
+
+
+
+.discoverButton:hover {
+  background: #1a0033;
+  box-shadow:
+    0 0 14px rgba(168, 85, 247, 0.35),
+    inset 0 0 8px rgba(168, 85, 247, 0.12);
+  transform: scale(1.02);
+  border-color: #e9d5ff;
+}
+
+.discoverButton:hover::before {
+  animation: none;
+}
+.discoverButton:hover::after {
+  animation: CenterBurst 0.6s ease-out forwards;
+}
+
+
+/* ----------- FOOTER ----------- */
+
+.footer {
+  margin-top: auto;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  background: #000;
+  border-top: 1px solid #1a1a1a;
+  color: #999;
+}
+
+.footer a {
+  color: #ff3c3c;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* ----------- RESPONSIVE ----------- */
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .navLeft,
+  .navRight {
+    gap: 15px;
+  }
+
+  .logo {
+    width: 170px;
+  }
+
+  .discoverButton {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+}
+
+/* components/FogOverlay.module.css */
+.fogContainer {
+  position: relative;
+  width: 60%;
+  height: 100%;
+  left: 20%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fogLayer {
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  top: -20%;
+  left: -20%;
+  z-index: 3;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  opacity: 0.5;
+  transition: transform 1.4s ease, opacity 1.4s ease;
+}
+
+
+.fog {
+  background-image: url('/images/fog/fog_cloud_1.png');
+  animation: fogDriftRight 60s ease-in-out infinite;
+  opacity: 0.6;
+  top: 0px;
+}
+
+.fog1 {
+  background-image: url('/images/fog/fog_cloud_2.png');
+  animation: fogDriftLeft 80s ease-in-out infinite;
+  opacity: 0.6;
+  top : -20px;
+}
+
+.fog2 {
+  background-image: url('/images/fog/fog_cloud_3.png');
+  animation: fogDriftDiagonal 60s ease-in-out infinite;
+  opacity: 0.6;
+  top: -30px;
+}
+
+@keyframes fogDriftRight {
+  0%   { transform: translate(0%, 0%); }
+  50%  { transform: translate(6%, -2%); }
+  100% { transform: translate(0%, 0%); }
+}
+
+@keyframes fogDriftLeft {
+  0%   { transform: translate(0%, 0%); }
+  50%  { transform: translate(-6%, -2%); }
+  100% { transform: translate(0%, 0%); }
+}
+
+@keyframes fogDriftDiagonal {
+  0%   { transform: translate(0%, 0%); }
+  50%  { transform: translate(3%, -4%); }
+  100% { transform: translate(0%, 0%); }
+}
+
+
+.fogReveal .fog {
+  transform: translateX(-30%);
+  opacity: 0.2;
+}
+
+.fogReveal .fog1 {
+  transform: translateX(30%);
+  opacity: 0.2;
+}
+
+.fogReveal .fog2 {
+  transform: translateY(-20%);
+  opacity: 0.2;
+}
+
+
