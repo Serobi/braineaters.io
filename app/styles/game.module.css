@@ -6,52 +6,33 @@
   padding: 0 24px;
   text-align: center;
 }
-.title {
-  position: relative;
-  display: inline-block;
 
-  font-family:fantasy, 'Arial Black', sans-serif;
+.title {
+  display: inline-block;
+  font-family: fantasy, 'Arial Black', sans-serif;
   font-size: 44px;
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  text-align: center;
 
-  background: linear-gradient(
-    90deg,
-    #e8c07a 40%,
-    #fff3b0 50%,
-    #e8c07a 60%
-  );
-
+  background: linear-gradient(90deg, #e8c07a 40%, #fff3b0 50%, #e8c07a 60%);
   background-size: 200% 100%;
   background-position: 0% center;
-
+  background-clip: text;
   -webkit-background-clip: text;
+  color: transparent;
   -webkit-text-fill-color: transparent;
 
-  animation: shineLeftToRight 4s ease-in-out infinite;
+  animation: shineLeftToRight 6s ease-in-out infinite;
 }
 
 @keyframes shineLeftToRight {
-  0% {
-    background-position: 100% center;   /* start just outside left */
-  }
-  10% {
-    background-position: -80% center;   /* exit fully on the right */
-  }
-  100% {
-    background-position: -80% center;   /* pause offscreen */
-  }
+  0%, 20% { background-position: 120% center; }
+  80%, 100% { background-position: -80% center; }
 }
 
-
-
-
-/* Reuse or simplify your bar */
 .titleBar {
   display: block;
-  position: relative;
   margin: 20px auto 0;
   width: 420px;
   height: 3px;
@@ -59,7 +40,6 @@
   border-radius: 2px;
   box-shadow: 0 0 10px rgba(232, 192, 122, 0.3);
 }
-
 
 .description {
   font-size: 19px;
@@ -74,17 +54,235 @@
   font-weight: 700;
 }
 
-
 @media (max-width: 768px) {
-  .gameIntro {
-    margin-top: 80px;
-  }
+  .gameIntro { margin-top: 80px; }
+  .title { font-size: 34px; }
+  .description { font-size: 16px; }
+}
 
-  .title {
-    font-size: 34px;
-  }
+/* -------------------------------
+   PILLARS WRAPPER - ADD BOTTOM MARGIN FOR COMPENSATION
+-------------------------------- */
+.pillarsWrapper {
+  position: sticky;
+  top: 70px;
+  margin-bottom: 140px;
+  transition: margin-bottom 0.4s ease;
+}
+.pillarsWrapper.stuck {
+  margin-bottom: 0;
+}
 
-  .description {
-    font-size: 16px;
+/* -------------------------------
+   PILLARS SECTION - NORMAL STATE
+-------------------------------- */
+.pillarsSection {
+  z-index: 10;
+  width: 100%;
+  padding: 40px 40px 0px;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  transition: padding 0.2s ease, background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pillarsSection.stuck {
+  top: 70px;
+  padding: 15px 12px 15px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Grid stays the same */
+.pillarsSection.stuck .pillarsGrid {
+  gap: 24px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* Smoothly hide descriptions */
+.pillarsSection.stuck .pillar p {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, height 0.3s ease, margin 0.3s ease;
+}
+
+/* Reduce pillar height */
+.pillarsSection.stuck .pillar {
+  padding: 20px 24px;
+  min-height: 90px;
+  transition: padding 0.4s ease, min-height 0.4s ease;
+}
+
+.pillarsSection.stuck .pillar h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0;
+}
+
+.pillarsSection.stuck .pillar.active {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(232, 192, 122, 0.25);
+}
+
+/* Base transition for p */
+.pillar p {
+  transition: opacity 0.3s ease, height 0.3s ease, margin 0.3s ease;
+}
+
+.pillarsGrid {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+/* -------------------------------
+   INDIVIDUAL PILLAR
+-------------------------------- */
+
+.pillar {
+  padding: 32px 28px;
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0.02);
+  border: 3px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.pillar:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.pillar:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+.pillar.active {
+  border-color: #e8c07a;
+  background: rgba(232, 192, 122, 0.05);
+  box-shadow: 0 2px 15px rgba(232, 192, 122, 0.295);
+}
+
+.pillar.active h3 {
+  color: #fff3b0;
+}
+
+.pillar h3 {
+  margin: 0 0 14px 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: #ffffff;
+}
+
+.pillar p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .pillarsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .pillarsSection { padding: 80px 20px; }
+  .pillarsGrid { grid-template-columns: 1fr; gap: 20px; }
+  .pillar { padding: 28px 24px; }
+}
+/* -------------------------------
+   PILLAR DETAIL SECTION
+-------------------------------- */
+
+.pillarDetailSection {
+  width: 100%;
+  padding: 80px 24px 120px;
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.pillarContent {
+  max-width: 900px;
+  width: 100%;
+  min-height: 400px;
+  padding: 48px 40px 60px;  /* Extra bottom padding for breathing room */
+  
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* Horizontal centering only */
+  text-align: center;
+  
+  animation: fadeUp 0.5s ease-out;
+}
+
+.pillarContent h2 {
+  position: relative;
+  margin: 0 0 36px 0;       /* More space below the title */
+  padding-bottom: 16px;    /* Space for the underline */
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.pillarContent h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;               /* Aligns with padding-bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #e8c07a, transparent);
+  border-radius: 2px;
+}
+
+.pillarContent p {
+  max-width: 700px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.pillarContent p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pillarDetailSection { padding: 60px 20px 100px; }
+  
+  .pillarContent {
+    min-height: 350px;
+    padding: 40px 24px 50px;
+    border-radius: 16px;
   }
+  
+  .pillarContent h2 {
+    font-size: 2rem;
+    margin-bottom: 32px;
+    padding-bottom: 12px;
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
