@@ -31,13 +31,13 @@ export default function RootLayout({
           <nav className={"navLeft"}>
             <a href="/" className={"navLink"}>Home</a>
             <a href="/game" className={"navLink"}>Game</a>
-            <a href="/roadmap" className={"navLink"}>Roadmap</a>
-            <a href="/team" className={"navLink"}>Team</a>
+            <a href="" className={"navLink"}>Roadmap</a>
+            <a href="" className={"navLink"}>Team</a>
           </nav>
 
           <nav className={"navRight"}>
-            <a href="/login" className={"navLink"}>Login</a>
-            <a href="/register" className={"navLink"}>Create Account</a>
+            <a href="" className={"navLink"}>Login</a>
+            <a href="" className={"navLink"}>Create Account</a>
           </nav>
         </header>
         <main className="page">
@@ -46,7 +46,7 @@ export default function RootLayout({
 
         <footer className="footer">
           <p>© {new Date().getFullYear()} Brain Eaters - All rights reserved.</p>
-          <a href="/contact" className="footerLink">Contact Us</a>
+          <a href="" className="footerLink">Contact Us</a>
         </footer>
       </body>
     </html>
