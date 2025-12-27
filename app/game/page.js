@@ -8,6 +8,7 @@ export default function GamePage() {
   const pillarsSectionRef = useRef(null);
   const pillarDetailRef = useRef(null);
   const [activeBuildTab, setActiveBuildTab] = useState("overview");
+  const [activeExploreTab, setActiveExploreTab] = useState("overview");
 
   const isPillarsSticky = () => {
     if (!pillarsSectionRef.current) return false;
@@ -296,26 +297,260 @@ export default function GamePage() {
                 <h2>Defend the city</h2>
                 <img
                   src="/images/banner.jpg"
+                  alt="Brain Eaters - Zombie attack on city walls"
                   className={`${styles.banner}`}
                 />
                 <p>
-                  Your shelter is your personal space.
-                  Upgrade it to store resources, craft equipment, and survive longer.
+                  Each night, zombies attack the city.
+                  As days pass, attacks become stronger, forcing survivors to prepare
+                  and improve defenses efficiently.
                 </p>
+
                 <p>
-                  The city itself must also be maintained.
-                  Walls, buildings, and defenses depend on collective effort.
+                  City defense relies on three main elements :
+                </p>
+
+                <p>
+                  <strong>Wall Level</strong><br />
+                  The Wall is the city’s primary line of defense.
+                  Upgrading it increases resistance against attacks.
+                </p>
+
+                <p>
+                  <strong>Assigned Defenders</strong><br />
+                  Survivors can be assigned to defend the city during the night.
+                  More defenders improve the chances of holding the Wall.
+                </p>
+
+                <p>
+                  <strong>Equipment</strong><br />
+                  Weapons and armor used by defenders directly impact defense efficiency.
+                </p>
+
+                <p>
+                  If the Wall holds, the city survives another night.
+                </p>
+
+                <p>
+                  If zombies break through, survivors may be injured, wounded or even die.
+                  The outcome will be randomly determined based on : <br />
+                  <strong>Shelter level</strong><br />
+                  <strong>Survivor equipment</strong><br />
+                  <strong>Survivor level and skills</strong><br />
                 </p>
               </div>
             )}
 
             {activePillar === "explore" && (
-              <div>
-                <h2>Explore the Wastelands</h2>
-                <p>
-                  Venture outside the city to scavenge abandoned zones.
-                  The further you go, the greater the rewards, and the risks.
-                </p>
+              <div className={styles.buildLayout}>
+
+                {/* LEFT SUBMENU */}
+                <aside className={styles.buildMenu}>
+                  {["overview", "world", "loot", "exploration", "combat", "Procedural World"].map((tab) => (
+                    <button
+                      key={tab}
+                      className={`${styles.buildMenuItem} ${activeExploreTab === tab ? styles.active : ""
+                        }`}
+                      onClick={() => setActiveExploreTab(tab)}
+                    >
+                      {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                    </button>
+                  ))}
+                </aside>
+
+                {/* RIGHT CONTENT */}
+                <div className={styles.buildContent}>
+                  {activeExploreTab === "overview" && (
+                    <>
+                      <h2>Map and exploration</h2>
+                      <p>
+                        The map is the second core area of Brain Eaters. <br />
+                        A procedural world you must explore to develop the city.
+                      </p>
+
+                      <p>
+                        Plan each expedition carefully, scavenge resources, and return before nightfall.
+                      </p>
+
+                      <p>
+                        <strong>But beware !</strong><br />
+                        When night falls, the rules change. <br />
+                        Predators roam the land, and returning to the city is no longer an option.
+                      </p>
+
+                      <p>
+                        Out there, one mistake or one unlucky move can cost everything.
+                      </p>
+                    </>
+                  )}
+
+                  {activeExploreTab === "world" && (
+                    <>
+                      <h2>World map</h2>
+
+                      <p>
+                        The world map of Brain Eaters is composed of isometric tiles.<br />
+                        Each tile represents a distinct area that can be explored by survivors, <br />
+                        with its own type, loot, enemies and elements.
+                      </p>
+
+
+                      <p>
+                        Tiles are defined by their type, such as Wasteland or Forest.<br />
+                        Tile types shape the environment, atmosphere, and potential dangers.
+                      </p>
+
+                      <p>
+                        Each tile is filled with elements like ruins, vehicles, buildings,
+                        or natural obstacles.<br />
+                        These elements define what can be looted and the quantity available.
+                      </p>
+
+                    </>
+                  )}
+
+                  {activeExploreTab === "loot" && (
+                    <>
+                      <h2>Loot</h2>
+                      <p>
+                        In order to progress and upgrade the city, survivors will have to explore the map to gather resources and items.
+                      </p>
+                      <p>
+                        <strong>Loot Tables & Probabilities</strong><br />
+                        Each tile type defines which resources can be found.<br />
+                        A Forest will not provide the same loot as a Wasteland.
+                      </p>
+
+                      <p>
+                        The presence and number of elements directly affect loot probabilities.<br />
+                        Tiles with ruins, vehicles, or structures offer higher rewards
+                        than empty areas.
+                      </p>
+
+                      <p>
+                        <strong>Loot Depletion</strong><br />
+                        Looting a tile gradually depletes its resources.<br />
+                        Each expedition reduces future loot chances on that tile.
+                      </p>
+
+                      <p>
+                        Overexploiting the same area is risky.<br />
+                        Survivors must choose between returning to known locations
+                        or pushing further into the unknown.
+                      </p>
+                    </>
+                  )}
+
+                  {activeExploreTab === "exploration" && (
+                    <>
+                      <h2>Exploration</h2>
+
+                      <p>
+                        The world of Brain Eaters is not only moving from a tile to another and avoiding dangers.<br />
+                        It's also about exploration, map control and vision.
+                      </p>
+                      <p>
+                        Exploration relies on two main mechanics : <br /><br />
+                        <strong>Unexplored tiles</strong><br />
+                        The tile haven't been explored yet.<br />
+                        A dense fog is hidding it and the tile type and details unknown<br />
+                      </p>
+                      <p>
+                        <strong>Unvisible tiles</strong><br />
+                        The tile have already been explored, but remains out of vision.<br />
+                        A light fog covers it, the tile is visible, but the amount of zombies is unknown.<br />
+                      </p>
+
+                      <p>
+                        To explore a tile, a survivor must have it within its vision range.<br />
+                        Once a survivor is close enough, the fog disappears and the details are revealed.
+                      </p>
+                    </>
+                  )}
+
+                  {activeExploreTab === "combat" && (
+                    <>
+                      <h2>Zombies and Combat</h2>
+                      <p>
+                        Think surviving and exploring is easy? Think again ! <br />
+                        Zombies are out there to remind you who's really in charge !
+                      </p>
+
+                      <p>
+                        The world of Brain Eaters is dynamic, zombies roam from tile to tile, smelling survivors from miles away. <br />
+                        If you dare to step outside the city, you better be prepared. <br />
+                        Zombies move periodically and will detect and attack anyone within their vision range.
+                      </p>
+
+                      <p>
+                        Combat is RPG-inspired. <br />
+                        Each fight is decided by a dice roll with four possible outcomes : <br /><br />
+                        <strong>Critical success</strong> Win without taking damage<br />
+                        <strong>Success</strong> Win but take damage<br />
+                        <strong>Fail</strong> Lose the fight and take damage<br />
+                        <strong>Critical fail</strong> Lose and take 30% extra damage, ouch!<br /><br />
+
+                        Check the game guide for a deeper dive into combat mechanics and how outcomes are calculated.
+                      </p>
+                    </>
+                  )}
+
+                  {activeExploreTab === "Procedural World" && (
+                    <>
+                      <h2>Procedural World</h2>
+
+                      <p>
+                        The world of Brain Eaters is entirely procedural. <br />
+                        Each new game generates a unique map, built tile by tile.
+                      </p>
+
+                      <p>
+                        Each tile is generated from multiple layers :
+                      </p>
+
+                      <p>
+                        <strong>Type</strong><br />
+                        Defines the biome, loot level, and overall threat level. <br />
+                        Current types include Wasteland and Forest. <br />
+                        New types will be added over time.
+                      </p>
+
+                      <p>
+                        <strong>Theme</strong><br />
+                        Defines how the tile is structured and populated.<br />
+                        A theme controls loot elements, textures and loot quantity.<br />
+                        For example, a ruin theme may feature a main ruin element,
+                        secondary elements around it like walls or pillars, and textures filling the remaining space.<br />
+                        Each element influence the loot quantity available on the tile.
+                      </p>
+
+                      <p>
+                        <strong>Main Elements</strong><br />
+                        A tile can have a main element such as ruins, vehicles, buildings etc. <br />
+                        Main elements are placed in the center of a tile and occupy a 2x2 space compared to a normal element.
+                      </p>
+
+                      <p>
+                        <strong>Elements</strong><br />
+                        Objects such as tree, rock, wall, pillar etc
+                        Elements are 1x1 sized and randomly generated across the tile.
+                      </p>
+
+                      <p>
+                        <strong>Textures</strong><br />
+                        Smaller ground details like grass, dirt, debris or broken materials.
+                        Textures are distributed dynamically to make each tile feel natural and unique.
+                      </p>
+
+                      <p>
+                        Thanks to this multi-layered procedural generation,
+                        each tile is different and each game is unique, offering infinite replayability and new challenges.
+                      </p>
+                    </>
+                  )}
+
+                </div>
+
               </div>
             )}
 

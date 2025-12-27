@@ -6,32 +6,33 @@ import { useState } from "react";
 
 export default function Home() {
   const [hovering, setHovering] = useState(false);
-  
+
   return (
     <div className={styles.homePage}>
       <Head>
         <title>Brain Eaters | Official Website</title>
-        <meta 
-          name="description" 
-          content="Brain Eaters is a post-apocalyptic cooperative survival strategy game." 
+        <meta
+          name="description"
+          content="Brain Eaters is a post-apocalyptic cooperative survival strategy game."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-<section className={styles.bannerSection}>
+      <section className={styles.bannerSection}>
 
-  <div className={`${styles.fogContainer} ${hovering ? styles.fogReveal : ""}`}>
-    <div className={`${styles.fogLayer} ${styles.fog}`}></div>
-    <div className={`${styles.fogLayer} ${styles.fog1}`}></div>
-    <div className={`${styles.fogLayer} ${styles.fog2}`}></div>
+        <div className={`${styles.fogContainer} ${hovering ? styles.fogReveal : ""}`}>
+          <div className={`${styles.fogLayer} ${styles.fog}`}></div>
+          <div className={`${styles.fogLayer} ${styles.fog1}`}></div>
+          <div className={`${styles.fogLayer} ${styles.fog2}`}></div>
 
-    <img
-      src="/images/hunter_eyes.png"
-      className={`${styles.hunterEyes} ${hovering ? styles.fadeIn : ""}`}
-    />
-  </div>
+          <img
+            src="/images/hunter_eyes.png"
+            alt="Glowing hunter eyes emerging from the fog"
+            className={`${styles.hunterEyes} ${hovering ? styles.fadeIn : ""}`}
+          />
+        </div>
 
-</section>
+      </section>
 
 
       <main className={styles.main}>

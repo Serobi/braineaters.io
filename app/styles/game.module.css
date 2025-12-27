@@ -302,6 +302,11 @@
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 8px;
+}
+
+.centeredPillar p+p {
+  margin-top: 10px;
 }
 
 
