@@ -296,7 +296,7 @@ export default function GamePage() {
               <div className={styles.centeredPillar}>
                 <h2>Defend the city</h2>
                 <img
-                  src="/images/banner.jpg"
+                  src="/images/Banner.jpg"
                   alt="Brain Eaters - Zombie attack on city walls"
                   className={`${styles.banner}`}
                 />
@@ -558,7 +558,7 @@ export default function GamePage() {
               <div className={styles.centeredPillar}>
                 <h2>Cooperation & Multiplayer</h2>
                 <img
-                  src="/images/banner_cooperation_3.png"
+                  src="/images/Banner_cooperation_3.png"
                   alt="Brain Eaters - Zombie attack on city walls"
                   className={`${styles.banner}`}
                 />

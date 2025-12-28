@@ -308,21 +308,21 @@
 
 
 .fog {
-  background-image: url('/images/fog/fog_cloud_1.png');
+  background-image: url('/images/Fog/fog_cloud_1.png');
   animation: fogDriftRight 60s ease-in-out infinite;
   opacity: 0.6;
   top: 0px;
 }
 
 .fog1 {
-  background-image: url('/images/fog/fog_cloud_2.png');
+  background-image: url('/images/Fog/fog_cloud_2.png');
   animation: fogDriftLeft 80s ease-in-out infinite;
   opacity: 0.6;
   top : -20px;
 }
 
 .fog2 {
-  background-image: url('/images/fog/fog_cloud_3.png');
+  background-image: url('/images/Fog/fog_cloud_3.png');
   animation: fogDriftDiagonal 60s ease-in-out infinite;
   opacity: 0.6;
   top: -30px;
