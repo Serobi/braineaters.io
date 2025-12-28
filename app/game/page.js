@@ -446,24 +446,24 @@ export default function GamePage() {
                       <h2>Exploration</h2>
 
                       <p>
-                        The world of Brain Eaters is not only moving from a tile to another and avoiding dangers.<br />
+                        The world of Brain Eaters isn't just about moving from tile to tile and loot resources.<br />
                         It's also about exploration, map control and vision.
                       </p>
                       <p>
                         Exploration relies on two main mechanics : <br /><br />
                         <strong>Unexplored tiles</strong><br />
-                        The tile haven't been explored yet.<br />
-                        A dense fog is hidding it and the tile type and details unknown<br />
+                        These tiles have never been explored.<br />
+                        A dense fog hides them completely, the tile type and its details are unknown.<br />
                       </p>
                       <p>
-                        <strong>Unvisible tiles</strong><br />
-                        The tile have already been explored, but remains out of vision.<br />
-                        A light fog covers it, the tile is visible, but the amount of zombies is unknown.<br />
+                        <strong>Out-of-vision tiles</strong><br />
+                        These tiles have already been explored but are no longer within your vision range.<br />
+                        A light fog covers them: the environment is visible, but the number of zombies is unknown.<br />
                       </p>
 
                       <p>
                         To explore a tile, a survivor must have it within its vision range.<br />
-                        Once a survivor is close enough, the fog disappears and the details are revealed.
+                        Once close enough, the fog disappears and the tile's details are revealed.
                       </p>
                     </>
                   )}
@@ -555,16 +555,42 @@ export default function GamePage() {
             )}
 
             {activePillar === "cooperate" && (
-              <div>
-                <h2>Survive Together</h2>
+              <div className={styles.centeredPillar}>
+                <h2>Cooperation & Multiplayer</h2>
+                <img
+                  src="/images/banner_cooperation_3.png"
+                  alt="Brain Eaters - Zombie attack on city walls"
+                  className={`${styles.banner}`}
+                />
                 <p>
-                  Resources are shared.
-                  Defenses are collective.
-                  Cooperation is not optional.
+                  <strong>Cooperation</strong> is what truly separates Brain Eaters from other games in the genre. <br />
+                  Each player controls a survivor while sharing the same city with other players.
                 </p>
+
                 <p>
-                  Lone survivors rarely last long.
+                  The city is a common space. <br />
+                  Buildings, defenses, and storage are <strong>shared</strong> : every decision impacts the entire community. <br /><br />
+                  Players must coordinate, plan ahead, and pick their <strong>role</strong>. <br />
+                  Every survivor contributes in the community's survival.
                 </p>
+
+                <p>
+                  Once outside the city, players <strong>share vision</strong> but <strong>cannot communicate</strong> over long distances,
+                  forcing careful planning before leaving the city. <br />
+                  A bad decision can leave you injured, alone, and far from the city walls.
+                </p>
+
+                <p>
+                  Helping others strengthens the city. <br />
+                  Neglecting teamwork makes survival harder for all.
+                </p>
+
+                <p>
+                  <strong>Roleplay</strong> is also a key part of Brain Eaters. <br />
+                  Stay alert ! some survivors may betray the city, leave the gate open at night,
+                  steal resources, or return infected… only to turn while everyone sleeps.
+                </p>
+
               </div>
             )}
           </div>
