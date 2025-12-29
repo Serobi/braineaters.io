@@ -35,7 +35,7 @@ export default function Home() {
 
       <section className={styles.bannerSection}>
 
-        <div className={`${styles.fogContainer} ${hovering ? styles.fogReveal : ""}`}>
+        <div className={`${styles.fogContainer} ${showEyes ? styles.fogReveal : ""}`}>
           <div className={`${styles.fogLayer} ${styles.fog}`}></div>
           <div className={`${styles.fogLayer} ${styles.fog1}`}></div>
           <div className={`${styles.fogLayer} ${styles.fog2}`}></div>
@@ -43,8 +43,9 @@ export default function Home() {
           <img
             src="/images/hunter_eyes.png"
             alt="Glowing hunter eyes emerging from the fog"
-            className={`${styles.hunterEyes} ${hovering ? styles.fadeIn : ""}`}
+            className={`${styles.hunterEyes} ${showEyes ? styles.fadeIn : ""}`}
           />
+
         </div>
 
       </section>
