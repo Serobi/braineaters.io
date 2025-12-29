@@ -383,7 +383,23 @@
 .introText span {
   font-size: 15px;
   line-height: 1.45;
-  animation-duration: 18s; /* calmer on mobile */
+  background: linear-gradient(
+    90deg,
+    #0b0b0b 30%,
+    #fff3b0 50%,
+    #0b0b0b 70%
+  );
+  background-size: 200% 100%;
+  background-position: 100% center;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  opacity: 0;
+  animation: lineShine 15s ease-in-out infinite;
 }
 
 .discoverButton {
