@@ -341,9 +341,10 @@
   .navRight {
     gap: 15px;
   }
-  .navleft {
-  left : 0%
-  }
+  
+.navLeft {
+  left: 0%;
+}
 
   .logo {
     width: 170px;
