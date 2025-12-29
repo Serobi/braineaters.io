@@ -332,8 +332,6 @@
     width: 100%;
     left: 0;
     overflow: hidden;
-    pointer-events: none;
-    inset: 0;
   }
 
   .fogLayer {
