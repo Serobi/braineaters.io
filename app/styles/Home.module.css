@@ -342,18 +342,18 @@
   }
 
   .fog {
-  animation: fogDriftRight 60s ease-in-out infinite;
+  animation: fogDriftRight 30s ease-in-out infinite;
   opacity: 0.6;
 }
 
 .fog1 {
-  animation: fogDriftLeft 80s ease-in-out infinite;
+  animation: fogDriftLeft 40s ease-in-out infinite;
   opacity: 0.6;
   top : -3%;
 }
 
 .fog2 {
-  animation: fogDriftDiagonal 60s ease-in-out infinite;
+  animation: fogDriftDiagonal 30s ease-in-out infinite;
   opacity: 0.6;
   top: -2%;
 }
