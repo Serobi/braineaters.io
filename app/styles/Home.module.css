@@ -370,7 +370,7 @@
 }
 
 .main {
-  margin-top: 0px;   /* 🔥 pulls text closer to fog */
+  margin-top: -40px;
   padding-top: 0;
 }
 
