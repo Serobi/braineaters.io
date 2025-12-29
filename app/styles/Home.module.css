@@ -309,7 +309,15 @@
 }
 
 @media (max-width: 768px) {
+  
+  .homePage {
+    min-height: calc(100vh - 70px); /* navbar height */
+    overflow-x: hidden;             /* kill fog overflow */
+  }
 
+  .bannerSection {
+    overflow: hidden;               /* fog can exceed internally */
+  }
   .hunterEyes {
     left: 50%;
     transform: translateX(-50%) scale(0.9);
