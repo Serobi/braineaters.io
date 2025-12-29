@@ -182,9 +182,8 @@ footer a:hover {
     overscroll-behavior-y: auto;
   }
   
-  /* --- PAGE OFFSET --- */
   .page {
-    flex: unset;
+    flex: unset;                 /* removes flex stretch */
     min-height: calc(100vh - 110px); /* header height */
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
