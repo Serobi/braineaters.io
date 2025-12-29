@@ -223,9 +223,17 @@ footer a:hover {
   }
 
   .navLeft .navLink {
-    border: 1px solid #333;
-    color: #e5e5e5;
-    background: #0b0b0b;
+    position: relative;
+    overflow: hidden;
+    color: #ff9f1c;
+    border: 1px solid #ff9f1c;
+    padding: 10px 18px;
+    border-radius: 6px;
+    transition:
+      background 0.25s ease,
+      color 0.25s ease,
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
   }
 
   .navLeft .navLink::after {
