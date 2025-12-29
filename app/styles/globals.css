@@ -186,7 +186,6 @@ footer a:hover {
     flex: unset;
     min-height: auto;
     overflow: visible;   /* 🔥 key */
-    padding-bottom: 0;
   }
   
 
