@@ -332,16 +332,19 @@
   opacity: 0.2;
 }
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
   .navbar {
     padding: 0 20px;
-  }
+}
 
   .navLeft,
   .navRight {
     gap: 15px;
   }
-
+  .navleft {
+  left : 0%
+  }
+  
   .logo {
     width: 170px;
   }
