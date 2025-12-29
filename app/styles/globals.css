@@ -182,12 +182,12 @@ footer a:hover {
     overscroll-behavior-y: auto;
   }
   
-  .page {
-    flex: unset;
-    min-height: auto;
-    overflow: visible;   /* 🔥 key */
-  }
-  
+.page {
+  flex: unset;
+  min-height: calc(100vh - 110px);
+  overflow: visible;   /* 🔥 key */
+}
+
 
   /* --- HEADER --- */
   .navbar {
@@ -253,6 +253,10 @@ footer a:hover {
   /* --- SECONDARY NAV --- */
   .navRight {
     display: none;
+  }
+
+  footer {
+    position: static;
   }
   
 }
