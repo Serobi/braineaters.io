@@ -176,111 +176,79 @@ footer a:hover {
 
 @media (max-width: 768px) {
 
+  /* --- PAGE OFFSET (fixed header) --- */
   .page {
-    padding-top: 130px; /* safe header height */
+    padding-top: 130px;
   }
-  /* HEADER CONTAINER */
+
+  /* --- HEADER CONTAINER --- */
   .navbar {
     position: fixed;
     top: 0;
     left: 0;
-    width : 100%;
+    width: 100%;
+
     height: auto;
     max-height: none;
     padding: 12px 14px;
 
+    display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
   }
 
-  /* NAV GROUPS */
-  .navLeft,
-  .navRight {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
+  /* --- PRIMARY NAV (4 buttons) --- */
+  .navLeft {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    width: 100%;
     margin: 0;
-  }
-
-  /* LINKS */
-  .navLink {
-    font-size: 14px;
-    padding: 0px 0px;
-    min-height: 44px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .navLink:hover {
-    color: inherit;
-    background: none;
-    box-shadow: none;
-    transform: none;
   }
 
   .navLeft .navLink {
     width: 100%;
     min-height: 44px;
     padding: 10px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+
     position: relative;
     overflow: hidden;
+
     color: #ff9f1c;
     border: 1px solid #ff9f1c;
     border-radius: 6px;
-    transition:
-      background 0.25s ease,
-      color 0.25s ease,
-      transform 0.25s ease,
-      box-shadow 0.25s ease;
+
+    transition: background 0.2s ease, color 0.2s ease;
   }
 
-  .navLeft .navLink::after {
-    display: none;
-  }
-  .navRight .navLink {
-    opacity: 0.85;
-    font-size: 13px;
-    transition: background 0.15s ease, color 0.15s ease;
-  }
-
+  /* Tap feedback */
   .navLeft .navLink:active {
     background: #ff9f1c;
     color: #fff;
-    transform: translateY(0);
+  }
+
+  /* Kill hover behavior on mobile */
+  .navLink:hover {
+    background: none;
     box-shadow: none;
+    transform: none;
   }
 
-  .navLeft .navLink:active::after {
-    animation: navSweep 0.45s ease-out;
-  }
-
+  /* Disable sweep effect on mobile */
   .navLeft .navLink::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      120deg,
-      transparent 35%,
-      rgba(255, 255, 255, 0.25) 45%,
-      rgba(255, 120, 120, 0.35) 50%,
-      rgba(255, 255, 255, 0.25) 55%,
-      transparent 65%
-    );
-    transform: translateX(-120%);
-    pointer-events: none;
+    display: none;
   }
 
-  .navLeft {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    width: 100%;
-  }
+  /* --- SECONDARY NAV (login / signup) --- */
   .navRight {
     display: none;
   }
 }
+
