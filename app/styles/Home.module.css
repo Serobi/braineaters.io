@@ -105,13 +105,13 @@
   -webkit-text-fill-color: transparent;
 
   opacity: 0;
-  animation: lineShine 10s ease-in-out infinite;
+  animation: lineShine 15s ease-in-out infinite;
 }
 
 
 .introText span:nth-child(1) { animation-delay: 1s; }
-.introText span:nth-child(2) { animation-delay: 4s; }
-.introText span:nth-child(3) { animation-delay: 7s; }
+.introText span:nth-child(2) { animation-delay: 6s; }
+.introText span:nth-child(3) { animation-delay: 11s; }
 
 
 
@@ -269,7 +269,7 @@
     padding: 12px 24px;
     font-size: 16px;
   }
-    .hunterEyes {
+  .hunterEyes {
     left: 50%;
     transform: translateX(-50%) scale(0.9);
     width: 300px;
@@ -360,6 +360,21 @@
 .fogReveal .fog2 {
   transform: translateY(-20%);
   opacity: 0.2;
+}
+
+@media (max-width: 768px) {
+  .fogContainer {
+    width: 100%;
+    left: 0;
+    overflow: visible;
+  }
+
+  .fogLayer {
+    width: 180%;
+    height: 180%;
+    top: -40%;
+    left: -40%;
+  }
 }
 
 

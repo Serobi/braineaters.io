@@ -3,9 +3,24 @@
 import Head from 'next/head';
 import styles from './styles/Home.module.css';
 import { useState } from "react";
+import { useIsMobile } from "@/app/hooks/useIsMobile";
+import { useEffect } from "react";
+
 
 export default function Home() {
   const [hovering, setHovering] = useState(false);
+  const isMobile = useIsMobile();
+  const [showEyes, setShowEyes] = useState(false);
+
+  useEffect(() => {
+    if (isMobile) {
+      const timer = setTimeout(() => {
+        setShowEyes(true);
+      }, 4000); // 4s sweet spot
+
+      return () => clearTimeout(timer);
+    }
+  }, [isMobile]);
 
   return (
     <div className={styles.homePage}>
