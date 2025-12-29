@@ -176,56 +176,53 @@ footer a:hover {
 
 @media (max-width: 768px) {
 
-  /* --- PAGE OFFSET (fixed header) --- */
+  /* --- PAGE OFFSET --- */
   .page {
-    padding-top: 130px;
+    padding-top: 110px; /* smaller header now */
   }
 
-  /* --- HEADER CONTAINER --- */
+  /* --- HEADER --- */
   .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
 
-    height: auto;
-    max-height: none;
-    padding: 12px 14px;
-
+    padding: 10px 8px;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
+    gap: 8px;
   }
 
-  /* --- PRIMARY NAV (4 buttons) --- */
+  /* --- PRIMARY NAV (4 buttons in one row) --- */
   .navLeft {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;        /* 🔴 IMPORTANT */
     width: 100%;
-    margin: 0;
+    gap: 6px;
   }
 
   .navLeft .navLink {
-    width: 100%;
-    min-height: 44px;
-    padding: 10px 0;
+    flex: 1 1 0;              /* 🔥 equal width */
+    min-width: 0;             /* 🔥 prevents overflow */
+    height: 42px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    font-size: 14px;
+    font-size: 13px;
+    padding: 0;
 
-    position: relative;
-    overflow: hidden;
+    white-space: nowrap;      /* no text wrap */
+    text-align: center;
 
     color: #ff9f1c;
     border: 1px solid #ff9f1c;
     border-radius: 6px;
 
-    transition: background 0.2s ease, color 0.2s ease;
+    transition: background 0.15s ease, color 0.15s ease;
   }
 
   /* Tap feedback */
@@ -234,21 +231,21 @@ footer a:hover {
     color: #fff;
   }
 
-  /* Kill hover behavior on mobile */
+  /* Kill hover effects on mobile */
   .navLink:hover {
     background: none;
-    box-shadow: none;
     transform: none;
+    box-shadow: none;
   }
 
-  /* Disable sweep effect on mobile */
   .navLeft .navLink::after {
     display: none;
   }
 
-  /* --- SECONDARY NAV (login / signup) --- */
+  /* --- SECONDARY NAV --- */
   .navRight {
     display: none;
   }
 }
+
 
