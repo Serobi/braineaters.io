@@ -369,12 +369,7 @@
   animation: CenterBurst 0.6s ease-out forwards;
 }
 
-.bannerSection {
-  min-height: 55vh;
-  display: flex;
-  align-items: flex-end;
-  padding-bottom: 10px;
-}
+
 
 .main {
   margin-top: -20px;   /* 🔥 pulls text closer to fog */
