@@ -208,7 +208,7 @@ footer a:hover {
   /* LINKS */
   .navLink {
     font-size: 14px;
-    padding: 10px 14px;
+    padding: 0px 0px;
     min-height: 44px;
 
     display: flex;
