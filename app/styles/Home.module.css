@@ -310,11 +310,6 @@
 
 @media (max-width: 768px) {
 
-  .discoverButton {
-    padding: 12px 24px;
-    font-size: 16px;
-  }
-
   .hunterEyes {
     left: 50%;
     transform: translateX(-50%) scale(0.9);
@@ -372,6 +367,37 @@
 }
 .discoverButton:active::after {
   animation: CenterBurst 0.6s ease-out forwards;
+}
+
+.bannerSection {
+  min-height: 55vh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 10px;
+}
+
+.main {
+  margin-top: -20px;   /* 🔥 pulls text closer to fog */
+  padding-top: 0;
+}
+
+.introText {
+  max-width: 92%;
+  margin: 0 auto 14px auto;
+  font-size: 15px;
+}
+
+.introText span {
+  font-size: 15px;
+  line-height: 1.45;
+  animation-duration: 18s; /* calmer on mobile */
+}
+
+.discoverButton {
+  margin-top: 10px;
+  min-height: 48px;
+  font-size: 16px;
+  padding: 12px 24px;
 }
 }
 
