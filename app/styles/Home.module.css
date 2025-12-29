@@ -359,6 +359,18 @@
 }
 
 .discoverButton:active {
+  background: #1a0033;
+  box-shadow:
+    0 0 14px rgba(168, 85, 247, 0.35),
+    inset 0 0 8px rgba(168, 85, 247, 0.12);
+  transform: scale(1.02);
+  border-color: #e9d5ff;
+}
+
+.discoverButton:active::before {
+  animation: none;
+}
+.discoverButton:active::after {
   animation: CenterBurst 0.6s ease-out forwards;
 }
 }
