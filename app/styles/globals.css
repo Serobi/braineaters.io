@@ -184,7 +184,7 @@ footer a:hover {
   
   .page {
     flex: unset;
-    min-height: auto;
+    min-height: calc(100vh - 110px);
     overflow: visible;   /* 🔥 key */
   }
   
@@ -257,7 +257,6 @@ footer a:hover {
 
   footer {
     position: static;
-    margin-top: 0;
   }
   
 }
