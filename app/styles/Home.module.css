@@ -357,6 +357,10 @@
   opacity: 0.6;
   top: -2%;
 }
+
+.discoverButton:active {
+  animation: CenterBurst 0.6s ease-out forwards;
+}
 }
 
 
