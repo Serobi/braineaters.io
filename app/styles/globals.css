@@ -173,3 +173,66 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+
+  .page {
+    padding-top: 130px; /* safe header height */
+  }
+  /* HEADER CONTAINER */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: auto;
+    max-height: none;
+    padding: 12px 14px;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  /* NAV GROUPS */
+  .navLeft,
+  .navRight {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+  }
+
+  /* LINKS */
+  .navLink {
+    font-size: 14px;
+    padding: 10px 14px;
+    min-height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navLink:hover {
+    color: inherit;
+    background: none;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .navLeft .navLink {
+    border: 1px solid #333;
+    color: #e5e5e5;
+    background: #0b0b0b;
+  }
+
+  .navLeft .navLink::after {
+    display: none;
+  }
+  .navRight .navLink {
+    opacity: 0.85;
+    font-size: 13px;
+  }
+}
