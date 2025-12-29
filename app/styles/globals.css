@@ -254,4 +254,19 @@ footer a:hover {
   .navLeft .navLink:active::after {
     animation: navSweep 0.6s ease-out;
   }
+  .navLeft .navLink::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      transparent 35%,
+      rgba(255, 255, 255, 0.25) 45%,
+      rgba(255, 120, 120, 0.35) 50%,
+      rgba(255, 255, 255, 0.25) 55%,
+      transparent 65%
+    );
+    transform: translateX(-120%);
+    pointer-events: none;
+  }
 }
