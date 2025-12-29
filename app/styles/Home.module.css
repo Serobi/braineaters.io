@@ -17,8 +17,6 @@
   pointer-events: none;
 }
 
-
-
 .hunterEyes {
   position: absolute;
   top: 0%;
@@ -227,28 +225,6 @@
 }
 
 
-/* ----------- FOOTER ----------- */
-
-.footer {
-  margin-top: auto;
-  width: 100%;
-  padding: 20px 0;
-  text-align: center;
-  background: #000;
-  border-top: 1px solid #1a1a1a;
-  color: #999;
-}
-
-.footer a {
-  color: #ff3c3c;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
-
 /* components/FogOverlay.module.css */
 .fogContainer {
   position: relative;
@@ -333,22 +309,6 @@
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    padding: 0 20px;
-}
-
-  .navLeft,
-  .navRight {
-    gap: 15px;
-  }
-  
-.navLeft {
-  left: 0%;
-}
-
-  .logo {
-    width: 170px;
-  }
 
   .discoverButton {
     padding: 12px 24px;
@@ -375,10 +335,10 @@
   }
 
   .fogLayer {
-    width: 120%;
-    height: 100%;
+    width: 140%;
+    height: 120%;
     top: 0%;
-    left: -10%;
+    left: -20%;
   }
 }
 
