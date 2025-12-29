@@ -249,36 +249,6 @@
 }
 
 
-/* ----------- RESPONSIVE ----------- */
-
-@media (max-width: 768px) {
-  .navbar {
-    padding: 0 20px;
-  }
-
-  .navLeft,
-  .navRight {
-    gap: 15px;
-  }
-
-  .logo {
-    width: 170px;
-  }
-
-  .discoverButton {
-    padding: 12px 24px;
-    font-size: 16px;
-  }
-  .hunterEyes {
-    left: 50%;
-    transform: translateX(-50%) scale(0.9);
-    width: 300px;
-  }
-  .hunterEyes.fadeIn {
-    transform: translateX(-50%) scale(1);
-  }
-}
-
 /* components/FogOverlay.module.css */
 .fogContainer {
   position: relative;
@@ -362,8 +332,40 @@
   opacity: 0.2;
 }
 
-@media (max-width: 768px) {
-  .fogContainer {
+  @media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .navLeft,
+  .navRight {
+    gap: 15px;
+  }
+
+  .logo {
+    width: 170px;
+  }
+
+  .discoverButton {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+
+  .hunterEyes {
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    width: 300px;
+    filter:
+      drop-shadow(0 0 10px rgba(150, 0, 255, 0.3))
+      brightness(0.9);
+    opacity: 0;
+  }
+
+  .hunterEyes.fadeIn {
+    transform: translateX(-50%) scale(1);
+  }
+
+    .fogContainer {
     width: 100%;
     left: 0;
     overflow: visible;
@@ -375,6 +377,7 @@
     top: 10%;
     left: 0%;
   }
+}
 }
 
 
