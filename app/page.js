@@ -62,11 +62,22 @@ export default function Home() {
         <a
           href="/game"
           className={styles.discoverButton}
-          onMouseEnter={() => setHovering(true)}
-          onMouseLeave={() => setHovering(false)}
+          onMouseEnter={() => {
+            if (!isMobile) {
+              setHovering(true);
+              setShowEyes(true);
+            }
+          }}
+          onMouseLeave={() => {
+            if (!isMobile) {
+              setHovering(false);
+              setShowEyes(false);
+            }
+          }}
         >
           Discover the Game
         </a>
+
       </main>
 
 

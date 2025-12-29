@@ -370,8 +370,8 @@
   }
 
   .fogLayer {
-    width: 180%;
-    height: 180%;
+    width: 110%;
+    height: 100%;
     top: -40%;
     left: -40%;
   }
