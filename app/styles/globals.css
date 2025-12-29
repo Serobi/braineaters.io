@@ -184,7 +184,7 @@ footer a:hover {
     position: fixed;
     top: 0;
     left: 0;
-
+    width : 100%;
     height: auto;
     max-height: none;
     padding: 12px 14px;
@@ -242,5 +242,16 @@ footer a:hover {
   .navRight .navLink {
     opacity: 0.85;
     font-size: 13px;
+  }
+
+  .navLeft .navLink:active {
+    background: #ff9f1c;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 0 6px rgba(255, 60, 60, 0.25);
+  }
+
+  .navLeft .navLink:active::after {
+    animation: navSweep 0.6s ease-out;
   }
 }
