@@ -353,7 +353,6 @@
 
   .hunterEyes {
     left: 50%;
-    top : 10%;
     transform: translateX(-50%) scale(0.9);
     width: 300px;
     filter:
@@ -375,7 +374,7 @@
   .fogLayer {
     width: 100%;
     height: 100%;
-    top: 10%;
+    top: 0%;
     left: 0%;
   }
 }
