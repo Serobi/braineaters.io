@@ -242,6 +242,7 @@ footer a:hover {
   .navRight .navLink {
     opacity: 0.85;
     font-size: 13px;
+    transition: background 0.15s ease, color 0.15s ease;
   }
 
   .navLeft .navLink:active {
