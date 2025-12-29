@@ -370,7 +370,7 @@
 }
 
 .main {
-  margin-top: -20px;   /* 🔥 pulls text closer to fog */
+  margin-top: 0px;   /* 🔥 pulls text closer to fog */
   padding-top: 0;
 }
 
