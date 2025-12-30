@@ -398,15 +398,12 @@
     90deg,
     #0b0b0b 30%,
     #fff3b0 50%,
-    #0b0b0b 70%
   );
   background-size: 200% 100%;
   background-position: 100% center;
 
   background-clip: text;
   -webkit-background-clip: text;
-
-
 
   will-change: background-position;
   backface-visibility: hidden;
