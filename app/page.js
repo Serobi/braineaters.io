@@ -54,9 +54,9 @@ export default function Home() {
       <main className={styles.main}>
 
         <p className={styles.introText}>
-          <span>Many have entered the Wastelands.</span>
-          <span>None survived.</span>
-          <span>Do you have what it takes?</span>
+          <span>Many have entered the Wastelands</span>
+          <span>None survived</span>
+          <span>Now it is your turn</span>
         </p>
 
 

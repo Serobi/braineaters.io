@@ -381,42 +381,17 @@
   padding-top: 0;
 }
 
-.introText {
-  max-width: 750px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.introText span {
-  display: block;
-  font-size: 18px;
-  line-height: 1.55;
-  font-family: fantasy, 'Arial Black', sans-serif;
-  margin-bottom: 6px;
-
-  background: linear-gradient(
-    90deg,
-    #0b0b0b 30%,
-    #fff3b0 50%,
-  );
-  background-size: 200% 100%;
-  background-position: 100% center;
-
-  background-clip: text;
-  -webkit-background-clip: text;
-
-  will-change: background-position;
-  backface-visibility: hidden;
-  transform: translateZ(0);
-  opacity: 0;
-  animation: lineShine 15s linear infinite;
-}
-
 .discoverButton {
   margin-top: 10px;
   min-height: 48px;
   font-size: 16px;
   padding: 12px 24px;
+}
+
+.introText span {
+  color: #e5e5e5;
+  opacity: 0;
+  animation: lineShine 15s ease-in-out infinite;
 }
 
 }
