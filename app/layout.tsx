@@ -16,29 +16,26 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   // Basic SEO
   title: {
-    default: "Brain Eaters - Post-Apocalyptic Survival Strategy Game",
+    default: "Brain Eaters - Cooperative Survival Strategy Game",
     template: "%s | Brain Eaters" // For page-specific titles
   },
   description: "Brain Eaters is a cooperative survival strategy game set in a post-apocalyptic world. Build your city, defend against zombie attacks, explore dangerous wastelands, and cooperate with other survivors to stay alive.",
   
   // Keywords for search engines
   keywords: [
-    "survival game",
-    "strategy game",
-    "cooperative game",
-    "multiplayer survival",
-    "zombie survival",
-    "post-apocalyptic game",
-    "city building game",
+    "cooperative survival game",
+    "post-apocalyptic strategy game",
+    "zombie survival game",
+    "city building survival",
+    "multiplayer strategy game",
     "Brain Eaters",
-    "Mobile Game"
+    "mobile survival game",
+    "PC survival game"
   ],
-  
   // Author information
-  authors: [{ name: "Brain Eaters Team" }],
-  creator: "Brain Eaters Team",
+  authors: [{ name: "Serobi" }],
+  creator: "Serobi",
   
-  // Robots - control search engine crawling
   robots: {
     index: true,
     follow: true,
@@ -48,31 +45,29 @@ export const metadata: Metadata = {
     },
   },
   
-  // Open Graph - For social media sharing (Facebook, LinkedIn, Discord)
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://yourdomain.com", // TODO: Replace with your actual domain
+    url: "https://braineatersgame.com",
     siteName: "Brain Eaters",
-    title: "Brain Eaters - Survive Together or Die Alone",
+    title: "Brain Eaters - Cooperative Survival Strategy Game on Mobile and PC",
     description: "A new genre of survival game. Build, defend, explore, and cooperate in a post-apocalyptic world where every decision matters.",
     images: [
       {
-        url: "/images/og-image.jpg", // TODO: Create this image (1200x630px recommended)
-        width: 1200,
-        height: 630,
-        alt: "Brain Eaters Game - Post-Apocalyptic Survival",
+        url: "https://braineatersgame.com/images/Logo_B.png",
+        width: 1024,
+        height: 1024,
+        alt: "Brain Eaters - Cooperative Survival Strategy Game",
       },
     ],
   },
   
-  // Twitter Card - For Twitter sharing
   twitter: {
     card: "summary_large_image",
-    title: "Brain Eaters - Survive Together or Die Alone",
+    title: "Brain Eaters - Cooperative Survival Strategy Game on Mobile and PC",
     description: "Build, defend, explore, and cooperate in a post-apocalyptic survival strategy game.",
-    images: ["/images/twitter-card.jpg"], // TODO: Create this image (1200x600px recommended)
-    creator: "@yourtwitterhandle", // TODO: Add your Twitter handle if you have one
+    images: ["/images/Logo_B.png"],
+    creator: "@mrserobi",
   },
   
   // Additional metadata
