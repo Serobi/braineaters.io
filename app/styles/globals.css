@@ -314,8 +314,7 @@ footer a:hover {
   .footerLeft {
     position : relative;
     align-items: flex-start;
-    left:0px;
-    bottom : -100%;
+    left:16px;
     font-size: 13px;
   }
 
