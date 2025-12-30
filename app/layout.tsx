@@ -108,10 +108,29 @@ export default function RootLayout({
           {children}
         </main>
 
-        <footer className="footer">
-          <p>© {new Date().getFullYear()} Brain Eaters - All rights reserved.</p>
-          <a href="#contact" className="footerLink">Contact Us</a>
-        </footer>
+<footer className="footer">
+<div className="footerCenter">
+  <p>© {new Date().getFullYear()} Brain Eaters - All rights reserved.</p>
+  <a href="#contact" className="footerLink">Contact Us</a>
+</div>
+
+<a
+  href="https://discord.gg/fTGX86sYFZ"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="footerDiscord"
+  aria-label="Join Brain Eaters on Discord"
+>
+  <img
+    src="/images/discord.png"
+    alt=""
+    className="discordIcon"
+  />
+</a>
+</footer>
+
+
+
       </body>
     </html>
   );

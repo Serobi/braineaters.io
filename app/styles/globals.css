@@ -155,6 +155,7 @@ html, body {
 }
 
 footer {
+  position: relative;
   margin-top: auto;
   width: 100%;
   padding: 20px 0;
@@ -172,6 +173,38 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+.footerCenter {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+
+/* Discord icon on the right */
+.footerDiscord {
+  position: absolute;
+  bottom: 25%;
+  right: 2%;
+}
+
+.discordIcon {
+  width: 50px;
+  height: 50px;
+  opacity: 0.85;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.footerDiscord:hover .discordIcon {
+  opacity: 1;
+  transform: translateY(-3%) scale(1.05);
+  filter: drop-shadow(0 0 6px rgba(88, 101, 242, 0.6));
+}
+
 
 @media (max-width: 768px) {
 
