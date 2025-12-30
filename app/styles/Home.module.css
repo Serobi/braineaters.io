@@ -382,14 +382,18 @@
 }
 
 .introText {
-  max-width: 92%;
-  margin: 0 auto 14px auto;
-  font-size: 15px;
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .introText span {
-  font-size: 15px;
-  line-height: 1.45;
+  display: block;
+  font-size: 18px;
+  line-height: 1.55;
+  font-family: fantasy, 'Arial Black', sans-serif;
+  margin-bottom: 6px;
+
   background: linear-gradient(
     90deg,
     #0b0b0b 30%,
@@ -404,9 +408,12 @@
 
   color: transparent;
   -webkit-text-fill-color: transparent;
-
+  
+  will-change: background-position;
+  backface-visibility: hidden;
+  transform: translateZ(0);
   opacity: 0;
-  animation: lineShine 15s ease-in-out infinite;
+  animation: lineShine 18s linear infinite;
 }
 
 .discoverButton {
