@@ -163,6 +163,7 @@ footer {
   background: #000;
   border-top: 1px solid #1a1a1a;
   color: #999;
+  flex-shrink: 0;
 }
 
 footer a {
@@ -181,9 +182,16 @@ footer a:hover {
     overscroll-behavior-y: auto;
   }
   
+  .bodyLayout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+  }
+
+  
 .page {
-  flex: unset;
-  min-height: calc(100vh - 110px);
+  flex: 1;
+  min-height: auto;
   overflow: visible;
 }
 
