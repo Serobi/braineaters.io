@@ -174,7 +174,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
-.footerCenter {
+.footerLeft {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -185,8 +185,8 @@ footer a:hover {
 /* Discord icon on the right */
 .footerDiscord {
   position: absolute;
-  bottom: 25%;
-  right: 2%;
+  bottom: 10%;
+  right: 15px;
 }
 
 .discordIcon {
@@ -302,8 +302,8 @@ footer a:hover {
   }
 
   .footerDiscord {
-    right: 15px;
-    top : 20%;
+    align-items: flex-end;
+    right: 16px;
   }
 
   .discordIcon {
@@ -318,13 +318,6 @@ footer a:hover {
     font-size: 13px;
   }
 
-  .footerCenter {
-    position: absolute;
-    left: 50%;
-    bottom: 30%;
-    transform: translateX(-50%);
-    font-size: 13px;
-  }
 }
 
 
