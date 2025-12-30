@@ -406,14 +406,13 @@
   background-clip: text;
   -webkit-background-clip: text;
 
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  
+
+
   will-change: background-position;
   backface-visibility: hidden;
   transform: translateZ(0);
   opacity: 0;
-  animation: lineShine 18s linear infinite;
+  animation: lineShine 15s linear infinite;
 }
 
 .discoverButton {
