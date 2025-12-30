@@ -1,0 +1,43 @@
+/* Container to simulate your game background */
+.logo-container {
+  background: #050505;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.foggytext {
+  font-family: sans-serif; /* Use your Bold Condensed font here */
+  font-weight: 900;
+  font-size: 4rem;
+  letter-spacing: 0.2rem;
+  animation: fogCycle 4s ease-in-out infinite;
+}
+
+.brain {
+  color: #e8c07a;
+}
+
+.eaters {
+  color: #581c87; /* Dark Purple */
+}
+
+@keyframes fogCycle {
+  0% {
+    opacity: 0;
+    filter: blur(20px);
+    transform: scale(0.9) translateY(0);
+  }
+  20%, 80% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(30px);
+    transform: scale(1.1) translateY(-10px); /* Drifts up like smoke */
+  }
+}
