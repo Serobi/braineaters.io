@@ -109,9 +109,11 @@ export default function RootLayout({
         </main>
 
 <footer className="footer">
-<div className="footerCenter">
+<div className="footerLeft">
   <p>© {new Date().getFullYear()} Brain Eaters - All rights reserved.</p>
-  <a href="#contact" className="footerLink">Contact Us</a>
+</div>
+<div className="footerCenter">
+<a href="#contact" className="footerLink">Contact Us</a>
 </div>
 
 <a
