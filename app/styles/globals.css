@@ -21,14 +21,12 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #0b0b0b;
 }
 
 .bodyLayout {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #0b0b0b;
 }
 
 .page {
@@ -49,7 +47,6 @@ html, body {
   align-items: center;
   padding: 0 20px 0;
   box-sizing: border-box;
-  border-bottom: 1px solid #1a1a1a;
   justify-content: flex-start;
   gap: 40px;
   position: fixed;
@@ -163,7 +160,6 @@ footer {
   padding: 20px 0;
   text-align: center;
   background: #000;
-  border-top: 1px solid #1a1a1a;
   color: #999;
   flex-shrink: 0;
 }
