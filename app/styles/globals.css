@@ -21,12 +21,14 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #0b0b0b;
 }
 
 .bodyLayout {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #0b0b0b;
 }
 
 .page {
@@ -180,12 +182,14 @@ footer a:hover {
   html, body {
     overflow-x: hidden;
     overscroll-behavior-y: auto;
+    background-color: #0b0b0b;
   }
   
   .bodyLayout {
     display: flex;
     flex-direction: column;
     min-height: 100svh;
+    background-color: #0b0b0b;
   }
 
   
@@ -193,6 +197,7 @@ footer a:hover {
   flex: 1;
   min-height: auto;
   overflow: visible;
+  background-color: #0b0b0b;
 }
 
 
