@@ -389,9 +389,11 @@
 }
 
 .introText span {
-  color: #e5e5e5;
-  opacity: 0;
-  animation: lineShine 15s ease-in-out infinite;
+  background: none;
+  -webkit-text-fill-color: #fff3b0d7;
+
+  opacity: 1;
+  animation: none;
 }
 
 }
