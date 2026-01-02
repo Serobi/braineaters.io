@@ -388,13 +388,62 @@
   padding: 12px 24px;
 }
 
-.introText span {
-  background: none;
-  -webkit-text-fill-color: #fff3b0d7;
-
-  opacity: 1;
-  animation: none;
+.introText {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
 }
+
+.introText span {
+  display: inline-block;          /* Critical fix for mobile Safari */
+  width: 100%;                    /* Ensures each span takes full width → one per line */
+  font-size: 18px;
+  line-height: 1.55;
+  font-family: fantasy, 'Arial Black', sans-serif;
+  margin-bottom: 6px;
+
+  background: linear-gradient(
+    90deg,
+    #0b0b0b 30%,
+    #fff3b0 50%,
+    #0b0b0b 70%
+  );
+  background-size: 200% 100%;
+  background-position: 100% center;  /* Start off to the right */
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  opacity: 0;
+  animation: lineShine 15s ease-in-out infinite;
+
+  will-change: opacity, background-position;
+  transform: translateZ(0);
+}
+
+/* Staggered delays for sequential appearance */
+.introText span:nth-child(1) { animation-delay: 1s; }
+.introText span:nth-child(2) { animation-delay: 6s; }
+.introText span:nth-child(3) { animation-delay: 11s; }
+
+@keyframes lineShine {
+  0%   { opacity: 0; background-position: 100% center; }
+  10%  { opacity: 0; }
+
+  20%  { opacity: 1; }
+  50%  { background-position: -80% center; opacity: 1; }
+
+  60%  { opacity: 1; }
+
+  70%  { opacity: 0; }
+
+  100% { opacity: 0; background-position: 110% center; }
+}
+
+
 
 }
 
