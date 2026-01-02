@@ -404,13 +404,15 @@
 
   background: linear-gradient(
     90deg,
-    #0b0b0b 30%,
-    #fff3b0 50%,
-    #0b0b0b 70%
+    #0b0b0b 5%,   /* Thin dark left */
+    #fff3b0 20%,  /* Start gold early */
+    #fff3b0 80%,  /* Wide gold center */
+    #0b0b0b 95%   /* Thin dark right */
   );
   background-size: 200% 100%;
-  background-position: 100% center;  /* Start off to the right */
-
+  background-position: 100% center;
+  text-shadow: 0 0 10px rgba(255, 243, 176, 0.4);
+  
   background-clip: text;
   -webkit-background-clip: text;
 
@@ -431,16 +433,11 @@
 
 @keyframes lineShine {
   0%   { opacity: 0; background-position: 100% center; }
-  10%  { opacity: 0; }
-
-  20%  { opacity: 1; }
-  50%  { background-position: -80% center; opacity: 1; }
-
-  60%  { opacity: 1; }
-
-  70%  { opacity: 0; }
-
-  100% { opacity: 0; background-position: 110% center; }
+  15%  { opacity: 1; background-position: 100% center; }  /* Fade in with gold on right */
+  50%  { background-position: -100% center; opacity: 1; } /* Full sweep to left */
+  65%  { opacity: 1; background-position: -100% center; }
+  80%  { opacity: 0; }
+  100% { opacity: 0; background-position: 100% center; }
 }
 
 
