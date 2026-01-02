@@ -395,51 +395,42 @@
 }
 
 .introText span {
-  display: inline-block;          /* Critical fix for mobile Safari */
-  width: 100%;                    /* Ensures each span takes full width → one per line */
+  display: inline-block;
+  width: 100%;                    /* Keeps each line separate */
   font-size: 18px;
   line-height: 1.55;
   font-family: fantasy, 'Arial Black', sans-serif;
   margin-bottom: 6px;
 
-  background: linear-gradient(
-    90deg,
-    #0b0b0b 5%,   /* Thin dark left */
-    #fff3b0 20%,  /* Start gold early */
-    #fff3b0 80%,  /* Wide gold center */
-    #0b0b0b 95%   /* Thin dark right */
-  );
-  background-size: 200% 100%;
-  background-position: 100% center;
-  text-shadow: 0 0 10px rgba(255, 243, 176, 0.4);
-  
-  background-clip: text;
-  -webkit-background-clip: text;
-
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-
+  color: #fff3b0;
   opacity: 0;
-  animation: lineShine 15s ease-in-out infinite;
+  filter: blur(8px);
 
-  will-change: opacity, background-position;
-  transform: translateZ(0);
+  text-shadow: 0 0 0px rgba(255, 243, 176, 0.6);  /* Optional soft glow */
+
+  animation: cleanReveal 16s ease-in-out infinite;
+
+  /* Smooth performance on mobile */
+  will-change: opacity, filter;
+  transform: translateZ(0);       /* Forces GPU – fixes any rendering quirks */
 }
 
-/* Staggered delays for sequential appearance */
-.introText span:nth-child(1) { animation-delay: 1s; }
-.introText span:nth-child(2) { animation-delay: 6s; }
-.introText span:nth-child(3) { animation-delay: 11s; }
+.introText span:nth-child(1) { animation-delay: 0s; }
+.introText span:nth-child(2) { animation-delay: 5s; }
+.introText span:nth-child(3) { animation-delay: 10s; }
 
-@keyframes lineShine {
-  0%   { opacity: 0; background-position: 100% center; }
-  15%  { opacity: 1; background-position: 100% center; }  /* Fade in with gold on right */
-  50%  { background-position: -100% center; opacity: 1; } /* Full sweep to left */
-  65%  { opacity: 1; background-position: -100% center; }
-  80%  { opacity: 0; }
-  100% { opacity: 0; background-position: 100% center; }
+
+@keyframes cleanReveal {
+
+  10%   { opacity: 0; filter: blur(8px); }
+
+  30%  { opacity: 1; filter: blur(0); }
+  60%  { opacity: 1; }
+
+  60%  { opacity: 0; filter: blur(10px);}
+
+  90% { opacity: 0; }
 }
-
 
 
 }
