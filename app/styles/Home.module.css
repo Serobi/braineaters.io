@@ -328,6 +328,7 @@
 
   .hunterEyes.fadeIn {
     transform: translateX(-50%) scale(1);
+    animation: subtlePulse 8s ease-in-out infinite;
   }
 
   .fogContainer {
@@ -427,6 +428,12 @@
   50%  { opacity: 0; filter: blur(8px); transform: translateY(-4px) translateZ(0);}
   100% { opacity: 0; filter: blur(8px); transform: translateY(-4px) translateZ(0);}
 }
+
+@keyframes subtlePulse {
+  0%, 100% { filter: drop-shadow(0 0 15px rgba(150, 0, 255, 0.4)) brightness(0.1); }
+  50% { filter: drop-shadow(0 0 25px rgba(150, 0, 255, 0.7)) brightness(1.2); }
+}
+
 }
 
 @media (prefers-reduced-motion: reduce) {
