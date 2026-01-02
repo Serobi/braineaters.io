@@ -421,16 +421,16 @@
 
 
 @keyframes cleanReveal {
+  0%   { opacity: 0; filter: blur(10px); }
+  15%  { opacity: 0; filter: blur(10px); }
 
-  0%   { opacity: 0; }
-  10%  { opacity: 0; filter: blur(10px);}
-  20%  { opacity: 1; filter: blur(0); }
-  60%  { opacity: 1; }
+  25%  { opacity: 1; filter: blur(0); }
+  40%  { opacity: 1; filter: blur(0); }
 
-  60%  { opacity: 0;}
-
-  70% { opacity: 0; filter: blur(10px);}
+  50%  { opacity: 0; filter: blur(8px); }
+  100% { opacity: 0; filter: blur(8px); }
 }
+
 
 
 }
