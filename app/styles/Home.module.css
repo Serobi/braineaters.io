@@ -418,13 +418,13 @@
 .introText span:nth-child(3) { animation-delay: 10s; }
 
 @keyframes cleanReveal {
-  0%   { opacity: 0; filter: blur(8px); }
+  0%   { opacity: 0; filter: blur(8px); transform: translateY(-4px) translateZ(0);}
   15%  { opacity: 0; filter: blur(8px); transform: translateY(-4px) translateZ(0);}
 
   25%  { opacity: 1; filter: blur(0); transform: translateY(0) translateZ(0); }
-  40%  { opacity: 1; filter: blur(0); }
+  40%  { opacity: 1; filter: blur(0); transform: translateY(0) translateZ(0);}
 
-  50%  { opacity: 0; filter: blur(8px);}
+  50%  { opacity: 0; filter: blur(8px); transform: translateY(-4px) translateZ(0);}
   100% { opacity: 0; filter: blur(8px); transform: translateY(-4px) translateZ(0);}
 }
 }
