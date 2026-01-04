@@ -401,19 +401,21 @@
   }
 
   .title { 
-    font-size: clamp(16px, 4vw, 34px);
+    font-size: clamp(16px, 5vw, 34px);
     line-height: 1.2;
     text-align: center;
-    animation : none;
+    animation: none;
+    background-position: 50% center;
   }
 
   .titleBar {
     width: clamp(100px, 60%, 300px); 
-    margin: clamp(12px, 2vw, 20px) auto 0;
+    margin: clamp(12px, 5vw, 20px) auto 0;
     animation : none;
   }
   .description { 
-    font-size: clamp(13px, 3vw, 16px);
+    font-size: clamp(12px, 3vw, 16px);
+    margin: clamp(20px, 3vw, 40px) auto;
   }
 
   .pillarDetailSection { 
