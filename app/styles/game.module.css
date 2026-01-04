@@ -397,7 +397,7 @@
 
 @media (max-width: 768px) {
   .gameIntro { 
-    margin-top: clamp(20px, 5vw, 40px); 
+    margin-top: clamp(18px, 5vw, 40px); 
   }
 
   .title { 
