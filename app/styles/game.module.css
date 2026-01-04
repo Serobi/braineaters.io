@@ -59,15 +59,6 @@
   font-weight: 700;
 }
 
-@media (max-width: 768px) {
-  .gameIntro { margin-top: 80px; }
-  .title { font-size: 34px; }
-  .description { font-size: 16px; }
-}
-
-/* -------------------------------
-   PILLARS WRAPPER - ADD BOTTOM MARGIN FOR COMPENSATION
--------------------------------- */
 .pillarsWrapper {
   position: sticky;
   z-index: 50;
@@ -433,5 +424,26 @@
     width: auto;
     min-width: 140px;
     text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .gameIntro { 
+    margin-top: 80px; 
+  }
+
+  .title { 
+    font-size: clamp(18px, 4vw, 34px);
+    line-height: 1.2;
+    text-align: center;
+    animation : none;
+  }
+
+  .titleBar {
+    width: clamp(100px, 60%, 300px); 
+    margin: clamp(12px, 2vw, 20px) auto 0;
+  }
+  .description { 
+    font-size: clamp(12px, 3vw, 16px);
   }
 }
