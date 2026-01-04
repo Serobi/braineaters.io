@@ -405,7 +405,6 @@
     line-height: 1.2;
     text-align: center;
 
-    white-space: nowrap;
     letter-spacing: clamp(0.5px, 0.8vw, 2px);
 
     animation: none;
