@@ -397,11 +397,11 @@
 
 @media (max-width: 768px) {
   .gameIntro { 
-    margin-top: 80px; 
+    margin-top: clamp(20px, 5vw, 40px); 
   }
 
   .title { 
-    font-size: clamp(16px, 5vw, 34px);
+    font-size: clamp(16px, 5vw, 30px);
     line-height: 1.2;
     text-align: center;
     animation: none;
