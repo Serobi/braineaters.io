@@ -405,13 +405,14 @@
     line-height: 1.2;
     text-align: center;
     animation: none;
-    background-position: 50% center;
+    background-position: 120% center;
   }
 
   .titleBar {
     width: clamp(100px, 60%, 300px); 
     margin: clamp(12px, 5vw, 20px) auto 0;
     animation : none;
+    background-position: 120% center;
   }
   .description { 
     font-size: clamp(12px, 3vw, 16px);
