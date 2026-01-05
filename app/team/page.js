@@ -1,13 +1,18 @@
 "use client";
 
-import Head from 'next/head';
 import styles from '../styles/team.module.css';
-import { useState } from "react";
-import { useIsMobile } from "@/app/hooks/useIsMobile";
-import { useEffect } from "react";
 
 
 export default function team() {
 
+    return (
 
+        <div className={styles.teamPage}>
+            <section className={styles.teamIntro}>
+                <h1 className={styles.title}>
+                    Coming Soon
+                </h1>
+            </section>
+        </div>
+    );
 }

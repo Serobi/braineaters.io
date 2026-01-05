@@ -1,0 +1,47 @@
+.roadmapIntro {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 0 24px;
+    text-align: center;
+  }
+  
+  .title {
+    display: inline-block;
+    font-family: fantasy, 'Arial Black', sans-serif;
+    font-size: 44px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  
+    background: linear-gradient(90deg, #e8c07a 40%, #fff3b0 50%, #e8c07a 60%);
+    background-size: 200% 100%;
+    background-position: 0% center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  
+    animation: shineLeftToRight 6s ease-in-out infinite;
+  }
+  
+  @keyframes shineLeftToRight {
+    0%, 20% { background-position: 120% center; }
+    80%, 100% { background-position: -80% center; }
+  }
+
+  @media (max-width: 768px) {
+    .roadmapIntro { 
+      margin-top: clamp(18px, 5vw, 40px); 
+    }
+  
+    .title { 
+      font-size: clamp(16px, 5vw, 30px);
+      line-height: 1.2;
+      text-align: center;
+  
+      letter-spacing: clamp(0.5px, 0.8vw, 2px);
+  
+      animation: none;
+      background-position: 120% center;
+    }
+}

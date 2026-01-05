@@ -94,7 +94,7 @@ export default function RootLayout({
           <nav className={"navLeft"}>
             <a href="/" className={"navLink"}>Home</a>
             <a href="/game" className={"navLink"}>Game</a>
-            <a href="#roadmap" className={"navLink"}>Roadmap</a>
+            <a href="/roadmap" className={"navLink"}>Roadmap</a>
             <a href="/team" className={"navLink"}>Team</a>
           </nav>
 
