@@ -115,10 +115,6 @@
   box-shadow: 0 2px 10px rgba(232, 192, 122, 0.295);
 }
 
-.pillarsSection.stuck .pillar:hover {
-  transform: none;
-}
-
 /* Base transition for p */
 .pillar p {
   transition: opacity 0.3s ease, height 0.3s ease, margin 0.3s ease;
@@ -459,13 +455,6 @@
     background: rgba(232, 192, 122, 0.12);
     border-color: #e8c07a;
     box-shadow: 0 0 12px rgba(232, 192, 122, 0.25);
-    transform: none;
-  }
-
-  .pillar:hover {
-    transform: none;
-    background: rgba(15, 15, 15, 0.4);
-    border: 2px solid rgba(219, 212, 200, 0.3);
   }
 
   .pillarsSection.stuck {
