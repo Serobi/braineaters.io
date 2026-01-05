@@ -66,14 +66,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Brain Eaters - Cooperative Survival Strategy Game on Mobile and PC",
     description: "Build, defend, explore, and cooperate in a post-apocalyptic survival strategy game.",
-    images: [
-      {
-        url: "https://braineatersgame.com/images/Logo_B.png",
-        width: 1024,
-        height: 1024,
-        alt: "Brain Eaters - Cooperative Survival Strategy Game",
-      },
-    ],
+    images: ["https://braineatersgame.com/images/Logo_B.png"],
     creator: "@mrserobi",
   },
   
