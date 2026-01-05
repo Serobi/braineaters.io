@@ -418,10 +418,56 @@
 
   .pillarsWrapper {
     top: 64px;
-    margin-bottom: 24px;
+    margin-bottom: 40px;
+  }
+  
+  .pillarsSection {
+    padding: 28px 16px;
+    background: transparent;
+    box-shadow: none;
+    border-bottom: none;
+  }
+  
+
+  .pillarsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .pillar {
+    min-height: 72px;
+    padding: 16px 10px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    background: rgba(15, 15, 15, 0.4);
+    border: 2px solid rgba(219, 212, 200, 0.3);
+    border-radius: 14px;
+  }
+  
+
+.pillar h3 {
+  font-size: clamp(0.75rem, 3.2vw, 1.25rem);
+  margin: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+.pillar p {
+  display: none;
+}
+
+  /* Active = clear navigation state */
+  .pillar.active {
+    background: rgba(232, 192, 122, 0.12);
+    border-color: #e8c07a;
+    box-shadow: 0 0 12px rgba(232, 192, 122, 0.25);
   }
 
-  .pillarsSection {
+  .pillarsSection.stuck {
     padding: 12px 12px;
     background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(12px);
@@ -429,51 +475,31 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   }
-
-  /* Single column buttons */
-  .pillarsGrid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+  
+  .pillarsSection.stuck .pillarsGrid {
     gap: 6px;
-    width: 100%;
   }
-
-  /* Pillar = button */
-  .pillar {
-    padding: 10px 8px;
+  
+  .pillarsSection.stuck .pillar {
     min-height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 10px 8px;
+    border-radius: 10px;
     background: rgba(15, 15, 15, 0.6);
     border: 2px solid rgba(219, 212, 200, 0.35);
-    border-radius: 10px;
-    box-shadow: none;
   }
-
-  /* Titles only */
-  .pillar h3 {
+  
+  
+  .pillarsSection.stuck .pillar h3 {
     font-size: clamp(0.55rem, 2.8vw, 1.1rem);
     margin: 0;
     white-space: nowrap;
   }
-
-  /* Always hide descriptions on mobile */
-  .pillar p {
-    display: none;
-  }
-
-  /* Kill hover illusions */
-  .pillar:hover {
-    transform: none;
-    background: inherit;
-  }
-
-  /* Active = clear navigation state */
-  .pillar.active {
+  
+  .pillarsSection.stuck .pillar.active {
     background: rgba(232, 192, 122, 0.12);
     border-color: #e8c07a;
     box-shadow: 0 0 12px rgba(232, 192, 122, 0.25);
+    transform: none;
   }
 
   .buildLayout {
