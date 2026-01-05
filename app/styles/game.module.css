@@ -541,8 +541,12 @@
       padding: 28px 20px 36px;
   
       border-radius: 14px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+  
+      box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.45);
+      animation: none;
     }
 
     .pillarContent h2 {
