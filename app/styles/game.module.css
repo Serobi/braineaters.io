@@ -531,6 +531,7 @@
 
     .pillarDetailSection {
       padding: 40px 12px 80px;
+      background: rgba(0, 0, 0, 0.3);
     }
 
     .pillarContent {
@@ -540,6 +541,8 @@
       padding: 28px 20px 36px;
   
       border-radius: 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .pillarContent h2 {
