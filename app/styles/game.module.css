@@ -106,6 +106,10 @@
   transition: padding 0.4s ease, min-height 0.4s ease;
 }
 
+.pillarsSection.stuck .pillar:hover {
+  transform: none;
+}
+
 .pillarsSection.stuck .pillar h3 {
   font-size: 1.6rem;
   margin-bottom: 0;
