@@ -539,6 +539,12 @@
       font-size: clamp(0.7rem, 4vw, 1.1rem);
     }
 
+    .buildMenuItem:hover {
+      transform: none;
+      background: rgba(255, 255, 255, 0.02);
+      border: 2px solid rgba(255, 255, 255, 0.08);
+    }
+
     .pillarDetailSection {
       padding: 40px 12px 80px;
       background: transparent;
