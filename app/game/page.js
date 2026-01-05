@@ -49,23 +49,20 @@ export default function GamePage() {
 
     const handleScroll = () => {
       const rect = pillarsSection.getBoundingClientRect();
+      const navbarHeight = 80; // ← Match your CSS top value
 
-      const desktopTrigger = 80;
-      const mobileTrigger = 120;
-
-      const triggerPoint = isMobile ? mobileTrigger : desktopTrigger;
-
-      const isStuck = rect.top <= triggerPoint;
+      // Add a small buffer to prevent flicker at the edge
+      const isStuck = rect.top <= navbarHeight + 10;
 
       pillarsSection.classList.toggle(styles.stuck, isStuck);
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll();
+    handleScroll(); // Initial check
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isMobile]);
-
+  },
+    []);
 
   return (
     <div className={styles.gamePage}>
