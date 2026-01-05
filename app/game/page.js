@@ -11,6 +11,7 @@ export default function GamePage() {
   const isMobile = useIsMobile();
   const [activeBuildTab, setActiveBuildTab] = useState("overview");
   const [activeExploreTab, setActiveExploreTab] = useState("overview");
+  const [pillarsCompact, setPillarsCompact] = useState(false);
 
   const isPillarsSticky = () => {
     if (!pillarsSectionRef.current) return false;
@@ -22,26 +23,51 @@ export default function GamePage() {
   const handlePillarClick = (pillar) => {
     setActivePillar(pillar);
 
-    setTimeout(() => {
-      if (!pillarDetailRef.current) return;
+    if (isMobile) {
+      if (!pillarsCompact) {
+        setPillarsCompact(true);
+      }
 
-      const baseOffset = 110;
-      const extraOffsetIfNotSticky = 173;
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          if (!pillarDetailRef.current) return;
 
-      const offset = isPillarsSticky()
-        ? baseOffset
-        : baseOffset + extraOffsetIfNotSticky;
+          const navbarOffset = 80;
+          const extraPadding = 12;
 
-      const elementTop =
-        pillarDetailRef.current.getBoundingClientRect().top +
-        window.pageYOffset;
+          const top =
+            pillarDetailRef.current.getBoundingClientRect().top +
+            window.pageYOffset;
 
-      window.scrollTo({
-        top: elementTop - offset,
-        behavior: "smooth",
+          window.scrollTo({
+            top: top - navbarOffset - extraPadding,
+            behavior: "smooth",
+          });
+        }, 60);
       });
-    }, 50);
+    } else {
+      setTimeout(() => {
+        if (!pillarDetailRef.current) return;
+
+        const baseOffset = 110;
+        const extraOffsetIfNotSticky = 173;
+
+        const offset = isPillarsSticky()
+          ? baseOffset
+          : baseOffset + extraOffsetIfNotSticky;
+
+        const elementTop =
+          pillarDetailRef.current.getBoundingClientRect().top +
+          window.pageYOffset;
+
+        window.scrollTo({
+          top: elementTop - offset,
+          behavior: "smooth",
+        });
+      }, 50);
+    }
   };
+
 
   useEffect(() => {
     const pillarsSection = pillarsSectionRef.current;

@@ -372,24 +372,6 @@
   margin-bottom: 18px;
 }
 
-@media (max-width: 900px) {
-  .buildLayout {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .buildMenu {
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .buildMenuItem {
-    width: auto;
-    min-width: 140px;
-    text-align: center;
-  }
-}
 
 @media (max-width: 768px) {
   .gameIntro { 
@@ -492,5 +474,22 @@
     background: rgba(232, 192, 122, 0.12);
     border-color: #e8c07a;
     box-shadow: 0 0 12px rgba(232, 192, 122, 0.25);
+  }
+
+  .buildLayout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .buildMenu {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .buildMenuItem {
+    width: auto;
+    min-width: 140px;
+    text-align: center;
   }
 }
