@@ -459,6 +459,7 @@
     background: rgba(232, 192, 122, 0.12);
     border-color: #e8c07a;
     box-shadow: 0 0 12px rgba(232, 192, 122, 0.25);
+    transform: none;
   }
 
   .pillarsSection.stuck {
