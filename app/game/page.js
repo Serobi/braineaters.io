@@ -97,6 +97,18 @@ export default function GamePage() {
   },
     []);
 
+  useEffect(() => {
+    const el = itemRefs.current[activeBuildTab];
+    if (!el) return;
+
+    el.scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest",
+    });
+  }, [activeBuildTab]);
+
+
   return (
     <div className={styles.gamePage}>
       <section className={styles.gameIntro}>
@@ -178,6 +190,7 @@ export default function GamePage() {
                   {["overview", "city", "resources", "craft", "customisation"].map((tab) => (
                     <button
                       key={tab}
+                      ref={(el) => (itemRefs.current[tab] = el)}
                       className={`${styles.buildMenuItem} ${activeBuildTab === tab ? styles.active : ""
                         }`}
                       onClick={() => setActiveBuildTab(tab)}
