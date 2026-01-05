@@ -59,22 +59,6 @@
   font-weight: 700;
 }
 
-.pillarsWrapper {
-  position: sticky;
-  z-index: 50;
-  top: 70px;
-  margin-bottom: 140px;
-  transition: margin-bottom 0.4s ease;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.9),
-    rgba(0,0,0,0.85)
-  );
-}
-.pillarsWrapper.stuck {
-  margin-bottom: 0;
-}
-
 /* -------------------------------
    PILLARS SECTION - NORMAL STATE
 -------------------------------- */
@@ -145,10 +129,6 @@
   gap: 32px;
 }
 
-/* -------------------------------
-   INDIVIDUAL PILLAR
--------------------------------- */
-
 .pillar {
   padding: 32px 28px;
   cursor: pointer;
@@ -193,6 +173,22 @@
   font-size: 0.95rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.75);
+}
+
+.pillarsWrapper {
+  position: sticky;
+  z-index: 50;
+  top: 70px;
+  margin-bottom: 140px;
+  transition: margin-bottom 0.4s ease;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.9),
+    rgba(0,0,0,0.85)
+  );
+}
+.pillarsWrapper.stuck {
+  margin-bottom: 0;
 }
 
 .pillarDetailSection {
@@ -437,14 +433,61 @@
     margin-bottom: 32px;
     padding-bottom: 12px;
   }
-}
 
-@media (max-width: 1024px) {
-  .pillarsGrid { grid-template-columns: repeat(2, 1fr); }
-}
+  .pillarsWrapper {
+    top: 64px;
+    margin-bottom: 24px;
+  }
 
-@media (max-width: 560px) {
-  .pillarsSection { padding: 80px 20px; }
-  .pillarsGrid { grid-template-columns: 1fr; gap: 20px; }
-  .pillar { padding: 28px 24px; }
+  .pillarsSection {
+    padding: 12px 12px;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Single column buttons */
+  .pillarsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    width: 100%;
+  }
+
+  /* Pillar = button */
+  .pillar {
+    padding: 10px 8px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Titles only */
+  .pillar h3 {
+    font-size: clamp(0.55rem, 2.8vw, 1.1rem);
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  /* Always hide descriptions on mobile */
+  .pillar p {
+    display: none;
+  }
+
+  /* Kill hover illusions */
+  .pillar:hover {
+    transform: none;
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Active = clear navigation state */
+  .pillar.active {
+    background: rgba(232, 192, 122, 0.12);
+    border-color: #e8c07a;
+    box-shadow: 0 0 12px rgba(232, 192, 122, 0.25);
+  }
 }
