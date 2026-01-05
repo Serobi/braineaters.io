@@ -462,6 +462,12 @@
     transform: none;
   }
 
+  .pillar:hover {
+    transform: none;
+    background: rgba(15, 15, 15, 0.4);
+    border: 2px solid rgba(219, 212, 200, 0.3);
+  }
+
   .pillarsSection.stuck {
     padding: 12px 12px;
     background: rgba(0, 0, 0, 0.85);
