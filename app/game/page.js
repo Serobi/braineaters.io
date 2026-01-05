@@ -32,15 +32,19 @@ export default function GamePage() {
         setTimeout(() => {
           if (!pillarDetailRef.current) return;
 
-          const navbarOffset = 80;
-          const extraPadding = 12;
+          const navbarOffset = 110;
+          const extraPadding = 49;
+
+          const offset = isPillarsSticky()
+            ? navbarOffset
+            : navbarOffset + extraPadding;
 
           const top =
             pillarDetailRef.current.getBoundingClientRect().top +
             window.pageYOffset;
 
           window.scrollTo({
-            top: top - navbarOffset - extraPadding,
+            top: top - offset,
             behavior: "smooth",
           });
         }, 60);
