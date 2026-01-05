@@ -2,11 +2,13 @@
 
 import styles from "../styles/game.module.css";
 import { useState, useEffect, useRef } from "react";
+import { useIsMobile } from "@/app/hooks/useIsMobile";
 
 export default function GamePage() {
   const [activePillar, setActivePillar] = useState(null);
   const pillarsSectionRef = useRef(null);
   const pillarDetailRef = useRef(null);
+  const isMobile = useIsMobile();
   const [activeBuildTab, setActiveBuildTab] = useState("overview");
   const [activeExploreTab, setActiveExploreTab] = useState("overview");
 
@@ -47,20 +49,23 @@ export default function GamePage() {
 
     const handleScroll = () => {
       const rect = pillarsSection.getBoundingClientRect();
-      const navbarHeight = 80; // ← Match your CSS top value
 
-      // Add a small buffer to prevent flicker at the edge
-      const isStuck = rect.top <= navbarHeight + 10;
+      const desktopTrigger = 80;
+      const mobileTrigger = 120;
+
+      const triggerPoint = isMobile ? mobileTrigger : desktopTrigger;
+
+      const isStuck = rect.top <= triggerPoint;
 
       pillarsSection.classList.toggle(styles.stuck, isStuck);
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
-  },
-    []);
+  }, [isMobile]);
+
 
   return (
     <div className={styles.gamePage}>
