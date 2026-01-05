@@ -439,6 +439,11 @@
     border-radius 0.25s ease;
   }
   
+  .pillar:hover {
+    transform: none;
+    background: rgba(15, 15, 15, 0.4);
+    border: 2px solid rgba(219, 212, 200, 0.3);
+  }
 
 .pillar h3 {
   font-size: clamp(0.75rem, 3.2vw, 1.25rem);
@@ -474,6 +479,12 @@
     min-height: 44px;
     padding: 10px 8px;
     border-radius: 10px;
+    background: rgba(15, 15, 15, 0.4);
+    border: 2px solid rgba(219, 212, 200, 0.35);
+  }
+
+  .pillarsSection.stuck .pillar:hover {
+    transform: none;
     background: rgba(15, 15, 15, 0.4);
     border: 2px solid rgba(219, 212, 200, 0.35);
   }
