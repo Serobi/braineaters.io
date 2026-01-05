@@ -521,15 +521,44 @@
     .buildMenuItem {
       flex: 0 0 auto;
       min-height: 44px;
-      padding: 8px 14px;
+      padding: clamp(6px, 1.8vw, 10px) clamp(10px, 3vw, 16px);
       width: auto;
-      min-width: clamp(72px, 22vw, 120px);
+      min-width: clamp(80px, 22vw, 120px);
       text-align: center;
       white-space: nowrap;
-      font-size: clamp(0.65rem, 2.8vw, 1.1rem);
+      font-size: clamp(0.7rem, 2.8vw, 1.1rem);
     }
 
-  .pillarContent {
-    overflow-x: hidden;
-  }
+    .pillarDetailSection {
+      padding: 40px 12px 80px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .pillarContent {
+      overflow-x: hidden;
+      min-height: auto;
+
+      padding: 28px 20px 36px;
+  
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .pillarContent h2 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      animation: none; /* optional but recommended */
+    }
+  
+    .pillarContent h2::after {
+      width: 80px;
+    }
+
+    .pillarContent p {
+      max-width: 100%;
+      font-size: clamp(0.6rem, 4vw, 1rem);
+      line-height: 1.6;
+    }
 }
