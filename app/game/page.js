@@ -108,6 +108,17 @@ export default function GamePage() {
     });
   }, [activeBuildTab]);
 
+  useEffect(() => {
+    const el = itemRefs.current[activeExploreTab];
+    if (!el) return;
+
+    el.scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest",
+    });
+  }, [activeExploreTab]);
+
 
   return (
     <div className={styles.gamePage}>
@@ -397,6 +408,7 @@ export default function GamePage() {
                   {["overview", "world", "loot", "exploration", "combat", "Procedural World"].map((tab) => (
                     <button
                       key={tab}
+                      ref={(el) => (itemRefs.current[tab] = el)}
                       className={`${styles.buildMenuItem} ${activeExploreTab === tab ? styles.active : ""
                         }`}
                       onClick={() => setActiveExploreTab(tab)}
