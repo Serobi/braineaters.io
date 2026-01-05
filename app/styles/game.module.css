@@ -526,7 +526,7 @@
       min-width: clamp(80px, 22vw, 120px);
       text-align: center;
       white-space: nowrap;
-      font-size: clamp(0.7rem, 2.8vw, 1.1rem);
+      font-size: clamp(0.7rem, 4vw, 1.1rem);
     }
 
     .pillarDetailSection {
