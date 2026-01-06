@@ -51,9 +51,9 @@ export const metadata: Metadata = {
     description: "A new genre of survival game. Build, defend, explore, and cooperate in a post-apocalyptic world where every decision matters.",
     images: [
       {
-        url: "https://braineatersgame.com/images/logo.jpg",
+        url: "https://braineatersgame.com/images/og-image.jpg",
         width: 1200,
-        height: 680,
+        height: 630,
         alt: "Brain Eaters - Cooperative Survival Strategy Game",
       },
     ],
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Brain Eaters - Cooperative Survival Strategy Game on Mobile and PC",
     description: "Build, defend, explore, and cooperate in a post-apocalyptic survival strategy game.",
-    images: ["https://braineatersgame.com/images/logo.jpg"],
+    images: ["https://braineatersgame.com/images/og-image.jpg"],
     creator: "@mrserobi",
   },
   
@@ -86,10 +86,8 @@ export default function RootLayout({
     {/* Standard favicon */}
         <link rel="icon" href="/favicon.ico" sizes="512x512" />
         
-        {/* Modern PNG versions (recommended for sharpness) */}
         <link rel="icon" href="/icon.png" type="image/png" sizes="512x512" />
         
-        {/* Apple touch icon (for iOS homescreen) */}
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="512x512" />
     </head>
       <body
