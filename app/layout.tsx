@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://braineatersgame.com",
     siteName: "Brain Eaters",
-    title: "Brain Eaters - Cooperative Survival Strategy Game on Mobile and PC",
-    description: "A new genre of survival game. Build, defend, explore, and cooperate in a post-apocalyptic world where every decision matters.",
+    title: "Brain Eaters",
+    description: "Cooperative Survival game. Build, defend, explore, and cooperate in a post-apocalyptic world where every decision matters.",
     images: [
       {
         url: "https://braineatersgame.com/images/og-image.jpg",
