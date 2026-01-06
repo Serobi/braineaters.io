@@ -51,9 +51,9 @@ export const metadata: Metadata = {
     description: "A new genre of survival game. Build, defend, explore, and cooperate in a post-apocalyptic world where every decision matters.",
     images: [
       {
-        url: "https://braineatersgame.com/images/Logo_B.png",
-        width: 1024,
-        height: 1024,
+        url: "https://braineatersgame.com/images/logo.jpg",
+        width: 1200,
+        height: 680,
         alt: "Brain Eaters - Cooperative Survival Strategy Game",
       },
     ],
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Brain Eaters - Cooperative Survival Strategy Game on Mobile and PC",
     description: "Build, defend, explore, and cooperate in a post-apocalyptic survival strategy game.",
-    images: ["https://braineatersgame.com/images/logo.png"],
+    images: ["https://braineatersgame.com/images/logo.jpg"],
     creator: "@mrserobi",
   },
   
