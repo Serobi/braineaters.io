@@ -12,16 +12,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Enhanced metadata for SEO and social sharing
 export const metadata: Metadata = {
-  // Basic SEO
   title: {
     default: "Brain Eaters - Cooperative Survival Strategy Game",
-    template: "%s | Brain Eaters" // For page-specific titles
+    template: "%s | Brain Eaters"
   },
-  description: "Brain Eaters is a cooperative survival strategy game set in a post-apocalyptic world. Build your city, defend against zombie attacks, explore dangerous wastelands, and cooperate with other survivors to stay alive.",
+  description: "Brain Eaters is a cooperative survival strategy game set in a post-apocalyptic world. Build your city, defend against zombie attacks, explore a mysterious world, and cooperate with other survivors to stay alive.",
   
-  // Keywords for search engines
   keywords: [
     "cooperative survival game",
     "post-apocalyptic strategy game",
@@ -32,7 +29,7 @@ export const metadata: Metadata = {
     "mobile survival game",
     "PC survival game"
   ],
-  // Author information
+
   authors: [{ name: "Serobi" }],
   creator: "Serobi",
   
@@ -66,14 +63,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Brain Eaters - Cooperative Survival Strategy Game on Mobile and PC",
     description: "Build, defend, explore, and cooperate in a post-apocalyptic survival strategy game.",
-    images: ["https://braineatersgame.com/images/Logo_B.png"],
+    images: ["https://braineatersgame.com/images/logo.png"],
     creator: "@mrserobi",
   },
   
-  // Additional metadata
   category: "Gaming",
   
-  // Verification (add when you set these up)
   // verification: {
   //   google: "your-google-verification-code",
   //   yandex: "your-yandex-verification-code",
