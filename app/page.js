@@ -34,7 +34,6 @@ export default function Home() {
       </Head>
 
       <section className={styles.bannerSection}>
-
         <div className={`${styles.fogContainer} ${showEyes ? styles.fogReveal : ""}`}>
           <div className={`${styles.fogLayer} ${styles.fog}`}></div>
           <div className={`${styles.fogLayer} ${styles.fog1}`}></div>

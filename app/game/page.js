@@ -127,7 +127,6 @@ export default function GamePage() {
           A New Genre of Survival Game
           <span className={styles.titleBar}></span>
         </h1>
-
         <p className={styles.description}>
           <strong>Brain Eaters</strong> is the first game to combine survival,
           strategy, and cooperation into a single experience.
