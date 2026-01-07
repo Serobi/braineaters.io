@@ -9,10 +9,10 @@
 
 .title {
   display: inline-block;
-  font-family: fantasy, 'Arial Black', sans-serif;
+  font-family: 'Anton', Arial, sans-serif;
   font-size: 44px;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 0.3px;
   text-transform: uppercase;
 
   background: linear-gradient(90deg, #e8c07a 40%, #fff3b0 50%, #e8c07a 60%);
