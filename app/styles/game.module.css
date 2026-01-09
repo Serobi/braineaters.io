@@ -290,7 +290,7 @@
   margin-bottom: 0;
 }
 
-.pillarContent img {
+.centeredPillar img {
   margin: 0px 0 32px;
   max-width: 90%;
   border-radius: 12px;
@@ -356,11 +356,13 @@
   flex-direction: column;
   align-items: flex-start;
   text-align: left; 
+  max-width: 1400px;
+  margin-left: 20px;
 }
 
 .buildContent h2 {
   margin-bottom: 24px;
-  margin-left: 40px;
+  margin-left: 20px;
 }
 
 .buildContent p + p {
@@ -370,10 +372,47 @@
 
 .buildContent p {
   max-width: 640px;
-  margin-left: 0;
-  margin-right: 0;
   margin-bottom: 18px;
 }
+
+.imageContainer {
+  width: 100%;
+  max-width: 1100px;
+  aspect-ratio: 2 / 1;
+
+  margin: 1rem auto 0;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  margin-left: -20px;
+
+  background: transparent;
+  background:
+    linear-gradient(to right, #e8c07aa6 1px, transparent 1px) left,
+    linear-gradient(to left,  #e8c07aa6 1px, transparent 1px) right,
+    linear-gradient(to bottom,#e8c07aa6 1px, transparent 1px) top,
+    linear-gradient(to top,   #e8c07aa6 1px, transparent 1px) bottom;
+
+  background-size: 1px 100%, 1px 100%, 100% 1px, 100% 1px;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+}
+
+/* Image itself */
+.gameImage {
+  width: 98%;
+  height: 96%;
+
+  object-fit: cover;
+  object-position: left center;
+
+  display: block;
+  border-radius: 14px;
+}
+
 
 
 @media (max-width: 768px) {

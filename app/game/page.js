@@ -212,6 +212,7 @@ export default function GamePage() {
 
                 {/* RIGHT CONTENT */}
                 <div className={styles.buildContent}>
+
                   {activeBuildTab === "overview" && (
                     <>
                       <h2>Build the City</h2>
@@ -224,6 +225,13 @@ export default function GamePage() {
                         But one question remains : <br />
                         Who can you really trust ?
                       </p>
+                      <div className={styles.imageContainer}>
+                        <img
+                          src="/images/game_screenshot/city_0.png"
+                          alt="City Overview"
+                          className={styles.gameImage}
+                        />
+                      </div>
                     </>
                   )}
                   {activeBuildTab === "city" && (
