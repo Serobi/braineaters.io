@@ -223,7 +223,7 @@ export default function GamePage() {
                         Resources are limited, clock is ticking. <br />
                         Choose wisely, each decision impacts the entire community.<br /><br />
                         But one question remains : <br />
-                        Who can you really trust ?
+                        How much time will you survive ?
                       </p>
                       <div className={styles.imageContainer}>
                         <img
@@ -655,7 +655,8 @@ export default function GamePage() {
                 <p>
                   <strong>Roleplay</strong> is also a key part of Brain Eaters. <br />
                   Stay alert ! some survivors may betray the city, leave the gate open at night,
-                  steal resources, or return infected… only to turn while everyone sleeps.
+                  steal resources, or return infected… only to turn while everyone sleeps. <br /><br />
+                  Do you really think you can trust everyone ?
                 </p>
 
               </div>
