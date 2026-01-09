@@ -387,7 +387,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 40px;
-  margin-left: -20px;
+  left: -5%;
 
   background: transparent;
   background:
@@ -623,6 +623,6 @@
     }
 
     .imageContainer {
-margin-left: 0px;
+      left: -5%;
     }
 }
