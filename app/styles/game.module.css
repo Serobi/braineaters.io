@@ -552,35 +552,58 @@
 
     .subMenu {
       position: sticky;
-      bottom: 16px;                 /* breathing room from screen edge */
+      bottom: 16px;
       z-index: 40;
     
-      margin: 0 auto;               /* center it */
-      width: fit-content;
-      max-width: calc(100% - 24px);
-    
-      display: flex;
-      flex-direction: row;
-      gap: 8px;
-    
+      margin: 0 auto;
+      max-width: calc(100% - 10%);
       padding: 10px 14px;
-    
-      overflow-x: auto;
-      overflow-y: hidden;
     
       background: rgba(0, 0, 0, 0.82);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
     
-      border-radius: 18px;          /* 👈 key */
+      border-radius: 40px;
       border: 1px solid rgba(255,255,255,0.08);
-    
       box-shadow:
         0 6px 24px rgba(0,0,0,0.55),
         inset 0 0 0 1px rgba(255,255,255,0.02);
     
-      scrollbar-width: none;
+      overflow: hidden;
+      
     }
+    .subMenuInner {
+      display: flex;
+      gap: 8px;
+    
+      overflow-x: auto;
+      overflow-y: hidden;
+    
+      padding: 2px;
+    
+      scrollbar-width: none;
+    
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 3%,
+        black 92%,
+        transparent 100%
+      );
+    
+      mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 3%,
+        black 92%,
+        transparent 100%
+      );
+    }
+    
+    .subMenuInner::-webkit-scrollbar {
+      display: none;
+    }
+    
 
     .subMenu::-webkit-scrollbar {
       display: none;
@@ -595,6 +618,10 @@
       text-align: center;
       white-space: nowrap;
       font-size: clamp(0.7rem, 4vw, 1.1rem);
+      transition:
+      background 0.2s ease,
+      border-color 0.2s ease;
+      border-radius: 30px; 
     }
 
     .subMenuItem:hover {

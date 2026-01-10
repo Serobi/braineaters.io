@@ -665,31 +665,35 @@ export default function GamePage() {
       )}
       {isMobile && activePillar === "build" && (
         <aside className={`${styles.subMenu} ${styles.subMenuMobile}`}>
-          {["overview", "city", "resources", "craft", "customisation"].map((tab) => (
-            <button
-              key={tab}
-              ref={(el) => (itemRefs.current[tab] = el)}
-              className={`${styles.subMenuItem} ${activeBuildTab === tab ? styles.active : ""}`}
-              onClick={() => setActiveBuildTab(tab)}
-            >
-              {tab.charAt(0).toUpperCase() + tab.slice(1)}
-            </button>
-          ))}
+          <div className={styles.subMenuInner}>
+            {["overview", "city", "resources", "craft", "customisation"].map((tab) => (
+              <button
+                key={tab}
+                ref={(el) => (itemRefs.current[tab] = el)}
+                className={`${styles.subMenuItem} ${activeBuildTab === tab ? styles.active : ""}`}
+                onClick={() => setActiveBuildTab(tab)}
+              >
+                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              </button>
+            ))}
+          </div>
         </aside>
       )}
       {isMobile && activePillar === "explore" && (
         <aside className={`${styles.subMenu} ${styles.subMenuMobile}`}>
-          {["overview", "world", "loot", "exploration", "combat", "Procedural World"].map((tab) => (
-            <button
-              key={tab}
-              ref={(el) => (itemRefs.current[tab] = el)}
-              className={`${styles.subMenuItem} ${activeExploreTab === tab ? styles.active : ""
-                }`}
-              onClick={() => setActiveExploreTab(tab)}
-            >
-              {tab.charAt(0).toUpperCase() + tab.slice(1)}
-            </button>
-          ))}
+          <div className={styles.subMenuInner}>
+            {["overview", "world", "loot", "exploration", "combat", "Procedural World"].map((tab) => (
+              <button
+                key={tab}
+                ref={(el) => (itemRefs.current[tab] = el)}
+                className={`${styles.subMenuItem} ${activeExploreTab === tab ? styles.active : ""
+                  }`}
+                onClick={() => setActiveExploreTab(tab)}
+              >
+                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              </button>
+            ))}
+          </div>
         </aside>
       )}
 
