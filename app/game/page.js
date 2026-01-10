@@ -193,23 +193,23 @@ export default function GamePage() {
         <section ref={pillarDetailRef} className={styles.pillarDetailSection}>
           <div className={styles.pillarContent}>
             {activePillar === "build" && (
-              <div className={styles.buildLayout}>
+              <div className={styles.contentLayout}>
 
-                {/* LEFT SUBMENU */}
-                <aside className={styles.buildMenu}>
-                  {["overview", "city", "resources", "craft", "customisation"].map((tab) => (
-                    <button
-                      key={tab}
-                      ref={(el) => (itemRefs.current[tab] = el)}
-                      className={`${styles.buildMenuItem} ${activeBuildTab === tab ? styles.active : ""
-                        }`}
-                      onClick={() => setActiveBuildTab(tab)}
-                    >
-                      {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                    </button>
-                  ))}
-                </aside>
-
+                {!isMobile && (
+                  <aside className={styles.subMenu}>
+                    {["overview", "city", "resources", "craft", "customisation"].map((tab) => (
+                      <button
+                        key={tab}
+                        ref={(el) => (itemRefs.current[tab] = el)}
+                        className={`${styles.subMenuItem} ${activeBuildTab === tab ? styles.active : ""
+                          }`}
+                        onClick={() => setActiveBuildTab(tab)}
+                      >
+                        {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                      </button>
+                    ))}
+                  </aside>
+                )}
                 {/* RIGHT CONTENT */}
                 <div className={styles.buildContent}>
 
@@ -408,23 +408,22 @@ export default function GamePage() {
             )}
 
             {activePillar === "explore" && (
-              <div className={styles.buildLayout}>
-
-                {/* LEFT SUBMENU */}
-                <aside className={styles.buildMenu}>
-                  {["overview", "world", "loot", "exploration", "combat", "Procedural World"].map((tab) => (
-                    <button
-                      key={tab}
-                      ref={(el) => (itemRefs.current[tab] = el)}
-                      className={`${styles.buildMenuItem} ${activeExploreTab === tab ? styles.active : ""
-                        }`}
-                      onClick={() => setActiveExploreTab(tab)}
-                    >
-                      {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                    </button>
-                  ))}
-                </aside>
-
+              <div className={styles.contentLayout}>
+                {!isMobile && (
+                  <aside className={styles.subMenu}>
+                    {["overview", "world", "loot", "exploration", "combat", "Procedural World"].map((tab) => (
+                      <button
+                        key={tab}
+                        ref={(el) => (itemRefs.current[tab] = el)}
+                        className={`${styles.subMenuItem} ${activeExploreTab === tab ? styles.active : ""
+                          }`}
+                        onClick={() => setActiveExploreTab(tab)}
+                      >
+                        {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                      </button>
+                    ))}
+                  </aside>
+                )}
                 {/* RIGHT CONTENT */}
                 <div className={styles.buildContent}>
                   {activeExploreTab === "overview" && (
@@ -664,7 +663,35 @@ export default function GamePage() {
           </div>
         </section>
       )}
-
+      {isMobile && activePillar === "build" && (
+        <aside className={`${styles.subMenu} ${styles.subMenuMobile}`}>
+          {["overview", "city", "resources", "craft", "customisation"].map((tab) => (
+            <button
+              key={tab}
+              ref={(el) => (itemRefs.current[tab] = el)}
+              className={`${styles.subMenuItem} ${activeBuildTab === tab ? styles.active : ""}`}
+              onClick={() => setActiveBuildTab(tab)}
+            >
+              {tab.charAt(0).toUpperCase() + tab.slice(1)}
+            </button>
+          ))}
+        </aside>
+      )}
+      {isMobile && activePillar === "explore" && (
+        <aside className={`${styles.subMenu} ${styles.subMenuMobile}`}>
+          {["overview", "world", "loot", "exploration", "combat", "Procedural World"].map((tab) => (
+            <button
+              key={tab}
+              ref={(el) => (itemRefs.current[tab] = el)}
+              className={`${styles.subMenuItem} ${activeExploreTab === tab ? styles.active : ""
+                }`}
+              onClick={() => setActiveExploreTab(tab)}
+            >
+              {tab.charAt(0).toUpperCase() + tab.slice(1)}
+            </button>
+          ))}
+        </aside>
+      )}
 
     </div>
 

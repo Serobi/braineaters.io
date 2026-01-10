@@ -305,7 +305,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-.buildLayout {
+.contentLayout {
   width: 100%;
   display: grid;
   grid-template-columns: 220px 1fr;
@@ -313,13 +313,13 @@
   align-items: flex-start;
 }
 
-.buildMenu {
+.subMenu {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.buildMenuItem {
+.subMenuItem {
   width: 100%;
   padding: 14px 18px;
   text-align: left;
@@ -339,12 +339,12 @@
     color 0.25s ease,
     transform 0.2s ease;
 }
-.buildMenuItem:hover {
+.subMenuItem:hover {
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.18);
   transform: translateX(4px);
 }
-.buildMenuItem.active {
+.subMenuItem.active {
   background: rgba(232, 192, 122, 0.08);
   border-color: #e8c07a;
   color: #fff3b0;
@@ -545,32 +545,48 @@
     transform: none;
   }
   
-    .buildLayout {
+    .contentLayout {
       display: flex;
       flex-direction: column;
     }
 
-    .buildMenu {
-      max-width: 100%;
-      box-sizing: border-box;
+    .subMenu {
+      position: sticky;
+      bottom: 16px;                 /* breathing room from screen edge */
+      z-index: 40;
+    
+      margin: 0 auto;               /* center it */
+      width: fit-content;
+      max-width: calc(100% - 24px);
+    
       display: flex;
       flex-direction: row;
-      flex-wrap: nowrap;          /* 🔴 important */
       gap: 8px;
-
+    
+      padding: 10px 14px;
+    
       overflow-x: auto;
       overflow-y: hidden;
-
-      padding: 8px 12px;
-
-      scrollbar-width: none;      /* Firefox */
+    
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    
+      border-radius: 18px;          /* 👈 key */
+      border: 1px solid rgba(255,255,255,0.08);
+    
+      box-shadow:
+        0 6px 24px rgba(0,0,0,0.55),
+        inset 0 0 0 1px rgba(255,255,255,0.02);
+    
+      scrollbar-width: none;
     }
 
-    .buildMenu::-webkit-scrollbar {
+    .subMenu::-webkit-scrollbar {
       display: none;
     }
 
-    .buildMenuItem {
+    .subMenuItem {
       flex: 0 0 auto;
       min-height: 44px;
       padding: clamp(6px, 1.8vw, 10px) clamp(10px, 3vw, 16px);
@@ -581,7 +597,7 @@
       font-size: clamp(0.7rem, 4vw, 1.1rem);
     }
 
-    .buildMenuItem:hover {
+    .subMenuItem:hover {
       transform: none;
     }
 
@@ -600,6 +616,7 @@
       border: 1px solid rgba(255, 255, 255, 0.12);
       background:rgba(30, 30, 30, 0.4);
       animation: none;
+      padding-bottom: 80px;
     }
 
     .pillarContent h2 {
