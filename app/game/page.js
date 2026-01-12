@@ -227,7 +227,7 @@ export default function GamePage() {
                       </p>
                       <div className={styles.imageContainer}>
                         <img
-                          src="/images/game_screenshot/City_0.webp"
+                          src="/images/game_screenshot/city_0.webp"
                           alt="City Overview"
                           loading="lazy"
                           decoding="async"
@@ -364,7 +364,7 @@ export default function GamePage() {
               <div className={styles.centeredPillar}>
                 <h2>Defend the city</h2>
                 <img
-                  src="/images/Banner.webp"
+                  src="/images/banner.webp"
                   loading="lazy"
                   decoding="async"
                   alt="Brain Eaters - Zombie attack on city walls"
@@ -628,7 +628,7 @@ export default function GamePage() {
               <div className={styles.centeredPillar}>
                 <h2>Cooperation & Multiplayer</h2>
                 <img
-                  src="/images/Banner_cooperate.webp"
+                  src="/images/banner_cooperate.webp"
                   loading="lazy"
                   decoding="async"
                   alt="Brain Eaters - Zombie attack on city walls"
