@@ -227,7 +227,7 @@ export default function GamePage() {
                       </p>
                       <div className={styles.imageContainer}>
                         <img
-                          src="/images/game_screenshot/city_0.webp"
+                          src="/images/game_screenshot/City_0.webp"
                           alt="City Overview"
                           loading="lazy"
                           decoding="async"
