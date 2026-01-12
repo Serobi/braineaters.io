@@ -8,7 +8,7 @@ export default function ImageCarousel({ images }) {
     setIndex(0);
   }, [images]);
 
-  if (!images.length) return null;
+  if(!images?.length) return null
 
   const next = () =>
     setIndex((i) => (i + 1) % images.length);
