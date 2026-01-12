@@ -3,6 +3,8 @@
 import styles from "../styles/game.module.css";
 import { useState, useEffect, useRef } from "react";
 import { useIsMobile } from "@/app/hooks/useIsMobile";
+import { gameImages } from "../data/gameImages";
+import ImageCarousel from "../components/ImageCarousel";
 
 export default function GamePage() {
   const [activePillar, setActivePillar] = useState(null);
@@ -14,6 +16,7 @@ export default function GamePage() {
   const [pillarsCompact, setPillarsCompact] = useState(false);
   const menuRef = useRef(null);
   const itemRefs = useRef({});
+  const buildImages = gameImages.build[activeBuildTab] || [];
 
 
   const isPillarsSticky = () => {
@@ -225,9 +228,10 @@ export default function GamePage() {
                         But one question remains : <br />
                         How much time will you survive ?
                       </p>
+
                       <div className={styles.imageContainer}>
                         <img
-                          src="/images/game_screenshot/city_0.webp"
+                          src="/images/game/city_0.webp"
                           alt="City Overview"
                           loading="lazy"
                           decoding="async"
@@ -257,6 +261,7 @@ export default function GamePage() {
                         <strong>Personal Building</strong><br />
                         <strong>Shelter</strong><br />Your private space for storage, protection, and upgrades
                       </p>
+                      <ImageCarousel images={buildImages} />
                     </>
                   )}
 

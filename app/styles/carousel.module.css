@@ -1,0 +1,147 @@
+/* === CAROUSEL WRAPPER (replaces imageContainer visually) === */
+.imageCarousel {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 1rem auto 0;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 40px;
+  left: -5%;
+
+  overflow: visible;
+
+  background:
+    linear-gradient(to right, #e8c07aa6 1px, transparent 1px) left,
+    linear-gradient(to left,  #e8c07aa6 1px, transparent 1px) right,
+    linear-gradient(to bottom,#e8c07aa6 1px, transparent 1px) top,
+    linear-gradient(to top,   #e8c07aa6 1px, transparent 1px) bottom;
+
+  background-size: 1px 100%, 1px 100%, 100% 1px, 100% 1px;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+  
+}
+
+/* === VIEWPORT (98% / 96% like before) === */
+.viewport {
+    width: 98%;
+    overflow: hidden;
+    border-radius: 14px;
+    padding: 1%;
+    margin: 0 auto;
+  }
+  
+
+/* === SLIDING TRACK === */
+.track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* === IMAGES (same behavior as .gameImage) === */
+.track img {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+  
+    object-fit: contain;
+    display: block;
+  }
+  
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  
+    box-shadow:
+      0 6px 18px rgba(0,0,0,0.5),
+      inset 0 0 0 1px rgba(255,255,255,0.08);
+  
+    cursor: pointer;
+    z-index: 2;
+  
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  
+  .arrow:hover {
+    background: rgba(0,0,0,0.85);
+    transform: translateY(-50%) scale(1.08);
+    box-shadow:
+      0 10px 26px rgba(0,0,0,0.6),
+      inset 0 0 0 1px rgba(255,255,255,0.12);
+  }
+  
+  .arrow:active {
+    transform: translateY(-50%) scale(0.96);
+  }
+  
+  
+  .chevron {
+    width: 12px;
+    height: 12px;
+    border-right: 3px solid rgba(255,255,255,0.9);
+    border-bottom: 3px solid rgba(255,255,255,0.9);
+    transform: rotate(-45deg);
+  }
+
+  .left .chevron {
+    transform: rotate(135deg);
+  }
+  
+  .right .chevron {
+    transform: rotate(-45deg);
+  }
+  
+.left {
+    left: -4.5%;   /* pushes arrow outside */
+  }
+  
+  .right {
+    right: -4.5%;  /* pushes arrow outside */
+  }
+
+  @media (max-width: 768px) {
+    .arrow {
+        width: clamp(30px, 6vw, 48px);
+        height: clamp(30px, 6vw, 48px);
+    }
+  
+    .chevron {
+        width: 32%;
+        height: 32%;
+      
+        border-right: clamp(2px, 0.4vw, 3px) solid rgba(255,255,255,0.9);
+        border-bottom: clamp(2px, 0.4vw, 3px) solid rgba(255,255,255,0.9);
+      }
+
+      .left {
+        left: clamp(-24px, -4vw, -52px);
+      }
+      
+      .right {
+        right: clamp(-24px, -4vw, -52px);
+      }
+      
+  }

@@ -203,24 +203,6 @@
   background: rgba(0, 0, 0, 0.3);
 }
 
-.pillarContent {
-  max-width: 900px;
-  width: 100%;
-  min-height: 400px;
-  padding: 48px 40px 60px;  /* Extra bottom padding for breathing room */
-  
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  
-  display: flex;
-  flex-direction: column;
-  align-items: center;      /* Horizontal centering only */
-  text-align: center;
-  
-  animation: fadeUp 0.5s ease-out;
-}
-
 .pillarContent h2 {
   position: relative;
   margin: 0 0 36px 0;
@@ -298,7 +280,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(12px); }
