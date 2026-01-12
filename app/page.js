@@ -41,6 +41,8 @@ export default function Home() {
 
           <img
             src="/images/hunter_eyes.png"
+            loading="lazy"
+            decoding="async"
             alt="Glowing hunter eyes emerging from the fog"
             className={`${styles.hunterEyes} ${showEyes ? styles.fadeIn : ""}`}
           />

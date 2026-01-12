@@ -229,6 +229,8 @@ export default function GamePage() {
                         <img
                           src="/images/game_screenshot/city_0.png"
                           alt="City Overview"
+                          loading="lazy"
+                          decoding="async"
                           className={styles.gameImage}
                         />
                       </div>
@@ -338,12 +340,12 @@ export default function GamePage() {
                     <>
                       <h2>City Customisation</h2>
                       <p>
-                        Brain Eaters features a deep city customisation system.
-                        Every layer of the city can be modified to reflect your choices, progress and achievements.
+                        Brain Eaters features a deep city customisation system. <br />
+                        Every layer can be modified to reflect your choices, progress and achievements.
                       </p>
                       <p>
-                        Ground, textures, decorations, and buildings can all be customised,
-                        allowing each city to develop its own identity.
+                        Ground, textures, decorations, and buildings are all customizable,
+                        allowing each players to shape their environment.
                       </p>
                       <p>
                         Because the city is shared, your earned or unlocked assets are visible
@@ -363,6 +365,8 @@ export default function GamePage() {
                 <h2>Defend the city</h2>
                 <img
                   src="/images/Banner.jpg"
+                  loading="lazy"
+                  decoding="async"
                   alt="Brain Eaters - Zombie attack on city walls"
                   className={`${styles.banner}`}
                 />
@@ -625,6 +629,8 @@ export default function GamePage() {
                 <h2>Cooperation & Multiplayer</h2>
                 <img
                   src="/images/Banner_cooperation_3.png"
+                  loading="lazy"
+                  decoding="async"
                   alt="Brain Eaters - Zombie attack on city walls"
                   className={`${styles.banner}`}
                 />
