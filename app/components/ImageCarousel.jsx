@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import styles from "../styles/carousel.module.css";
 
 export default function ImageCarousel({ images }) {
