@@ -124,21 +124,26 @@
 
   @media (max-width: 768px) {
 
-    .arrow {
-        width: 10%;
-        height: 16%;
-        min-width: 30px;
-        min-height: 30px;
-    }
-    
-    .chevron {
-        width: 32%;
-        height: 32%;
-        min-width: 8px;
-        min-height: 8px;
-      
-        border-right: clamp(2px, 0.4vw, 3px) solid rgba(255,255,255,0.9);
-        border-bottom: clamp(2px, 0.4vw, 3px) solid rgba(255,255,255,0.9);
+    .imageCarousel {
+        left: clamp(-12px, -4vw, -120px);
       }
       
+
+    .arrow {
+        width: clamp(38px, 6.5vw, 58px);
+        height: clamp(38px, 6.5vw, 58px);
+      }
+      
+    
+      .chevron {
+        width: 34%;
+        height: 34%;
+        border-right: clamp(2.2px, 0.45vw, 3.4px) solid rgba(255,255,255,0.9);
+        border-bottom: clamp(2.2px, 0.45vw, 3.4px) solid rgba(255,255,255,0.9);
+      }
+      
+      
+    .left  { left: clamp(-24px, -4vw, -52px); }
+    .right { right: clamp(-24px, -4vw, -52px); }
+
   }
