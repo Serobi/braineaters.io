@@ -123,18 +123,6 @@
   }
 
   @media (max-width: 768px) {
-    .arrow {
-        width: clamp(30px, 6vw, 48px);
-        height: clamp(30px, 6vw, 48px);
-    }
-  
-    .chevron {
-        width: 32%;
-        height: 32%;
-      
-        border-right: clamp(2px, 0.4vw, 3px) solid rgba(255,255,255,0.9);
-        border-bottom: clamp(2px, 0.4vw, 3px) solid rgba(255,255,255,0.9);
-      }
 
       .left {
         left: clamp(-24px, -4vw, -52px);
