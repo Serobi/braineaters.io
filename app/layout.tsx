@@ -115,12 +115,25 @@ export default function RootLayout({
 <div className="footerLeft">
   <p>© {new Date().getFullYear()} Brain Eaters - All rights reserved.</p>
 </div>
-
+<div className="footerRight">
+<a
+  href="https://x.com/BrainEatersGame"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="socialLink"
+  aria-label="Join Brain Eaters on X"
+>
+  <img
+    src="/images/logo-x.png"
+    alt=""
+    className="xIcon"
+  />
+</a>
 <a
   href="https://discord.gg/fTGX86sYFZ"
   target="_blank"
   rel="noopener noreferrer"
-  className="footerDiscord"
+  className="socialLink"
   aria-label="Join Brain Eaters on Discord"
 >
   <img
@@ -129,10 +142,8 @@ export default function RootLayout({
     className="discordIcon"
   />
 </a>
+</div>
 </footer>
-
-
-
       </body>
     </html>
   );

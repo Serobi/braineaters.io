@@ -9,7 +9,6 @@
   --font-mono: var(--font-geist-mono);
 }
 
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -40,12 +39,10 @@ html, body {
 }
 
 .navbar {
-  min-height: 70px;
-  max-height: 70px;
   background: #000000;
   display: flex;
   align-items: center;
-  padding: 0 20px 0;
+  padding: 0 20px;
   box-sizing: border-box;
   justify-content: flex-start;
   gap: 40px;
@@ -57,22 +54,6 @@ html, body {
   z-index: 1000;
 }
 
-/* LOGO FIXED TOP LEFT */
-/*.logoDiv {
-  position: absolute;
-  top: 3px;
-  left: 10px;
-  width: 120px;
-  height: 120px;
-}
-
-.logoDiv img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}*/
-
-/* NAV MENUS */
 .navLeft {
   display: flex;
   gap: 25px;
@@ -84,7 +65,6 @@ html, body {
   margin-left: auto;
 }
 
-
 .navLink {
   color: #e5e5e5;
   text-decoration: none;
@@ -94,40 +74,27 @@ html, body {
 }
 
 .navLink:hover {
-  color: #ff9f1c; /* Subtle red highlight */
+  color: #ff9f1c;
 }
 
 .navLeft .navLink {
   position: relative;
   overflow: hidden;
-
   color: #ff9f1c;
   border: 1px solid #ff9f1c;
   padding: 10px 18px;
   border-radius: 6px;
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .navLeft .navLink::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent 35%,
-    rgba(255, 255, 255, 0.25) 45%,
-    rgba(255, 120, 120, 0.35) 50%,
-    rgba(255, 255, 255, 0.25) 55%,
-    transparent 65%
-  );
+  background: linear-gradient(120deg, transparent 35%, rgba(255, 255, 255, 0.25) 45%, rgba(255, 120, 120, 0.35) 50%, rgba(255, 255, 255, 0.25) 55%, transparent 65%);
   transform: translateX(-120%);
   pointer-events: none;
 }
-
 
 .navLeft .navLink:hover {
   background: #ff9f1c;
@@ -136,78 +103,73 @@ html, body {
   box-shadow: 0 0 6px rgba(255, 60, 60, 0.25);
 }
 
-
 .navLeft .navLink:hover::after {
   animation: navSweep 0.6s ease-out;
 }
 
 @keyframes navSweep {
-  from {
-    transform: translateX(-120%);
-  }
-  to {
-    transform: translateX(120%);
-  }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from { transform: translateX(-120%); }
+  to { transform: translateX(120%); }
 }
 
-footer {
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.footer {
   position: relative;
   margin-top: auto;
   width: 100%;
-  padding: 20px 0;
-  text-align: center;
+  padding: 20px 40px;
   background: #000;
   color: #999;
   flex-shrink: 0;
-}
-
-footer a {
-  color: #ff9f1c;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .footerLeft {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 6px;
 }
 
-
-/* Discord icon on the right */
-.footerDiscord {
-  position: absolute;
-  bottom: 10%;
-  right: 15px;
+.footerRight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
 }
 
-.discordIcon {
-  width: 50px;
-  height: 50px;
+.socialLink {
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.discordIcon, .xIcon {
+  width: 40px;
+  height: auto;
   opacity: 0.85;
-  transition:
-    opacity 0.2s ease,
-    transform 0.2s ease,
-    filter 0.2s ease;
+  transition: opacity 0.2s ease, filter 0.2s ease, transform 0.2s ease;
 }
 
-.footerDiscord:hover .discordIcon {
+.socialLink:hover .discordIcon {
   opacity: 1;
   transform: translateY(-3%) scale(1.05);
-  filter: drop-shadow(0 0 6px rgba(88, 101, 242, 0.6));
+  filter: drop-shadow(0 0 8px rgba(88, 101, 242, 0.8));
 }
 
+.socialLink:hover .xIcon {
+  opacity: 1;
+  transform: translateY(-3%) scale(1.05);
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+}
 
 @media (max-width: 768px) {
-
   html, body {
     height: auto;
     overflow-y: auto;
@@ -218,103 +180,74 @@ footer a:hover {
     overflow: visible;
   }
 
-  
-.page {
-  flex: 1;
-  min-height: auto;
-  overflow: visible;
-  background-color: #0b0b0b;
-}
+  .page {
+    flex: 1;
+    min-height: auto;
+    overflow: visible;
+  }
 
-
-  /* --- HEADER --- */
   .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 10px 8px; /* OVERRIDES 170px left padding */
-    box-sizing: border-box;
+    height: auto;
+    min-height: 70px;
+    padding: 15px 10px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
   }
 
-  /* --- PRIMARY NAV (4 buttons in one row) --- */
   .navLeft {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;        /* 🔴 IMPORTANT */
+    flex-wrap: nowrap;
     width: 100%;
     gap: 6px;
   }
 
   .navLeft .navLink {
-    flex: 1 1 0;              /* 🔥 equal width */
-    min-width: 0;             /* 🔥 prevents overflow */
+    flex: 1 1 0;
+    min-width: 0;
     height: 42px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
-    font-size: 12px;
+    font-size: 11px;
     padding: 0;
-
-    white-space: nowrap;      /* no text wrap */
+    white-space: nowrap;
     text-align: center;
-
-    color: #ff9f1c;
-    border: 1px solid #ff9f1c;
-    border-radius: 6px;
-
-    transition: background 0.15s ease, color 0.15s ease;
   }
 
-  /* Tap feedback */
-  .navLeft .navLink:active {
-    background: #ff9f1c;
-    color: #fff;
-  }
-
-  /* Kill hover effects on mobile */
-  .navLink:hover {
-    background: none;
-    transform: none;
-    box-shadow: none;
-  }
-
-  .navLeft .navLink::after {
-    display: none;
-  }
-
-  /* --- SECONDARY NAV --- */
   .navRight {
     display: none;
   }
 
-  footer {
-    position: relative;
-    text-align: left;
-  }
-
-  .footerDiscord {
-    align-items: flex-end;
-    right: 16px;
-  }
-
-  .discordIcon {
-    width: 40px;
-    height: 40px;
+  .footer {
+    flex-direction: column;
+    gap: 15px;
+    padding: 25px 20px;
+    text-align: center;
   }
 
   .footerLeft {
-    position : relative;
-    align-items: flex-start;
-    left:16px;
+    align-items: center;
     font-size: 13px;
   }
 
+  .footerRight {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .discordIcon, .xIcon {
+    width: 35px;
+  }
+
+  .socialLink:hover .discordIcon,
+  .socialLink:hover .xIcon {
+    transform: none;
+    filter: none;
+  }
 }
-
-
