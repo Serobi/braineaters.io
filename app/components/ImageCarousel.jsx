@@ -80,7 +80,7 @@ export default function ImageCarousel({ images }) {
           {loopedImages.map((src, i) => (
             <img
               key={`${src}-${i}`} // safe with duplicates
-              src={src.toLowerCase()}
+              src={src}
               alt=""
               loading="lazy"
               decoding="async"
