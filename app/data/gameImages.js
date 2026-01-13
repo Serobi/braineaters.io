@@ -12,8 +12,8 @@ export const gameImages = {
             "/images/game/buildings/well.webp",
         ],
         resources: [
-            "/images/game/build/inventory.webp",
-            "/images/game/build/storage.webp",
+            "/images/game/UI/inventory.webp",
+            "/images/game/UI/storage.webp",
         ],
     },
 

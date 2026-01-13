@@ -392,7 +392,9 @@
   display: block;
   border-radius: 14px;
 }
-
+.squared {
+  border-radius: 0 !important;
+}
 
 
 @media (max-width: 768px) {

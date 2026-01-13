@@ -303,6 +303,24 @@ export default function GamePage() {
                         Weapons, armor, and crafting tools.
                         Improve survivor efficiency and combat capabilities.
                       </p>
+                      <div className={styles.imageContainer}>
+                        <img
+                          src="/images/game/UI/inventory.webp"
+                          alt="Inventory"
+                          loading="lazy"
+                          decoding="async"
+                          className={`${styles.gameImage} ${styles.squared}`}
+                        />
+                      </div>
+                      <div className={styles.imageContainer}>
+                        <img
+                          src="/images/game/UI/storage.webp"
+                          alt="Storage"
+                          loading="lazy"
+                          decoding="async"
+                          className={`${styles.gameImage} ${styles.squared}`}
+                        />
+                      </div>
                     </>
                   )}
 
