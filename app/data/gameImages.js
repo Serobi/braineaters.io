@@ -4,8 +4,8 @@ export const gameImages = {
             "/images/game/city_0.webp",
         ],
         city: [
-            "/images/game/buildings/workshop_0.webp",
-            "/images/game/buildings/workshop_1.webp",
+            "/images/game/buildings/workshopLvl0.webp",
+            "/images/game/buildings/workshopLvl1.webp",
             "/images/game/buildings/warehouse_0.webp",
             "/images/game/buildings/warehouse_1.webp",
             "/images/game/buildings/shelter.webp",
