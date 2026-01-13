@@ -46,13 +46,19 @@
 
 /* === IMAGES (same behavior as .gameImage) === */
 .track img {
-    width: 100%;
-    height: auto;
-    flex-shrink: 0;
-  
-    object-fit: contain;
-    display: block;
-  }
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+  display: block;
+
+  margin-right: 5%;
+}
+
+.track img:last-child {
+  margin-right: 0;
+}
+
   
 
   .arrow {
