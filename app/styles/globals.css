@@ -225,29 +225,30 @@ html, body {
   }
 
   .footer {
-    flex-direction: column;
-    gap: 15px;
-    padding: 25px 20px;
-    text-align: center;
+    flex-direction: row;         /* On force l'alignement horizontal */
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 15px;          /* Réduction des marges pour gagner de la place */
+    gap: 10px;
   }
 
   .footerLeft {
-    align-items: center;
-    font-size: 13px;
+    align-items: flex-start;     /* Texte calé à gauche */
+    flex: 1;                     /* Prend l'espace disponible */
+  }
+
+  .footerLeft p {
+    font-size: 11px;             /* Taille réduite pour éviter le retour à la ligne */
+    white-space: nowrap;         /* Empêche le copyright de passer sur 2 lignes */
   }
 
   .footerRight {
-    justify-content: center;
-    padding-right: 0;
+    justify-content: flex-end;
+    flex-shrink: 0;              /* Empêche les icônes de s'écraser */
+    gap: 10px;                   /* Espace réduit entre les icônes */
   }
 
   .discordIcon, .xIcon {
-    width: 35px;
-  }
-
-  .socialLink:hover .discordIcon,
-  .socialLink:hover .xIcon {
-    transform: none;
-    filter: none;
+    width: clamp(24px, 8vw, 32px);
   }
 }
