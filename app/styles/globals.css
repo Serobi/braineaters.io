@@ -251,4 +251,21 @@ html, body {
   .discordIcon, .xIcon {
     width: clamp(24px, 8vw, 32px);
   }
+  
+}
+
+@media (max-width: 300px) {
+
+  .footer {
+    padding: 20px 15px;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .footerLeft p {
+    font-size: 12px;
+    white-space: normal;
+  }
+
 }
