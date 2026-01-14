@@ -11,6 +11,9 @@ export const gameImages = {
             "/images/game/buildings/shelter.webp",
             "/images/game/buildings/well.webp",
         ],
+        craft: [
+
+        ],
         customisation: [
             "/images/game/decorations/ruins.webp",
             "/images/game/decorations/trees.webp",

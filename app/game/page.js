@@ -352,6 +352,9 @@ export default function GamePage() {
                         Weapons, armor, and crafting tools.
                         Improve survivor efficiency and combat capabilities.
                       </p>
+                      <p>
+                        *UI are not definitive and are subject to change*
+                      </p>
                       <div className={styles.imageContainer}>
                         <img
                           src="/images/game/UI/inventory.webp"
@@ -407,7 +410,16 @@ export default function GamePage() {
                       </p>
                       <div className={styles.imageContainer}>
                         <img
-                          src="/images/game/UI/crafting.webp"
+                          src="/images/game/UI/crafting1.webp"
+                          alt="Inventory"
+                          loading="lazy"
+                          decoding="async"
+                          className={`${styles.gameImage} ${styles.squared}`}
+                        />
+                      </div>
+                      <div className={styles.imageContainer}>
+                        <img
+                          src="/images/game/UI/crafting2.webp"
                           alt="Inventory"
                           loading="lazy"
                           decoding="async"
@@ -433,6 +445,24 @@ export default function GamePage() {
                         to other players, making customisation a social and expressive feature.
                       </p>
                       <ImageCarousel images={buildImages} />
+                      <div className={styles.imageContainer}>
+                        <img
+                          src="/images/game/UI/buildmode.webp"
+                          alt="Inventory"
+                          loading="lazy"
+                          decoding="async"
+                          className={`${styles.gameImage} ${styles.squared}`}
+                        />
+                      </div>
+                      <div className={styles.imageContainer}>
+                        <img
+                          src="/images/game/UI/groundmode.webp"
+                          alt="Inventory"
+                          loading="lazy"
+                          decoding="async"
+                          className={`${styles.gameImage} ${styles.squared}`}
+                        />
+                      </div>
                     </>
                   )}
 
