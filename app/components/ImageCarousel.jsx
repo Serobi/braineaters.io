@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "../styles/carousel.module.css";
 
 const STEP = 105; // 100% slide + 5% spacing
 const TRANSITION_MS = 450;
+const TOUCH_THRESHOLD = 40;
+const MOUSE_THRESHOLD = 80;
 
 export default function ImageCarousel({ images }) {
   if (!images?.length) return null;
@@ -15,6 +17,11 @@ export default function ImageCarousel({ images }) {
 
   const [index, setIndex] = useState(images.length > 1 ? 1 : 0);
   const [transition, setTransition] = useState(true);
+
+  const startX = useRef(0);
+  const startY = useRef(0);
+  const isSwiping = useRef(false);
+  const pointerType = useRef(null); // ✅ FIX
 
   // Reset when images change
   useEffect(() => {
@@ -29,7 +36,6 @@ export default function ImageCarousel({ images }) {
   useEffect(() => {
     if (images.length <= 1) return;
 
-    // Jump from fake first → real last
     if (index === 0) {
       const t = setTimeout(() => {
         setTransition(false);
@@ -38,7 +44,6 @@ export default function ImageCarousel({ images }) {
       return () => clearTimeout(t);
     }
 
-    // Jump from fake last → real first
     if (index === images.length + 1) {
       const t = setTimeout(() => {
         setTransition(false);
@@ -55,6 +60,46 @@ export default function ImageCarousel({ images }) {
     }
   }, [transition]);
 
+  /* === SWIPE HANDLERS === */
+
+  const onPointerDown = (e) => {
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+
+    pointerType.current = e.pointerType;
+    startX.current = e.clientX;
+    startY.current = e.clientY;
+    isSwiping.current = true;
+  };
+
+  const onPointerMove = (e) => {
+    if (!isSwiping.current) return;
+
+    const dx = e.clientX - startX.current;
+    const dy = e.clientY - startY.current;
+
+    // Cancel swipe if vertical scroll intent
+    if (Math.abs(dy) > Math.abs(dx)) {
+      isSwiping.current = false;
+    }
+  };
+
+  const onPointerUp = () => {
+    if (!isSwiping.current) return;
+
+    const dx = event.clientX - startX.current;
+    const threshold =
+      pointerType.current === "touch"
+        ? TOUCH_THRESHOLD
+        : MOUSE_THRESHOLD;
+
+    if (Math.abs(dx) > threshold) {
+      dx < 0 ? next() : prev();
+    }
+
+    isSwiping.current = false;
+    pointerType.current = null;
+  };
+
   return (
     <div className={styles.imageCarousel}>
       {images.length > 1 && (
@@ -67,7 +112,13 @@ export default function ImageCarousel({ images }) {
         </button>
       )}
 
-      <div className={styles.viewport}>
+      <div
+        className={styles.viewport}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
+      >
         <div
           className={styles.track}
           style={{
@@ -79,7 +130,7 @@ export default function ImageCarousel({ images }) {
         >
           {loopedImages.map((src, i) => (
             <img
-              key={`${src}-${i}`} // safe with duplicates
+              key={`${src}-${i}`}
               src={src}
               alt=""
               loading="lazy"
