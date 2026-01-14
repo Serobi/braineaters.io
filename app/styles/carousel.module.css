@@ -148,8 +148,8 @@
       transform: translateY(-50%) scale(0.95);
     }
     50% {
-      opacity: 0.75;
-      transform: translateY(-50%) scale(1.05);
+      opacity: 0.9;
+      transform: translateY(-50%) scale(1.1);
     }
     100% {
       opacity: 0.35;
@@ -164,15 +164,6 @@
         left: clamp(-12px, -4vw, -120px);
       }
       
-
-    .arrow {
-        width: clamp(38px, 6.5vw, 58px);
-        height: clamp(38px, 6.5vw, 58px);
-        animation: arrowPulse 2.8s ease-in-out infinite;
-        transition: opacity 0.3s ease;
-      }
-      
-    
       .chevron {
         width: 34%;
         height: 34%;
@@ -184,14 +175,35 @@
     .left  { left: clamp(-24px, -4vw, -52px); }
     .right { right: clamp(-24px, -4vw, -52px); }
 
-    .viewport:active ~ .arrow,
-    .arrow:active {
-      animation: none;
-      opacity: 1;
-    }
 
-    .viewport:active .arrow {
+    .arrow {
+      width: clamp(38px, 6.5vw, 58px);
+      height: clamp(38px, 6.5vw, 58px);
+      will-change: transform, opacity;
+      touch-action: manipulation;
+      animation: arrowPulse 2.8s ease-in-out infinite;
+      transition:
+        transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+        opacity 0.2s ease;
+    }
+    
+      
+      .arrow:active {
+        transform: translateY(-50%) scale(0.92);
+        opacity: 1;
+        animation: none;
+      }
+      .arrow:active::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
+      }
+
+    .viewport:active ~ .arrow {
       opacity: 0.15;
     }
+    
 
   }
