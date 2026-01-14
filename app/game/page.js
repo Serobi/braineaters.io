@@ -448,19 +448,19 @@ export default function GamePage() {
                       <div className={styles.imageContainer}>
                         <img
                           src="/images/game/UI/buildmode.webp"
-                          alt="Inventory"
+                          alt="build mode"
                           loading="lazy"
                           decoding="async"
-                          className={`${styles.gameImage} ${styles.squared}`}
+                          className={`${styles.gameImage}`}
                         />
                       </div>
                       <div className={styles.imageContainer}>
                         <img
                           src="/images/game/UI/groundmode.webp"
-                          alt="Inventory"
+                          alt="ground mode"
                           loading="lazy"
                           decoding="async"
-                          className={`${styles.gameImage} ${styles.squared}`}
+                          className={`${styles.gameImage}`}
                         />
                       </div>
                     </>
