@@ -41,7 +41,7 @@
   .viewport:active {
     cursor: grabbing;
   }
-  
+
 /* === SLIDING TRACK === */
 .track {
   display: flex;
@@ -142,6 +142,22 @@
     right: -4.5%;  /* pushes arrow outside */
   }
 
+  @keyframes arrowPulse {
+    0% {
+      opacity: 0.35;
+      transform: translateY(-50%) scale(0.95);
+    }
+    50% {
+      opacity: 0.75;
+      transform: translateY(-50%) scale(1.05);
+    }
+    100% {
+      opacity: 0.35;
+      transform: translateY(-50%) scale(0.95);
+    }
+  }
+  
+
   @media (max-width: 768px) {
 
     .imageCarousel {
@@ -152,6 +168,8 @@
     .arrow {
         width: clamp(38px, 6.5vw, 58px);
         height: clamp(38px, 6.5vw, 58px);
+        animation: arrowPulse 2.8s ease-in-out infinite;
+        transition: opacity 0.3s ease;
       }
       
     
@@ -165,5 +183,15 @@
       
     .left  { left: clamp(-24px, -4vw, -52px); }
     .right { right: clamp(-24px, -4vw, -52px); }
+
+    .viewport:active ~ .arrow,
+    .arrow:active {
+      animation: none;
+      opacity: 1;
+    }
+
+    .viewport:active .arrow {
+      opacity: 0.15;
+    }
 
   }
