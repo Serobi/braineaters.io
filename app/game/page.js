@@ -78,6 +78,57 @@ export default function GamePage() {
     }
   };
 
+  const handleSubMenuAutoScroll = () => {
+
+    if (isMobile) {
+      if (!pillarsCompact) {
+        setPillarsCompact(true);
+      }
+
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          if (!pillarDetailRef.current) return;
+
+          const navbarOffset = 90;
+          const extraPadding = 52;
+
+          const offset = isPillarsSticky()
+            ? navbarOffset
+            : navbarOffset + extraPadding;
+
+          const top =
+            pillarDetailRef.current.getBoundingClientRect().top +
+            window.pageYOffset;
+
+          window.scrollTo({
+            top: top - offset,
+            behavior: "smooth",
+          });
+        }, 60);
+      });
+    }
+    else {
+      setTimeout(() => {
+        if (!pillarDetailRef.current) return;
+
+        const baseOffset = 110;
+        const extraOffsetIfNotSticky = 173;
+
+        const offset = isPillarsSticky()
+          ? baseOffset
+          : baseOffset + extraOffsetIfNotSticky;
+
+        const elementTop =
+          pillarDetailRef.current.getBoundingClientRect().top +
+          window.pageYOffset;
+
+        window.scrollTo({
+          top: elementTop - offset,
+          behavior: "smooth",
+        });
+      }, 50);
+    }
+  };
 
   useEffect(() => {
     const pillarsSection = pillarsSectionRef.current;
@@ -85,16 +136,15 @@ export default function GamePage() {
 
     const handleScroll = () => {
       const rect = pillarsSection.getBoundingClientRect();
-      const navbarHeight = 80; // ← Match your CSS top value
+      const navbarHeight = 80;
 
-      // Add a small buffer to prevent flicker at the edge
       const isStuck = rect.top <= navbarHeight + 10;
 
       pillarsSection.classList.toggle(styles.stuck, isStuck);
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   },
@@ -206,14 +256,13 @@ export default function GamePage() {
                         ref={(el) => (itemRefs.current[tab] = el)}
                         className={`${styles.subMenuItem} ${activeBuildTab === tab ? styles.active : ""
                           }`}
-                        onClick={() => setActiveBuildTab(tab)}
+                        onClick={() => setActiveBuildTab(tab) + handleSubMenuAutoScroll()}
                       >
                         {tab.charAt(0).toUpperCase() + tab.slice(1)}
                       </button>
                     ))}
                   </aside>
                 )}
-                {/* RIGHT CONTENT */}
                 <div className={styles.buildContent}>
 
                   {activeBuildTab === "overview" && (
@@ -444,7 +493,7 @@ export default function GamePage() {
                         ref={(el) => (itemRefs.current[tab] = el)}
                         className={`${styles.subMenuItem} ${activeExploreTab === tab ? styles.active : ""
                           }`}
-                        onClick={() => setActiveExploreTab(tab)}
+                        onClick={() => setActiveExploreTab(tab) + handleSubMenuAutoScroll()}
                       >
                         {tab.charAt(0).toUpperCase() + tab.slice(1)}
                       </button>
@@ -700,7 +749,7 @@ export default function GamePage() {
                 key={tab}
                 ref={(el) => (itemRefs.current[tab] = el)}
                 className={`${styles.subMenuItem} ${activeBuildTab === tab ? styles.active : ""}`}
-                onClick={() => setActiveBuildTab(tab)}
+                onClick={() => setActiveBuildTab(tab) + handleSubMenuAutoScroll()}
               >
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}
               </button>
@@ -717,7 +766,7 @@ export default function GamePage() {
                 ref={(el) => (itemRefs.current[tab] = el)}
                 className={`${styles.subMenuItem} ${activeExploreTab === tab ? styles.active : ""
                   }`}
-                onClick={() => setActiveExploreTab(tab)}
+                onClick={() => setActiveExploreTab(tab) + handleSubMenuAutoScroll()}
               >
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}
               </button>
