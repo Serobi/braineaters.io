@@ -51,8 +51,8 @@
   flex-shrink: 0;
   object-fit: contain;
   display: block;
-
   margin-right: 5%;
+  border-radius: 20px;
 }
 
 .track img:last-child {

@@ -405,6 +405,15 @@ export default function GamePage() {
                         such as forges or workbenches.
                         Module levels cannot exceed the building's level.
                       </p>
+                      <div className={styles.imageContainer}>
+                        <img
+                          src="/images/game/UI/crafting.webp"
+                          alt="Inventory"
+                          loading="lazy"
+                          decoding="async"
+                          className={`${styles.gameImage} ${styles.squared}`}
+                        />
+                      </div>
                     </>
                   )}
 
@@ -423,6 +432,7 @@ export default function GamePage() {
                         Because the city is shared, your earned or unlocked assets are visible
                         to other players, making customisation a social and expressive feature.
                       </p>
+                      <ImageCarousel images={buildImages} />
                     </>
                   )}
 

@@ -11,9 +11,12 @@ export const gameImages = {
             "/images/game/buildings/shelter.webp",
             "/images/game/buildings/well.webp",
         ],
-        resources: [
-            "/images/game/UI/inventory.webp",
-            "/images/game/UI/storage.webp",
+        customisation: [
+            "/images/game/decorations/ruins.webp",
+            "/images/game/decorations/trees.webp",
+            "/images/game/decorations/rocks.webp",
+            "/images/game/decorations/car.webp",
+            "/images/game/decorations/carriage.webp",
         ],
     },
 
