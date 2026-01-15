@@ -625,13 +625,11 @@
     font-size: clamp(1.5rem, 4vw, 2rem);
     margin-bottom: 24px;
     padding-bottom: 12px;
-    animation: none;
     background-position: 120% center;
   }
 
   .pillarContent h2::after {
     width: 80px;
-    animation: none;
     background-position: 120% center;
   }
 
