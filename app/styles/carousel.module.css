@@ -203,7 +203,7 @@
   @keyframes ghostPulse {
     0% {
       transform: scale(1);
-      opacity: 0.7;
+      opacity: 1;
     }
     70% {
       transform: scale(1.8);
@@ -223,10 +223,10 @@
   }
   50% {
     transform: scale(1.6);
-    opacity: 0.3;
+    opacity: 0;
   }
   100% {
-    transform: scale(1.6);
+    transform: scale(1);
     opacity: 0;
   }
 }
