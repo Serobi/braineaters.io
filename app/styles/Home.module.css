@@ -1,11 +1,15 @@
 /* ----------- GLOBAL PAGE LAYOUT ----------- */
 
-
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
 
 /* ----------- BANNER ----------- */
 
@@ -24,19 +28,14 @@
   width: 400px;
 
   opacity: 0;
-  transition:
-    opacity 1s ease,
-    transform 1s ease;
+  transition: opacity 1s ease, transform 1s ease;
 
-  filter:
-    drop-shadow(0 0 15px rgba(150, 0, 255, 0.4))
-    brightness(1.05)
+  filter: drop-shadow(0 0 15px rgba(150, 0, 255, 0.4)) brightness(1.05)
     contrast(1.1);
 
   mix-blend-mode: screen;
   z-index: 3;
 }
-
 
 .hunterEyes::after {
   content: "";
@@ -45,7 +44,7 @@
   left: 0px;
   width: 100%;
   height: 120px;
-  background: linear-gradient(transparent, rgba(0,0,0,0.9));
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
   filter: blur(20px);
 }
 
@@ -63,8 +62,13 @@
   transform: translateX(-50%) scale(1);
 }
 @keyframes subtlePulse {
-  0%, 100% { filter: drop-shadow(0 0 15px rgba(150, 0, 255, 0.4)) brightness(0.6); }
-  50% { filter: drop-shadow(0 0 25px rgba(150, 0, 255, 0.7)) brightness(1.2); }
+  0%,
+  100% {
+    filter: drop-shadow(0 0 15px rgba(150, 0, 255, 0.4)) brightness(0.6);
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgba(150, 0, 255, 0.7)) brightness(1.2);
+  }
 }
 
 .main {
@@ -83,15 +87,10 @@
   display: block;
   font-size: 18px;
   line-height: 1.55;
-  font-family: fantasy, 'Arial Black', sans-serif;
+  font-family: fantasy, "Arial Black", sans-serif;
   margin-bottom: 6px;
 
-  background: linear-gradient(
-    90deg,
-    #0b0b0b 30%,
-    #fff3b0 50%,
-    #0b0b0b 70%
-  );
+  background: linear-gradient(90deg, #0b0b0b 30%, #fff3b0 50%, #0b0b0b 70%);
   background-size: 200% 100%;
   background-position: 100% center;
 
@@ -105,29 +104,46 @@
   animation: lineShine 15s ease-in-out infinite;
 }
 
-
-.introText span:nth-child(1) { animation-delay: 1s; }
-.introText span:nth-child(2) { animation-delay: 6s; }
-.introText span:nth-child(3) { animation-delay: 11s; }
-
-
-
-@keyframes lineShine {
-
-  0%   { opacity: 0; background-position: 100% center; }
-  10%  { opacity: 0; }
-
-
-  20%  { opacity: 1; }
-  50%  { background-position: -80% center; opacity: 1; }
-
-  60%  { opacity: 1; }
-
-  70%  { opacity: 0; }
-
-  100% { opacity: 0; background-position: 110% center; }
+.introText span:nth-child(1) {
+  animation-delay: 1s;
+}
+.introText span:nth-child(2) {
+  animation-delay: 6s;
+}
+.introText span:nth-child(3) {
+  animation-delay: 11s;
 }
 
+@keyframes lineShine {
+  0% {
+    opacity: 0;
+    background-position: 100% center;
+  }
+  10% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+  50% {
+    background-position: -80% center;
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    background-position: 110% center;
+  }
+}
 
 /* ----------- DISCOVER BUTTON ----------- */
 
@@ -135,7 +151,7 @@
   display: inline-block;
   margin-top: 35px;
   padding: 14px 32px;
-  background: #0d001a; 
+  background: #0d001a;
   color: #fff;
   text-decoration: none;
   font-size: 18px;
@@ -158,8 +174,8 @@
   width: 50%;
   height: 100%;
   background: linear-gradient(
-    to right, 
-    transparent, 
+    to right,
+    transparent,
     rgba(255, 255, 255, 0.3),
     rgba(168, 85, 247, 0.4),
     transparent
@@ -183,12 +199,17 @@
   pointer-events: none;
 }
 
-
-
 @keyframes autoShine {
-  0% { left: -150%; }
-  25% { left: 150%; }
-  26%, 100% { left: 150%; }
+  0% {
+    left: -150%;
+  }
+  25% {
+    left: 150%;
+  }
+  26%,
+  100% {
+    left: 150%;
+  }
 }
 @keyframes CenterBurst {
   0% {
@@ -205,12 +226,9 @@
   }
 }
 
-
-
 .discoverButton:hover {
   background: #1a0033;
-  box-shadow:
-    0 0 14px rgba(168, 85, 247, 0.35),
+  box-shadow: 0 0 14px rgba(168, 85, 247, 0.35),
     inset 0 0 8px rgba(168, 85, 247, 0.12);
   transform: scale(1.02);
   border-color: #e9d5ff;
@@ -222,7 +240,6 @@
 .discoverButton:hover::after {
   animation: CenterBurst 0.6s ease-out forwards;
 }
-
 
 /* components/FogOverlay.module.css */
 .fogContainer {
@@ -251,46 +268,62 @@
   transition: transform 1.4s ease, opacity 1.4s ease;
 }
 
-
 .fog {
-  background-image: url('/images/Fog/fog_cloud_1.png');
+  background-image: url("/images/Fog/fog_cloud_1.png");
   animation: fogDriftRight 60s ease-in-out infinite;
   opacity: 0.6;
   top: 0px;
 }
 
 .fog1 {
-  background-image: url('/images/Fog/fog_cloud_2.png');
+  background-image: url("/images/Fog/fog_cloud_2.png");
   animation: fogDriftLeft 80s ease-in-out infinite;
   opacity: 0.6;
-  top : -20px;
+  top: -20px;
 }
 
 .fog2 {
-  background-image: url('/images/Fog/fog_cloud_3.png');
+  background-image: url("/images/Fog/fog_cloud_3.png");
   animation: fogDriftDiagonal 60s ease-in-out infinite;
   opacity: 0.6;
   top: -30px;
 }
 
 @keyframes fogDriftRight {
-  0%   { transform: translate(0%, 0%); }
-  50%  { transform: translate(6%, -2%); }
-  100% { transform: translate(0%, 0%); }
+  0% {
+    transform: translate(0%, 0%);
+  }
+  50% {
+    transform: translate(6%, -2%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
 }
 
 @keyframes fogDriftLeft {
-  0%   { transform: translate(0%, 0%); }
-  50%  { transform: translate(-6%, -2%); }
-  100% { transform: translate(0%, 0%); }
+  0% {
+    transform: translate(0%, 0%);
+  }
+  50% {
+    transform: translate(-6%, -2%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
 }
 
 @keyframes fogDriftDiagonal {
-  0%   { transform: translate(0%, 0%); }
-  50%  { transform: translate(3%, -4%); }
-  100% { transform: translate(0%, 0%); }
+  0% {
+    transform: translate(0%, 0%);
+  }
+  50% {
+    transform: translate(3%, -4%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
 }
-
 
 .fogReveal .fog {
   transform: translateX(-30%);
@@ -308,22 +341,19 @@
 }
 
 @media (max-width: 768px) {
-  
   .homePage {
     min-height: calc(100vh - 70px); /* navbar height */
-    overflow-x: hidden;             /* kill fog overflow */
+    overflow-x: hidden; /* kill fog overflow */
   }
 
   .bannerSection {
-    overflow: hidden;               /* fog can exceed internally */
+    overflow: hidden; /* fog can exceed internally */
   }
   .hunterEyes {
     left: 50%;
     transform: translateX(-50%) scale(0.9);
     width: 300px;
-    filter:
-      drop-shadow(0 0 10px rgba(150, 0, 255, 0.3))
-      brightness(0.9);
+    filter: drop-shadow(0 0 10px rgba(150, 0, 255, 0.3)) brightness(0.9);
   }
 
   .hunterEyes.fadeIn {
@@ -345,110 +375,175 @@
   }
 
   .fog {
-  animation: fogDriftRight 30s ease-in-out infinite;
-  opacity: 0.6;
-}
+    animation: fogDriftRight 30s ease-in-out infinite;
+    opacity: 0.6;
+  }
 
-.fog1 {
-  animation: fogDriftLeft 40s ease-in-out infinite;
-  opacity: 0.6;
-  top : -3%;
-}
+  .fog1 {
+    animation: fogDriftLeft 40s ease-in-out infinite;
+    opacity: 0.6;
+    top: -3%;
+  }
 
-.fog2 {
-  animation: fogDriftDiagonal 30s ease-in-out infinite;
-  opacity: 0.6;
-  top: -2%;
-}
+  .fog2 {
+    animation: fogDriftDiagonal 30s ease-in-out infinite;
+    opacity: 0.6;
+    top: -2%;
+  }
 
-.fogReveal .fog {
-  transform: translateX(-10%);
-  opacity: 0.4;
-}
+  .fogReveal .fog {
+    transform: translateX(-10%);
+    opacity: 0.4;
+  }
 
-.fogReveal .fog1 {
-  transform: translateX(10%);
-  opacity: 0.4;
-}
+  .fogReveal .fog1 {
+    transform: translateX(10%);
+    opacity: 0.4;
+  }
 
-.fogReveal .fog2 {
-  transform: translateY(-50%);
-  opacity: 0.4;
-}
+  .fogReveal .fog2 {
+    transform: translateY(-50%);
+    opacity: 0.4;
+  }
 
-.discoverButton:active {
-  background: #1a0033;
-  box-shadow:
-    0 0 14px rgba(168, 85, 247, 0.35),
-    inset 0 0 8px rgba(168, 85, 247, 0.12);
-  transform: scale(1.02);
-  border-color: #e9d5ff;
-}
+  .discoverButton {
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
 
-.discoverButton:active::before {
-  animation: none;
-}
-.discoverButton:active::after {
-  animation: CenterBurst 0.6s ease-out forwards;
-}
+  .discoverButton::after {
+    content: "";
+    position: absolute;
+    background: radial-gradient(
+      circle,
+      rgba(168, 85, 247, 0.6) 0%,
+      transparent 70%
+    );
+    border-radius: inherit;
+    pointer-events: none;
 
-.main {
-  margin-top: -40px;
-  padding-top: 0;
-}
+    animation: CenterBurst 0.6s ease-out forwards;
 
-.discoverButton {
-  margin-top: 10px;
-  min-height: 48px;
-  font-size: 16px;
-  padding: 12px 24px;
-}
+    opacity: 0;
+  }
 
-.introText {
-  max-width: 750px;
-  margin: 0 auto;
-  text-align: center;
-}
+  .discoverButton:active::after {
+    animation: none;
+    opacity: 0;
+    inset: 50% 50%;
+  }
 
-.introText span {
-  display: inline-block;
-  width: 100%;
-  font-size: 18px;
-  line-height: 1.55;
-  font-family: fantasy, 'Arial Black', sans-serif;
-  margin-bottom: 6px;
+  .discoverButton:active::before {
+    animation: none;
+  }
 
-  color: #fff3b0;
-  opacity: 0;
-  filter: blur(8px);
-  text-shadow: 0 0 0px rgba(255, 243, 176, 0.6);
+  @keyframes CenterBurst {
+    0% {
+      inset: 50% 50%;
+      opacity: 0.8;
+    }
+    60% {
+      inset: -30% -30%;
+      opacity: 0.15;
+    }
+    100% {
+      inset: 0 0;
+      opacity: 0; /* Parfait pour le nettoyage final */
+    }
+  }
 
-  transform: translateY(-4px) translateZ(0);
-  will-change: opacity, filter, transform;
+  .main {
+    margin-top: -40px;
+    padding-top: 0;
+  }
 
-  animation: cleanReveal 16s ease-in-out infinite;
-}
+  .discoverButton {
+    margin-top: 10px;
+    min-height: 48px;
+    font-size: 16px;
+    padding: 12px 24px;
+  }
 
-.introText span:nth-child(1) { animation-delay: 0s; }
-.introText span:nth-child(2) { animation-delay: 5s; }
-.introText span:nth-child(3) { animation-delay: 10s; }
+  .introText {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+  }
 
-@keyframes cleanReveal {
-  0%   { opacity: 0; filter: blur(8px); transform: translateY(-4px) translateZ(0);}
-  15%  { opacity: 0; filter: blur(8px); transform: translateY(-4px) translateZ(0);}
+  .introText span {
+    display: inline-block;
+    width: 100%;
+    font-size: 18px;
+    line-height: 1.55;
+    font-family: fantasy, "Arial Black", sans-serif;
+    margin-bottom: 6px;
 
-  25%  { opacity: 1; filter: blur(0); transform: translateY(0) translateZ(0); }
-  40%  { opacity: 1; filter: blur(0); transform: translateY(0) translateZ(0);}
+    color: #fff3b0;
+    opacity: 0;
+    filter: blur(8px);
+    text-shadow: 0 0 0px rgba(255, 243, 176, 0.6);
 
-  50%  { opacity: 0; filter: blur(8px); transform: translateY(-4px) translateZ(0);}
-  100% { opacity: 0; filter: blur(8px); transform: translateY(-4px) translateZ(0);}
-}
+    transform: translateY(-4px) translateZ(0);
+    will-change: opacity, filter, transform;
 
-@keyframes subtlePulse {
-  0%, 100% { filter: drop-shadow(0 0 15px rgba(150, 0, 255, 0.4)) brightness(0.2); }
-  50% { filter: drop-shadow(0 0 25px rgba(150, 0, 255, 0.7)) brightness(0.9); }
-}
+    animation: cleanReveal 16s ease-in-out infinite;
+  }
 
+  .introText span:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .introText span:nth-child(2) {
+    animation-delay: 5s;
+  }
+  .introText span:nth-child(3) {
+    animation-delay: 10s;
+  }
+
+  @keyframes cleanReveal {
+    0% {
+      opacity: 0;
+      filter: blur(8px);
+      transform: translateY(-4px) translateZ(0);
+    }
+    15% {
+      opacity: 0;
+      filter: blur(8px);
+      transform: translateY(-4px) translateZ(0);
+    }
+
+    25% {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateY(0) translateZ(0);
+    }
+    40% {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateY(0) translateZ(0);
+    }
+
+    50% {
+      opacity: 0;
+      filter: blur(8px);
+      transform: translateY(-4px) translateZ(0);
+    }
+    100% {
+      opacity: 0;
+      filter: blur(8px);
+      transform: translateY(-4px) translateZ(0);
+    }
+  }
+
+  @keyframes subtlePulse {
+    0%,
+    100% {
+      filter: drop-shadow(0 0 15px rgba(150, 0, 255, 0.4)) brightness(0.2);
+    }
+    50% {
+      filter: drop-shadow(0 0 25px rgba(150, 0, 255, 0.7)) brightness(0.9);
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -459,6 +554,3 @@
     transform: none;
   }
 }
-
-
-
