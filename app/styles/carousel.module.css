@@ -15,32 +15,30 @@
 
   overflow: visible;
 
-  background:
-    linear-gradient(to right, #e8c07aa6 1px, transparent 1px) left,
-    linear-gradient(to left,  #e8c07aa6 1px, transparent 1px) right,
-    linear-gradient(to bottom,#e8c07aa6 1px, transparent 1px) top,
-    linear-gradient(to top,   #e8c07aa6 1px, transparent 1px) bottom;
+  background: linear-gradient(to right, #e8c07aa6 1px, transparent 1px) left,
+    linear-gradient(to left, #e8c07aa6 1px, transparent 1px) right,
+    linear-gradient(to bottom, #e8c07aa6 1px, transparent 1px) top,
+    linear-gradient(to top, #e8c07aa6 1px, transparent 1px) bottom;
 
   background-size: 1px 100%, 1px 100%, 100% 1px, 100% 1px;
   background-repeat: no-repeat;
   background-clip: padding-box;
-  
 }
 
 /* === VIEWPORT (98% / 96% like before) === */
 .viewport {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 14px;
-    padding: 1%;
-    margin: 0 auto;
-    touch-action: pan-y;
-    cursor: grab;
-  }
-  
-  .viewport:active {
-    cursor: grabbing;
-  }
+  width: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  padding: 1%;
+  margin: 0 auto;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.viewport:active {
+  cursor: grabbing;
+}
 
 /* === SLIDING TRACK === */
 .track {
@@ -68,142 +66,168 @@
   cursor: grabbing;
 }
 
-
 .track img:last-child {
   margin-right: 0;
 }
 
-  
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Glassmorphism plus propre */
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.arrow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  z-index: -1;
+
+  opacity: 0;
+  transform: scale(1.5);
+
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  pointer-events: none;
+}
+
+.arrow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  z-index: -1;
+  animation: ghostPulse 3s infinite;
+}
+
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.85);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow:active {
+  transform: translateY(-50%) scale(0.92);
+  background: rgba(255, 255, 255, 0.2);
+  transition: 0s;
+}
+
+.arrow:active::before {
+  transition: 0s;
+  opacity: 0.7;
+  transform: scale(1);
+}
+
+.chevron {
+  width: 12px;
+  height: 12px;
+  border-right: 3px solid rgba(255, 255, 255, 0.9);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.9);
+  transform: rotate(-45deg);
+}
+
+.left .chevron {
+  transform: rotate(135deg);
+}
+
+.right .chevron {
+  transform: rotate(-45deg);
+}
+
+.left {
+  left: -4.5%; /* pushes arrow outside */
+}
+
+.right {
+  right: -4.5%; /* pushes arrow outside */
+}
+
+@media (max-width: 768px) {
+  .imageCarousel {
+    left: clamp(-12px, -4vw, -120px);
+  }
+
+  .chevron {
+    width: 34%;
+    height: 34%;
+    border-right: clamp(2.2px, 0.45vw, 3.4px) solid rgba(255, 255, 255, 0.9);
+    border-bottom: clamp(2.2px, 0.45vw, 3.4px) solid rgba(255, 255, 255, 0.9);
+  }
+
+  .left {
+    left: clamp(-24px, -4vw, -52px);
+  }
+  .right {
+    right: clamp(-24px, -4vw, -52px);
+  }
 
   .arrow {
+    width: clamp(42px, 10vw, 52px);
+    height: clamp(42px, 10vw, 52px);
+    animation: none;
+  }
+
+  /* L'onde de choc circulaire */
+  .arrow::before {
+    content: "";
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 48px;
-    height: 48px;
+    inset: 0;
     border-radius: 50%;
-    border: none;
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  
-    box-shadow:
-      0 6px 18px rgba(0,0,0,0.5),
-      inset 0 0 0 1px rgba(255,255,255,0.08);
-  
-    cursor: pointer;
-    z-index: 2;
-  
-    transition:
-      background 0.2s ease,
-      transform 0.2s ease,
-      box-shadow 0.2s ease;
+    background: rgba(255, 255, 255, 0.4);
+    z-index: -1;
+    animation: ghostPulse 3s infinite;
   }
-  
-  .arrow:hover {
-    background: rgba(0,0,0,0.85);
-    transform: translateY(-50%) scale(1.08);
-    box-shadow:
-      0 10px 26px rgba(0,0,0,0.6),
-      inset 0 0 0 1px rgba(255,255,255,0.12);
-  }
-  
+
   .arrow:active {
-    transform: translateY(-50%) scale(0.96);
+    transform: translateY(-50%) scale(0.92);
+    background: rgba(255, 255, 255, 0.2);
   }
-  
-  
-  .chevron {
-    width: 12px;
-    height: 12px;
-    border-right: 3px solid rgba(255,255,255,0.9);
-    border-bottom: 3px solid rgba(255,255,255,0.9);
-    transform: rotate(-45deg);
+}
+
+@keyframes ghostPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
   }
-
-  .left .chevron {
-    transform: rotate(135deg);
+  50% {
+    transform: scale(1.6);
+    opacity: 0;
   }
-  
-  .right .chevron {
-    transform: rotate(-45deg);
+  100% {
+    transform: scale(1);
+    opacity: 0;
   }
-  
-.left {
-    left: -4.5%;   /* pushes arrow outside */
+}
+
+@keyframes arrowPulse {
+  0% {
+    opacity: 0.5;
+    transform: translateY(-50%) scale(0.95);
   }
-  
-  .right {
-    right: -4.5%;  /* pushes arrow outside */
+  50% {
+    opacity: 0.9;
+    transform: translateY(-50%) scale(1.2);
   }
-
-  @keyframes arrowPulse {
-    0% {
-      opacity: 0.35;
-      transform: translateY(-50%) scale(0.95);
-    }
-    50% {
-      opacity: 0.9;
-      transform: translateY(-50%) scale(1.1);
-    }
-    100% {
-      opacity: 0.35;
-      transform: translateY(-50%) scale(0.95);
-    }
+  100% {
+    opacity: 0.5;
+    transform: translateY(-50%) scale(0.95);
   }
-  
-
-  @media (max-width: 768px) {
-
-    .imageCarousel {
-        left: clamp(-12px, -4vw, -120px);
-      }
-      
-      .chevron {
-        width: 34%;
-        height: 34%;
-        border-right: clamp(2.2px, 0.45vw, 3.4px) solid rgba(255,255,255,0.9);
-        border-bottom: clamp(2.2px, 0.45vw, 3.4px) solid rgba(255,255,255,0.9);
-      }
-      
-      
-    .left  { left: clamp(-24px, -4vw, -52px); }
-    .right { right: clamp(-24px, -4vw, -52px); }
-
-
-    .arrow {
-      width: clamp(38px, 6.5vw, 58px);
-      height: clamp(38px, 6.5vw, 58px);
-      will-change: transform, opacity;
-      touch-action: manipulation;
-      animation: arrowPulse 2.8s ease-in-out infinite;
-      transition:
-        transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
-        opacity 0.2s ease;
-    }
-    
-      
-      .arrow:active {
-        transform: translateY(-50%) scale(0.92);
-        opacity: 1;
-        animation: none;
-      }
-      .arrow:active::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 50%;
-        box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
-      }
-
-    .viewport:active ~ .arrow {
-      opacity: 0.15;
-    }
-    
-
-  }
+}

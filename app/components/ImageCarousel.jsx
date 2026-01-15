@@ -103,6 +103,7 @@ export default function ImageCarousel({ images }) {
   return (
     <div className={styles.imageCarousel}>
       {images.length > 1 && (
+        <div className={`${styles.carouselArrows}`}>
         <button
           className={`${styles.arrow} ${styles.left}`}
           onClick={prev}
@@ -110,6 +111,14 @@ export default function ImageCarousel({ images }) {
         >
           <span className={styles.chevron} />
         </button>
+        <button
+          className={`${styles.arrow} ${styles.right}`}
+          onClick={next}
+          aria-label="Next image"
+        >
+          <span className={styles.chevron} />
+        </button>
+        </div>
       )}
 
       <div
@@ -139,16 +148,6 @@ export default function ImageCarousel({ images }) {
           ))}
         </div>
       </div>
-
-      {images.length > 1 && (
-        <button
-          className={`${styles.arrow} ${styles.right}`}
-          onClick={next}
-          aria-label="Next image"
-        >
-          <span className={styles.chevron} />
-        </button>
-      )}
     </div>
   );
 }
