@@ -79,7 +79,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(15, 15, 15, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4),
