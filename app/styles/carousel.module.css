@@ -84,13 +84,12 @@
   background: rgba(15, 15, 15, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4),
     inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-
   cursor: pointer;
   z-index: 2;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 0.25s ease,
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .arrow::before {
@@ -100,10 +99,8 @@
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.4);
   z-index: -1;
-
   opacity: 0;
-  transform: scale(1.5);
-
+  transform: scale(1.1);
   transition: transform 0.6s ease-out, opacity 0.6s ease-out;
   pointer-events: none;
 }
@@ -113,7 +110,7 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.2); /* Plus discret */
   z-index: -1;
   animation: ghostPulse 3s infinite;
 }
@@ -182,21 +179,6 @@
     width: clamp(42px, 10vw, 52px);
     height: clamp(42px, 10vw, 52px);
     animation: none;
-  }
-
-  .arrow::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.4);
-    z-index: -1;
-    animation: ghostPulse 3s infinite;
-  }
-
-  .arrow:active {
-    transform: translateY(-50%) scale(0.92);
-    background: rgba(255, 255, 255, 0.2);
   }
 }
 
