@@ -9,7 +9,7 @@
 
 .title {
   display: inline-block;
-  font-family: 'Oswald', Arial, sans-serif;
+  font-family: "Oswald", Arial, sans-serif;
   font-size: 44px;
   font-weight: 600;
   letter-spacing: 0.3px;
@@ -27,8 +27,14 @@
 }
 
 @keyframes shineLeftToRight {
-  0%, 20% { background-position: 120% center; }
-  80%, 100% { background-position: -80% center; }
+  0%,
+  20% {
+    background-position: 120% center;
+  }
+  80%,
+  100% {
+    background-position: -80% center;
+  }
 }
 
 .titleBar {
@@ -42,9 +48,7 @@
   border-radius: 2px;
   box-shadow: 0 0 10px rgba(232, 192, 122, 0.3);
   animation: shineLeftToRight 6s ease-in-out infinite;
-  
 }
-
 
 .description {
   font-size: 19px;
@@ -140,7 +144,8 @@
   border: 3px solid rgba(255, 255, 255, 0.06);
   border-radius: 16px;
 
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease,
+    background 0.25s ease;
 }
 
 .pillar:hover {
@@ -186,8 +191,8 @@
   transition: margin-bottom 0.4s ease;
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.9),
-    rgba(0,0,0,0.85)
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.85)
   );
 }
 .pillarsWrapper.stuck {
@@ -222,7 +227,7 @@
 }
 
 .pillarContent h2::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -263,10 +268,9 @@
   margin-bottom: 8px;
 }
 
-.centeredPillar p+p {
+.centeredPillar p + p {
   margin-top: 10px;
 }
-
 
 .pillarContent p:last-child {
   margin-bottom: 0;
@@ -282,8 +286,14 @@
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .contentLayout {
@@ -314,10 +324,7 @@
   font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
 
-  transition:
-    background 0.25s ease,
-    border-color 0.25s ease,
-    color 0.25s ease,
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease,
     transform 0.2s ease;
 }
 .subMenuItem:hover {
@@ -336,7 +343,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  text-align: left; 
+  text-align: left;
   max-width: 1400px;
   margin-left: 20px;
 }
@@ -349,7 +356,6 @@
 .buildContent p + p {
   margin-top: 8px;
 }
-
 
 .buildContent p {
   max-width: 640px;
@@ -371,11 +377,10 @@
   left: -5%;
 
   background: transparent;
-  background:
-    linear-gradient(to right, #e8c07aa6 1px, transparent 1px) left,
-    linear-gradient(to left,  #e8c07aa6 1px, transparent 1px) right,
-    linear-gradient(to bottom,#e8c07aa6 1px, transparent 1px) top,
-    linear-gradient(to top,   #e8c07aa6 1px, transparent 1px) bottom;
+  background: linear-gradient(to right, #e8c07aa6 1px, transparent 1px) left,
+    linear-gradient(to left, #e8c07aa6 1px, transparent 1px) right,
+    linear-gradient(to bottom, #e8c07aa6 1px, transparent 1px) top,
+    linear-gradient(to top, #e8c07aa6 1px, transparent 1px) bottom;
 
   background-size: 1px 100%, 1px 100%, 100% 1px, 100% 1px;
   background-repeat: no-repeat;
@@ -396,30 +401,28 @@
   border-radius: 0 !important;
 }
 
-
 @media (max-width: 768px) {
-  .gameIntro { 
-    margin-top: clamp(18px, 5vw, 40px); 
+  .gameIntro {
+    margin-top: clamp(18px, 5vw, 40px);
   }
 
-  .title { 
+  .title {
     font-size: clamp(16px, 5vw, 30px);
     line-height: 1.2;
     text-align: center;
 
     letter-spacing: clamp(0.5px, 0.8vw, 2px);
 
-    animation: none;
     background-position: 120% center;
   }
 
   .titleBar {
-    width: clamp(100px, 60%, 300px); 
+    width: clamp(100px, 60%, 300px);
     margin: clamp(12px, 5vw, 20px) auto 0;
-    animation : none;
+
     background-position: 120% center;
   }
-  .description { 
+  .description {
     font-size: clamp(12px, 3vw, 16px);
     margin: clamp(20px, 3vw, 40px) auto;
   }
@@ -428,14 +431,13 @@
     top: 64px;
     margin-bottom: 40px;
   }
-  
+
   .pillarsSection {
     padding: 28px 16px;
     background: transparent;
     box-shadow: none;
     border-bottom: none;
   }
-  
 
   .pillarsGrid {
     display: grid;
@@ -443,42 +445,38 @@
     gap: 10px;
     width: 100%;
   }
-  
+
   .pillar {
     min-height: 72px;
     padding: 16px 10px;
-  
+
     display: flex;
     align-items: center;
     justify-content: center;
-  
+
     background: rgba(15, 15, 15, 0.4);
     border: 2px solid rgba(219, 212, 200, 0.3);
     border-radius: 14px;
     will-change: padding, min-height, background, border-radius;
-    transition:
-    padding 0.25s ease,
-    min-height 0.25s ease,
-    background 0.15s ease,
-    border-color 0.15s ease,
-    border-radius 0.25s ease;
+    transition: padding 0.25s ease, min-height 0.25s ease, background 0.15s ease,
+      border-color 0.15s ease, border-radius 0.25s ease;
   }
-  
+
   .pillar:hover {
     transform: none;
     background: rgba(15, 15, 15, 0.4);
     border: 2px solid rgba(219, 212, 200, 0.3);
   }
 
-.pillar h3 {
-  font-size: clamp(0.75rem, 3.2vw, 1.25rem);
-  margin: 0;
-  text-align: center;
-  white-space: nowrap;
-}
-.pillar p {
-  display: none;
-}
+  .pillar h3 {
+    font-size: clamp(0.75rem, 3.2vw, 1.25rem);
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .pillar p {
+    display: none;
+  }
 
   /* Active = clear navigation state */
   .pillar.active {
@@ -495,11 +493,11 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   }
-  
+
   .pillarsSection.stuck .pillarsGrid {
     gap: 6px;
   }
-  
+
   .pillarsSection.stuck .pillar {
     min-height: 44px;
     padding: 10px 8px;
@@ -513,154 +511,146 @@
     background: rgba(15, 15, 15, 0.4);
     border: 2px solid rgba(219, 212, 200, 0.35);
   }
-  
-  
+
   .pillarsSection.stuck .pillar h3 {
     font-size: clamp(0.55rem, 2.8vw, 1.1rem);
     margin: 0;
     white-space: nowrap;
   }
-  
+
   .pillarsSection.stuck .pillar.active {
     background: rgba(232, 192, 122, 0.12);
     border-color: #e8c07a;
     box-shadow: 0 0 12px rgba(232, 192, 122, 0.25);
     transform: none;
   }
-  
-    .contentLayout {
-      display: flex;
-      flex-direction: column;
-    }
 
-    .subMenu {
-      position: sticky;
-      bottom: 16px;
-      z-index: 40;
-    
-      margin: 0 auto;
-      max-width: calc(100% - 10%);
-      padding: 10px 14px;
-    
-      background: rgba(0, 0, 0, 0.82);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-    
-      border-radius: 40px;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow:
-        0 6px 24px rgba(0,0,0,0.55),
-        inset 0 0 0 1px rgba(255,255,255,0.02);
-    
-      overflow: hidden;
-      
-    }
-    .subMenuInner {
-      display: flex;
-      gap: 8px;
-    
-      overflow-x: auto;
-      overflow-y: hidden;
-    
-      padding: 2px;
-    
-      scrollbar-width: none;
-    
-      -webkit-mask-image: linear-gradient(
-        to right,
-        transparent 0%,
-        black 3%,
-        black 92%,
-        transparent 100%
-      );
-    
-      mask-image: linear-gradient(
-        to right,
-        transparent 0%,
-        black 3%,
-        black 92%,
-        transparent 100%
-      );
-    }
-    
-    .subMenuInner::-webkit-scrollbar {
-      display: none;
-    }
-    
+  .contentLayout {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .subMenu::-webkit-scrollbar {
-      display: none;
-    }
+  .subMenu {
+    position: sticky;
+    bottom: 16px;
+    z-index: 40;
 
-    .subMenuItem {
-      flex: 0 0 auto;
-      min-height: 44px;
-      padding: clamp(6px, 1.8vw, 10px) clamp(10px, 3vw, 16px);
-      width: auto;
-      min-width: clamp(80px, 22vw, 120px);
-      text-align: center;
-      white-space: nowrap;
-      font-size: clamp(0.7rem, 4vw, 1.1rem);
-      transition:
-      background 0.2s ease,
-      border-color 0.2s ease;
-      border-radius: 30px; 
-    }
+    margin: 0 auto;
+    max-width: calc(100% - 10%);
+    padding: 10px 14px;
 
-    .subMenuItem:hover {
-      transform: none;
-    }
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 
-    .pillarDetailSection {
-      padding: 40px 12px 80px;
-      background: transparent;
-    }
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.55),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.02);
 
-    .pillarContent {
-      overflow-x: hidden;
-      min-height: auto;
+    overflow: hidden;
+  }
+  .subMenuInner {
+    display: flex;
+    gap: 8px;
 
-      padding: 28px 20px 36px;
-  
-      border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background:rgba(30, 30, 30, 0.4);
-      animation: none;
-      padding-bottom: 80px;
-    }
+    overflow-x: auto;
+    overflow-y: hidden;
 
-    .pillarContent h2 {
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      margin-bottom: 24px;
-      padding-bottom: 12px;
-      animation: none;
-      background-position: 120% center;
-    }
-  
-    .pillarContent h2::after {
-      width: 80px;
-      animation: none;
-      background-position: 120% center;
-    }
+    padding: 2px;
 
-    .pillarContent p {
-      max-width: 100%;
-      font-size: clamp(0.6rem, 4vw, 1rem);
-      line-height: 1.6;
-    }
+    scrollbar-width: none;
 
-    .imageContainer {
-      left: -5%;
-    }
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 3%,
+      black 92%,
+      transparent 100%
+    );
+
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 3%,
+      black 92%,
+      transparent 100%
+    );
+  }
+
+  .subMenuInner::-webkit-scrollbar {
+    display: none;
+  }
+
+  .subMenu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .subMenuItem {
+    flex: 0 0 auto;
+    min-height: 44px;
+    padding: clamp(6px, 1.8vw, 10px) clamp(10px, 3vw, 16px);
+    width: auto;
+    min-width: clamp(80px, 22vw, 120px);
+    text-align: center;
+    white-space: nowrap;
+    font-size: clamp(0.7rem, 4vw, 1.1rem);
+    transition: background 0.2s ease, border-color 0.2s ease;
+    border-radius: 30px;
+  }
+
+  .subMenuItem:hover {
+    transform: none;
+  }
+
+  .pillarDetailSection {
+    padding: 40px 12px 80px;
+    background: transparent;
+  }
+
+  .pillarContent {
+    overflow-x: hidden;
+    min-height: auto;
+
+    padding: 28px 20px 36px;
+
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(30, 30, 30, 0.4);
+    animation: none;
+    padding-bottom: 80px;
+  }
+
+  .pillarContent h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    animation: none;
+    background-position: 120% center;
+  }
+
+  .pillarContent h2::after {
+    width: 80px;
+    animation: none;
+    background-position: 120% center;
+  }
+
+  .pillarContent p {
+    max-width: 100%;
+    font-size: clamp(0.6rem, 4vw, 1rem);
+    line-height: 1.6;
+  }
+
+  .imageContainer {
+    left: -5%;
+  }
 }
 
 @media (max-width: 320px) {
-
   .pillarsSection .pillarsGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     width: 100%;
   }
-
 }
