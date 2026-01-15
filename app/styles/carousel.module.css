@@ -81,7 +81,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Glassmorphism plus propre */
   background: rgba(15, 15, 15, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -153,11 +152,11 @@
 }
 
 .left {
-  left: -4.5%; /* pushes arrow outside */
+  left: -4.5%;
 }
 
 .right {
-  right: -4.5%; /* pushes arrow outside */
+  right: -4.5%;
 }
 
 @media (max-width: 768px) {
@@ -185,7 +184,6 @@
     animation: none;
   }
 
-  /* L'onde de choc circulaire */
   .arrow::before {
     content: "";
     position: absolute;
