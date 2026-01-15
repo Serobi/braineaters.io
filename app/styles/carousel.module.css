@@ -181,6 +181,10 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
+  .arrow:hover {
+    background: none;
+  }
+
   .arrow::after {
     content: "";
     position: absolute;
