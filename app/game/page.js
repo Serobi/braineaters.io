@@ -444,7 +444,6 @@ export default function GamePage() {
                         Because the city is shared, your earned or unlocked assets are visible
                         to other players, making customisation a social and expressive feature.
                       </p>
-                      <ImageCarousel images={buildImages} />
                       <div className={styles.imageContainer}>
                         <img
                           src="/images/game/UI/buildmode.webp"
@@ -463,6 +462,7 @@ export default function GamePage() {
                           className={`${styles.gameImage}`}
                         />
                       </div>
+                      <ImageCarousel images={buildImages} />
                     </>
                   )}
 
