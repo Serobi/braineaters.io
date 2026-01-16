@@ -630,7 +630,7 @@
     margin-bottom: 24px;
     padding-bottom: 12px;
 
-    transform: translateX(-10%);
+    transform: translateX(-20%);
   }
 
   .pillarContent h2::after {

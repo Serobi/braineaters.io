@@ -3,7 +3,7 @@ export const gameImages = {
         overview: [
             "/images/game/city_0.webp",
         ],
-        city: [
+        buildings: [
             "/images/game/buildings/workshopLvl0.webp",
             "/images/game/buildings/workshopLvl1.webp",
             "/images/game/buildings/warehouse_0.webp",

@@ -250,7 +250,7 @@ export default function GamePage() {
 
                 {!isMobile && (
                   <aside className={styles.subMenu}>
-                    {["overview", "city", "resources", "craft", "customisation"].map((tab) => (
+                    {["overview", "buildings", "resources", "craft", "customisation"].map((tab) => (
                       <button
                         key={tab}
                         ref={(el) => (itemRefs.current[tab] = el)}
@@ -267,7 +267,7 @@ export default function GamePage() {
 
                   {activeBuildTab === "overview" && (
                     <>
-                      <h2>Build the City</h2>
+                      <h2>City</h2>
                       <p>
                         In Brain Eaters, the city is your only hope of survival. <br />
                         On game start, it lies in ruins.<br />
@@ -289,9 +289,9 @@ export default function GamePage() {
                       </div>
                     </>
                   )}
-                  {activeBuildTab === "city" && (
+                  {activeBuildTab === "buildings" && (
                     <>
-                      <h2>City Buildings</h2>
+                      <h2>Buildings</h2>
 
                       <p>
                         The city is composed of several essential buildings that support survival,
@@ -317,7 +317,7 @@ export default function GamePage() {
 
                   {activeBuildTab === "resources" && (
                     <>
-                      <h2>Resources & Storage</h2>
+                      <h2>Resources</h2>
 
                       <p>
                         Survival depends on managing a wide variety of resources and items.
@@ -431,7 +431,7 @@ export default function GamePage() {
 
                   {activeBuildTab === "customisation" && (
                     <>
-                      <h2>City Customisation</h2>
+                      <h2>Customisation</h2>
                       <p>
                         Brain Eaters features a deep city customisation system. <br />
                         Every layer can be modified to reflect your choices, progress and achievements.
@@ -786,7 +786,7 @@ export default function GamePage() {
       {isMobile && activePillar === "build" && (
         <aside className={`${styles.subMenu} ${styles.subMenuMobile}`}>
           <div className={styles.subMenuInner}>
-            {["overview", "city", "resources", "craft", "customisation"].map((tab) => (
+            {["overview", "buildings", "resources", "craft", "customisation"].map((tab) => (
               <button
                 key={tab}
                 ref={(el) => (itemRefs.current[tab] = el)}
