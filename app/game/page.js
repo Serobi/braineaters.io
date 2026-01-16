@@ -437,12 +437,13 @@ export default function GamePage() {
                         Every layer can be modified to reflect your choices, progress and achievements.
                       </p>
                       <p>
-                        Ground, textures, decorations, and buildings are all customizable,
-                        allowing each players to shape their environment.
+                        Place and move buildings or decorations freely. <br />
+                        Change ground color and type, regenerate textures whenever you want. <br /> <br />
+                        Customisation is complete and offers players total freedom to shape the city and its environment.
                       </p>
                       <p>
-                        Because the city is shared, your earned or unlocked assets are visible
-                        to other players, making customisation a social and expressive feature.
+                        Because the city is shared, your earned or unlocked assets are visible to other players,
+                        turning customisation into a social and expressive feature.
                       </p>
                       <div className={styles.imageContainer}>
                         <img
@@ -453,6 +454,7 @@ export default function GamePage() {
                           className={`${styles.gameImage}`}
                         />
                       </div>
+
                       <div className={styles.imageContainer}>
                         <img
                           src="/images/game/UI/groundmode.webp"
