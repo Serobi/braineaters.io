@@ -421,8 +421,9 @@
   }
 
   .description {
-    font-size: clamp(10px, 3vw, 16px);
+    font-size: clamp(10px, 3.2vw, 16px);
     margin: clamp(8px, 4vw, 20px) auto clamp(30px, 10vw, 50px);
+    line-height: 1.6;
   }
 
   .pillarsWrapper {
