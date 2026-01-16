@@ -7,7 +7,7 @@ import { gameImages } from "../data/gameImages";
 import ImageCarousel from "../components/ImageCarousel";
 
 export default function GamePage() {
-  const [activePillar, setActivePillar] = useState(null);
+  const [activePillar, setActivePillar] = useState("build");
   const pillarsSectionRef = useRef(null);
   const pillarDetailRef = useRef(null);
   const isMobile = useIsMobile();
