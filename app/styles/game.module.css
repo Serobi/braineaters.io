@@ -2,7 +2,7 @@
 
 .gameIntro {
   max-width: 1200px;
-  margin: 40px auto 0;
+  margin: 60px auto 0;
   padding: 0 24px;
   text-align: center;
 }
@@ -55,7 +55,7 @@
   line-height: 1.6;
   color: #cfcfcf;
   max-width: 780px;
-  margin: 40px auto;
+  margin: 60px auto;
 }
 
 .description strong {
@@ -403,28 +403,26 @@
 
 @media (max-width: 768px) {
   .gameIntro {
-    margin-top: clamp(18px, 5vw, 40px);
+    margin-top: clamp(30px, 4vw, 80px);
   }
 
   .title {
-    font-size: clamp(16px, 5vw, 30px);
+    font-size: clamp(10px, 4vw, 26px);
     line-height: 1.2;
     text-align: center;
 
     letter-spacing: clamp(0.5px, 0.8vw, 2px);
-
-    background-position: 120% center;
   }
 
   .titleBar {
-    width: clamp(100px, 60%, 300px);
-    margin: clamp(12px, 5vw, 20px) auto 0;
-
-    background-position: 120% center;
+    width: 40%;
+    height: 2px;
+    margin: clamp(8px, 4vw, 20px) auto clamp(8px, 4vw, 20px);
   }
+
   .description {
-    font-size: clamp(12px, 3vw, 16px);
-    margin: clamp(20px, 3vw, 40px) auto;
+    font-size: clamp(10px, 3vw, 16px);
+    margin: clamp(8px, 4vw, 20px) auto clamp(30px, 10vw, 50px);
   }
 
   .pillarsWrapper {
