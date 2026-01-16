@@ -227,18 +227,6 @@
   animation: shineLeftToRight 6s ease-in-out infinite;
 }
 
-.pillarContent h2::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #e8c07a, transparent);
-  border-radius: 2px;
-}
-
 .pillarContent {
   max-width: 900px;
   width: 100%;
@@ -631,10 +619,6 @@
     padding-bottom: 12px;
 
     transform: none;
-  }
-
-  .pillarContent h2::after {
-    display: none;
   }
 
   .pillarContent p {
