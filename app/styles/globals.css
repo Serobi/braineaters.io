@@ -89,16 +89,24 @@ body {
   transition: opacity 0.2s ease, filter 0.2s ease, transform 0.2s ease;
 }
 
-.socialLink:hover .discordIcon {
-  opacity: 1;
-  transform: translateY(-3%) scale(1.05);
-  filter: drop-shadow(0 0 8px rgba(88, 101, 242, 0.8));
-}
+@media (hover: hover) {
+  .socialLink .xIcon:hover {
+    opacity: 1;
+    transform: translateY(-3%) scale(1.05);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+  }
 
-.socialLink:hover .xIcon {
-  opacity: 1;
-  transform: translateY(-3%) scale(1.05);
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+  .socialLink .discordIcon:hover {
+    opacity: 1;
+    transform: translateY(-3%) scale(1.05);
+    filter: drop-shadow(0 0 8px rgba(88, 101, 242, 0.8));
+  }
+
+  .socialLink .instaIcon:hover {
+    opacity: 1;
+    transform: translateY(-3%) scale(1.05);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+  }
 }
 
 @media (max-width: 768px) {
