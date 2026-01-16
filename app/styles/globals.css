@@ -130,11 +130,12 @@ body {
   .footerLeft {
     align-items: flex-start;
     flex: 1;
+    margin-left: -2%;
   }
 
   .footerLeft p {
-    font-size: 10px; /* Taille réduite pour éviter le retour à la ligne */
-    white-space: nowrap; /* Empêche le copyright de passer sur 2 lignes */
+    font-size: 10px;
+    white-space: nowrap;
   }
 
   .footerRight {
