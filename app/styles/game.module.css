@@ -407,7 +407,7 @@
   }
 
   .title {
-    font-size: clamp(10px, 4vw, 26px);
+    font-size: clamp(14px, 4.3vw, 30px);
     line-height: 1.2;
     text-align: center;
 
