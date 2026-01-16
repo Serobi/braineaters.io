@@ -546,7 +546,7 @@ export default function GamePage() {
                 <div className={styles.buildContent}>
                   {activeExploreTab === "overview" && (
                     <>
-                      <h2>Map and exploration</h2>
+                      <h2>Exploration</h2>
                       <p>
                         The map is the second core area of Brain Eaters. <br />
                         A procedural world you must explore to develop the city.
@@ -654,7 +654,7 @@ export default function GamePage() {
 
                   {activeExploreTab === "combat" && (
                     <>
-                      <h2>Zombies and Combat</h2>
+                      <h2>Combat</h2>
                       <p>
                         Think surviving and exploring is easy? Think again ! <br />
                         Zombies are out there to remind you who's really in charge !
@@ -740,7 +740,7 @@ export default function GamePage() {
 
             {activePillar === "cooperate" && (
               <div className={styles.centeredPillar}>
-                <h2>Cooperation & Multiplayer</h2>
+                <h2>Cooperation</h2>
                 <img
                   src="/images/banner_cooperate.webp"
                   loading="lazy"
