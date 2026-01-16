@@ -38,7 +38,7 @@ export default function GamePage() {
         setTimeout(() => {
           if (!pillarDetailRef.current) return;
 
-          const navbarOffset = 90;
+          const navbarOffset = 25;
           const extraPadding = 52;
 
           const offset = isPillarsSticky()
@@ -89,7 +89,7 @@ export default function GamePage() {
         setTimeout(() => {
           if (!pillarDetailRef.current) return;
 
-          const navbarOffset = 90;
+          const navbarOffset = 25;
           const extraPadding = 52;
 
           const offset = isPillarsSticky()

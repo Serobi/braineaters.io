@@ -16,7 +16,8 @@
   }
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -84,14 +85,22 @@ html, body {
   border: 1px solid #ff9f1c;
   padding: 10px 18px;
   border-radius: 6px;
-  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .navLeft .navLink::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, transparent 35%, rgba(255, 255, 255, 0.25) 45%, rgba(255, 120, 120, 0.35) 50%, rgba(255, 255, 255, 0.25) 55%, transparent 65%);
+  background: linear-gradient(
+    120deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.25) 45%,
+    rgba(255, 120, 120, 0.35) 50%,
+    rgba(255, 255, 255, 0.25) 55%,
+    transparent 65%
+  );
   transform: translateX(-120%);
   pointer-events: none;
 }
@@ -108,13 +117,21 @@ html, body {
 }
 
 @keyframes navSweep {
-  from { transform: translateX(-120%); }
-  to { transform: translateX(120%); }
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(120%);
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .footer {
@@ -150,7 +167,8 @@ html, body {
   transition: transform 0.2s ease;
 }
 
-.discordIcon, .xIcon {
+.discordIcon,
+.xIcon {
   width: 40px;
   height: auto;
   opacity: 0.85;
@@ -170,7 +188,8 @@ html, body {
 }
 
 @media (max-width: 768px) {
-  html, body {
+  html,
+  body {
     height: auto;
     overflow-y: auto;
   }
@@ -182,14 +201,13 @@ html, body {
 
   .page {
     flex: 1;
+    padding-top: 0;
     min-height: auto;
     overflow: visible;
   }
 
   .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     height: auto;
     min-height: 70px;
@@ -225,37 +243,36 @@ html, body {
   }
 
   .footer {
-    flex-direction: row;         /* On force l'alignement horizontal */
-    justify-content: space-between; 
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    padding: 15px 15px;          /* Réduction des marges pour gagner de la place */
+    padding: 15px 15px;
     gap: 10px;
   }
 
   .footerLeft {
-    align-items: flex-start;     /* Texte calé à gauche */
-    flex: 1;                     /* Prend l'espace disponible */
+    align-items: flex-start; /* Texte calé à gauche */
+    flex: 1; /* Prend l'espace disponible */
   }
 
   .footerLeft p {
-    font-size: 11px;             /* Taille réduite pour éviter le retour à la ligne */
-    white-space: nowrap;         /* Empêche le copyright de passer sur 2 lignes */
+    font-size: 11px; /* Taille réduite pour éviter le retour à la ligne */
+    white-space: nowrap; /* Empêche le copyright de passer sur 2 lignes */
   }
 
   .footerRight {
     justify-content: flex-end;
-    flex-shrink: 0;              /* Empêche les icônes de s'écraser */
-    gap: 10px;                   /* Espace réduit entre les icônes */
+    flex-shrink: 0; /* Empêche les icônes de s'écraser */
+    gap: 10px; /* Espace réduit entre les icônes */
   }
 
-  .discordIcon, .xIcon {
+  .discordIcon,
+  .xIcon {
     width: clamp(24px, 8vw, 32px);
   }
-  
 }
 
 @media (max-width: 300px) {
-
   .footer {
     padding: 20px 15px;
     flex-direction: column;
@@ -267,5 +284,4 @@ html, body {
     font-size: 12px;
     white-space: normal;
   }
-
 }
