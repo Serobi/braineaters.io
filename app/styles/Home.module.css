@@ -1,5 +1,3 @@
-/* ----------- GLOBAL PAGE LAYOUT ----------- */
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -342,12 +340,11 @@
 
 @media (max-width: 768px) {
   .homePage {
-    min-height: calc(100vh - 70px); /* navbar height */
-    overflow-x: hidden; /* kill fog overflow */
+    overflow-x: hidden;
   }
 
   .bannerSection {
-    overflow: hidden; /* fog can exceed internally */
+    overflow: hidden;
   }
   .hunterEyes {
     left: 50%;
