@@ -130,6 +130,15 @@ export default function RootLayout({
             >
               <img src="/images/discord.png" alt="" className="discordIcon" />
             </a>
+            <a
+              href="https://www.instagram.com/braineaters.game/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="socialLink"
+              aria-label="Join Brain Eaters on Instagram"
+            >
+              <img src="/images/logo_insta.png" alt="" className="instaIcon" />
+            </a>
           </div>
         </footer>
       </body>

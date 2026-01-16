@@ -128,8 +128,8 @@ body {
   }
 
   .footerLeft {
-    align-items: flex-start; /* Texte calé à gauche */
-    flex: 1; /* Prend l'espace disponible */
+    align-items: flex-start;
+    flex: 1;
   }
 
   .footerLeft p {
@@ -144,8 +144,9 @@ body {
   }
 
   .discordIcon,
-  .xIcon {
-    width: clamp(24px, 8vw, 32px);
+  .xIcon,
+  .instaIcon {
+    width: clamp(18px, 6vw, 32px);
   }
 }
 
@@ -160,5 +161,10 @@ body {
   .footerLeft p {
     font-size: 12px;
     white-space: normal;
+  }
+  .discordIcon,
+  .xIcon,
+  .instaIcon {
+    width: 25px;
   }
 }
