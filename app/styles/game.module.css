@@ -210,6 +210,7 @@
 
 .pillarContent h2 {
   position: relative;
+  text-align: left;
   margin: 0 0 36px 0;
   padding-bottom: 16px;
   font-size: 2.4rem;
@@ -620,26 +621,38 @@
     padding-bottom: 80px;
   }
 
-  .pillarContent h2 {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-
-    font-size: clamp(1.5rem, 4vw, 2rem);
+  .buildContent h2 {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10%;
+    font-size: clamp(14px, 6vw, 34px);
     margin-bottom: 24px;
     padding-bottom: 12px;
 
-    transform: translateX(-20%);
+    transform: none;
   }
 
   .pillarContent h2::after {
-    width: 80px;
+    display: none;
   }
 
   .pillarContent p {
     max-width: 100%;
-    font-size: clamp(0.6rem, 4vw, 1rem);
+    font-size: clamp(10px, 3.5vw, 16px);
     line-height: 1.6;
+  }
+
+  .centeredPillar h2 {
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0%;
+    font-size: clamp(14px, 6vw, 34px);
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+
+    transform: none;
   }
 
   .imageContainer {
