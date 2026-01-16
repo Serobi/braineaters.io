@@ -48,12 +48,14 @@ export default function Navbar() {
       </nav>
 
       <nav className={styles.navRight}>
+        {/*
         <a href="#login" className={styles.navLink}>
           Login
         </a>
         <a href="#signup" className={styles.navLink}>
           Create Account
         </a>
+        */}
       </nav>
     </header>
   );
