@@ -28,9 +28,12 @@ export const gameImages = {
             "/images/game/explore/map_0.webp",
             "/images/game/explore/map_1.webp",
         ],
-        loot: [
-            "/images/game/explore/loot_0.webp",
-            "/images/game/explore/loot_1.webp",
+        world: [
+            "/images/game/map/wasteland_car.webp",
+            "/images/game/map/wasteland_ruin.webp",
+            "/images/game/map/wasteland_nature.webp",
+            "/images/game/map/forest_nature.webp",
+            "/images/game/map/forest_camp.webp",
         ],
     },
 };

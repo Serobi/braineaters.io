@@ -74,7 +74,10 @@
   justify-content: center;
   align-items: center;
   background: transparent;
-  transition: padding 0.2s ease, background 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    padding 0.2s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 .pillarsSection.stuck {
@@ -100,14 +103,19 @@
   height: 0;
   margin: 0;
   overflow: hidden;
-  transition: opacity 0.3s ease, height 0.3s ease, margin 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    height 0.3s ease,
+    margin 0.3s ease;
 }
 
 /* Reduce pillar height */
 .pillarsSection.stuck .pillar {
   padding: 20px 24px;
   min-height: 90px;
-  transition: padding 0.4s ease, min-height 0.4s ease;
+  transition:
+    padding 0.4s ease,
+    min-height 0.4s ease;
 }
 
 .pillarsSection.stuck .pillar:hover {
@@ -125,7 +133,10 @@
 
 /* Base transition for p */
 .pillar p {
-  transition: opacity 0.3s ease, height 0.3s ease, margin 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    height 0.3s ease,
+    margin 0.3s ease;
 }
 
 .pillarsGrid {
@@ -144,7 +155,9 @@
   border: 3px solid rgba(255, 255, 255, 0.06);
   border-radius: 16px;
 
-  transition: transform 0.25s ease, border-color 0.25s ease,
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
     background 0.25s ease;
 }
 
@@ -313,7 +326,10 @@
   font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
 
-  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease,
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
     transform 0.2s ease;
 }
 
@@ -365,15 +381,20 @@
   align-items: center;
   justify-content: center;
   border-radius: 30px;
-  left: -5%;
+  left: -2%;
 
   background: transparent;
-  background: linear-gradient(to right, #e8c07aa6 1px, transparent 1px) left,
+  background:
+    linear-gradient(to right, #e8c07aa6 1px, transparent 1px) left,
     linear-gradient(to left, #e8c07aa6 1px, transparent 1px) right,
     linear-gradient(to bottom, #e8c07aa6 1px, transparent 1px) top,
     linear-gradient(to top, #e8c07aa6 1px, transparent 1px) bottom;
 
-  background-size: 1px 100%, 1px 100%, 100% 1px, 100% 1px;
+  background-size:
+    1px 100%,
+    1px 100%,
+    100% 1px,
+    100% 1px;
   background-repeat: no-repeat;
   background-clip: padding-box;
 
@@ -389,7 +410,7 @@
   object-position: left center;
 
   display: block;
-  border-radius: 14px;
+  border-radius: 20px;
 }
 .squared {
   border-radius: 0 !important;
@@ -451,8 +472,12 @@
     border: 2px solid rgba(219, 212, 200, 0.3);
     border-radius: 14px;
     will-change: padding, min-height, background, border-radius;
-    transition: padding 0.25s ease, min-height 0.25s ease, background 0.15s ease,
-      border-color 0.15s ease, border-radius 0.25s ease;
+    transition:
+      padding 0.25s ease,
+      min-height 0.25s ease,
+      background 0.15s ease,
+      border-color 0.15s ease,
+      border-radius 0.25s ease;
   }
 
   .pillar:hover {
@@ -538,7 +563,8 @@
 
     border-radius: 40px;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.55),
+    box-shadow:
+      0 6px 24px rgba(0, 0, 0, 0.55),
       inset 0 0 0 1px rgba(255, 255, 255, 0.02);
 
     overflow: hidden;
@@ -588,7 +614,9 @@
     text-align: center;
     white-space: nowrap;
     font-size: clamp(0.7rem, 4vw, 1.1rem);
-    transition: background 0.2s ease, border-color 0.2s ease;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease;
     border-radius: 30px;
   }
 

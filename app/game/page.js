@@ -17,6 +17,7 @@ export default function GamePage() {
   const menuRef = useRef(null);
   const itemRefs = useRef({});
   const buildImages = gameImages.build[activeBuildTab] || [];
+  const exploreImages = gameImages.explore[activeExploreTab] || [];
 
 
   const isPillarsSticky = () => {
@@ -529,7 +530,7 @@ export default function GamePage() {
               <div className={styles.contentLayout}>
                 {!isMobile && (
                   <aside className={styles.subMenu}>
-                    {["overview", "world", "loot", "exploration", "combat", "Procedural World"].map((tab) => (
+                    {["overview", "world", "exploration", "loot", "combat", "Procedural World"].map((tab) => (
                       <button
                         key={tab}
                         ref={(el) => (itemRefs.current[tab] = el)}
@@ -565,6 +566,15 @@ export default function GamePage() {
                       <p>
                         Out there, one mistake or one unlucky move can cost everything.
                       </p>
+                      <div className={styles.imageContainer}>
+                        <img
+                          src="/images/game/map/overview.webp"
+                          alt="ground mode"
+                          loading="lazy"
+                          decoding="async"
+                          className={`${styles.gameImage}`}
+                        />
+                      </div>
                     </>
                   )}
 
@@ -589,10 +599,36 @@ export default function GamePage() {
                         or natural obstacles.<br />
                         These elements define what can be looted and the quantity available.
                       </p>
-
+                      <ImageCarousel images={exploreImages} />
                     </>
                   )}
 
+                  {activeExploreTab === "exploration" && (
+                    <>
+                      <h2>Exploration</h2>
+
+                      <p>
+                        The world of Brain Eaters isn't just about moving from tile to tile and loot resources.<br />
+                        It's also about exploration, map control and vision.
+                      </p>
+                      <p>
+                        Exploration relies on two main mechanics : <br /><br />
+                        <strong>Unexplored tiles</strong><br />
+                        These tiles have never been explored.<br />
+                        A dense fog hides them completely, the tile type and its details are unknown.<br />
+                      </p>
+                      <p>
+                        <strong>Out-of-vision tiles</strong><br />
+                        These tiles have already been explored but are no longer within your vision range.<br />
+                        A light fog covers them: the environment is visible, but the number of zombies is unknown.<br />
+                      </p>
+
+                      <p>
+                        To explore a tile, a survivor must have it within its vision range.<br />
+                        Once close enough, the fog disappears and the tile's details are revealed.
+                      </p>
+                    </>
+                  )}
                   {activeExploreTab === "loot" && (
                     <>
                       <h2>Loot</h2>
@@ -624,34 +660,6 @@ export default function GamePage() {
                       </p>
                     </>
                   )}
-
-                  {activeExploreTab === "exploration" && (
-                    <>
-                      <h2>Exploration</h2>
-
-                      <p>
-                        The world of Brain Eaters isn't just about moving from tile to tile and loot resources.<br />
-                        It's also about exploration, map control and vision.
-                      </p>
-                      <p>
-                        Exploration relies on two main mechanics : <br /><br />
-                        <strong>Unexplored tiles</strong><br />
-                        These tiles have never been explored.<br />
-                        A dense fog hides them completely, the tile type and its details are unknown.<br />
-                      </p>
-                      <p>
-                        <strong>Out-of-vision tiles</strong><br />
-                        These tiles have already been explored but are no longer within your vision range.<br />
-                        A light fog covers them: the environment is visible, but the number of zombies is unknown.<br />
-                      </p>
-
-                      <p>
-                        To explore a tile, a survivor must have it within its vision range.<br />
-                        Once close enough, the fog disappears and the tile's details are revealed.
-                      </p>
-                    </>
-                  )}
-
                   {activeExploreTab === "combat" && (
                     <>
                       <h2>Combat</h2>
@@ -802,7 +810,7 @@ export default function GamePage() {
       {isMobile && activePillar === "explore" && (
         <aside className={`${styles.subMenu} ${styles.subMenuMobile}`}>
           <div className={styles.subMenuInner}>
-            {["overview", "world", "loot", "exploration", "combat", "Procedural World"].map((tab) => (
+            {["overview", "world", "exploration", "loot", "combat", "Procedural World"].map((tab) => (
               <button
                 key={tab}
                 ref={(el) => (itemRefs.current[tab] = el)}
