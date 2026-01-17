@@ -569,7 +569,7 @@ export default function GamePage() {
                       <div className={styles.imageContainer}>
                         <img
                           src="/images/game/map/overview.webp"
-                          alt="ground mode"
+                          alt="explore overview"
                           loading="lazy"
                           decoding="async"
                           className={`${styles.gameImage}`}
@@ -627,6 +627,16 @@ export default function GamePage() {
                         To explore a tile, a survivor must have it within its vision range.<br />
                         Once close enough, the fog disappears and the tile's details are revealed.
                       </p>
+                      <div className={styles.imageContainer}>
+                        <video
+                          src="/images/game/map/fog.mp4"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className={styles.gameImage} // reuse the same CSS as your img
+                        />
+                      </div>
                     </>
                   )}
                   {activeExploreTab === "loot" && (
@@ -682,8 +692,27 @@ export default function GamePage() {
                         <strong>Fail</strong> Lose the fight and take damage<br />
                         <strong>Critical fail</strong> Lose and take 30% extra damage, ouch!<br /><br />
 
-                        Check the game guide for a deeper dive into combat mechanics and how outcomes are calculated.
+                        Check the game guide for a deeper dive into combat mechanics and how outcomes are calculated.<br /><br />
+                        *The combat system will evolve in the future.
                       </p>
+                      <div className={styles.imageContainer}>
+                        <img
+                          src="/images/game/map/fightsystem.webp"
+                          alt="explore overview"
+                          loading="lazy"
+                          decoding="async"
+                          className={`${styles.gameImage}`}
+                        />
+                      </div>
+                      <div className={styles.imageContainer}>
+                        <img
+                          src="/images/game/map/fightresult.webp"
+                          alt="explore overview"
+                          loading="lazy"
+                          decoding="async"
+                          className={`${styles.gameImage}`}
+                        />
+                      </div>
                     </>
                   )}
 

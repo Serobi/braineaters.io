@@ -11,9 +11,6 @@ export const gameImages = {
             "/images/game/buildings/shelter.webp",
             "/images/game/buildings/well.webp",
         ],
-        craft: [
-
-        ],
         customisation: [
             "/images/game/decorations/ruins.webp",
             "/images/game/decorations/trees.webp",
@@ -24,10 +21,6 @@ export const gameImages = {
     },
 
     explore: {
-        overview: [
-            "/images/game/explore/map_0.webp",
-            "/images/game/explore/map_1.webp",
-        ],
         world: [
             "/images/game/map/wasteland_car.webp",
             "/images/game/map/wasteland_ruin.webp",
