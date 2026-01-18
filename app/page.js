@@ -40,12 +40,12 @@ export default function Home() {
           minHeight: 200,
           minWidth: 200,
 
-          highlightColor: isMobile ? 0x666666 : 0x777777,
-          midtoneColor: isMobile ? 0x080808 : 0x050505,
+          highlightColor: isMobile ? 0xa7a7a7 : 0xa7a7a7,
+          midtoneColor: isMobile ? 0x282828 : 0x282828,
           lowlightColor: 0x000000,
           baseColor: 0x000000,
           zoom: isMobile ? 0.2 : 0.8,
-          speed: isMobile ? 1.2 : 0.4
+          speed: isMobile ? 1.2 : 0.6
         });
       });
     }
