@@ -24,39 +24,76 @@ export default function Home() {
   const vantaRef = useRef(null);
   const vantaEffect = useRef(null);
 
-  useEffect(() => {
-    if (!vantaEffect.current && vantaRef.current) {
-      Promise.all([
-        import("three"),
-        import("vanta/dist/vanta.fog.min"),
-      ]).then(([THREE, VANTA]) => {
+  if (!isMobile) {
+    useEffect(() => {
+      if (!vantaEffect.current && vantaRef.current) {
+        Promise.all([
+          import("three"),
+          import("vanta/dist/vanta.fog.min"),
+        ]).then(([THREE, VANTA]) => {
 
-        vantaEffect.current = VANTA.default({
-          el: vantaRef.current,
-          THREE,
-          mouseControls: !isMobile,
-          touchControls: false,
-          gyroControls: false,
-          minHeight: 200,
-          minWidth: 200,
+          vantaEffect.current = VANTA.default({
+            el: vantaRef.current,
+            THREE,
+            mouseControls: false,
+            touchControls: false,
+            gyroControls: false,
+            minHeight: 200,
+            minWidth: 200,
 
-          highlightColor: isMobile ? 0xa7a7a7 : 0xa7a7a7,
-          midtoneColor: isMobile ? 0x282828 : 0x282828,
-          lowlightColor: 0x000000,
-          baseColor: 0x000000,
-          zoom: isMobile ? 0.2 : 0.8,
-          speed: isMobile ? 1.2 : 0.6
+            highlightColor: 0x7f7f7f,
+            midtoneColor: 0x484848,
+            lowlightColor: 0x1e1e1e,
+            baseColor: 0xf0f0f,
+            zoom: 0.8,
+            speed: 0.6
+          });
         });
-      });
-    }
-
-    return () => {
-      if (vantaEffect.current) {
-        vantaEffect.current.destroy();
-        vantaEffect.current = null;
       }
-    };
-  }, []);
+
+      return () => {
+        if (vantaEffect.current) {
+          vantaEffect.current.destroy();
+          vantaEffect.current = null;
+        }
+      };
+    }, []);
+  }
+  if (isMobile) {
+    useEffect(() => {
+      if (!vantaEffect.current && vantaRef.current) {
+        Promise.all([
+          import("three"),
+          import("vanta/dist/vanta.fog.min"),
+        ]).then(([THREE, VANTA]) => {
+
+          vantaEffect.current = VANTA.default({
+            el: vantaRef.current,
+            THREE,
+            mouseControls: false,
+            touchControls: false,
+            gyroControls: false,
+            minHeight: 200,
+            minWidth: 200,
+
+            highlightColor: 0x7a7a7a,
+            midtoneColor: 0xf0f0f,
+            lowlightColor: 0x252525,
+            baseColor: 0x1b1b1b,
+            zoom: 0.3,
+            speed: 0.6
+          });
+        });
+      }
+
+      return () => {
+        if (vantaEffect.current) {
+          vantaEffect.current.destroy();
+          vantaEffect.current = null;
+        }
+      };
+    }, []);
+  }
 
   return (
     <div className={styles.homePage}>
