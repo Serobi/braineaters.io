@@ -86,7 +86,10 @@ body {
   width: 40px;
   height: auto;
   opacity: 0.85;
-  transition: opacity 0.2s ease, filter 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    filter 0.2s ease,
+    transform 0.2s ease;
 }
 
 @media (hover: hover) {

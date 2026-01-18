@@ -157,8 +157,7 @@
 
   .hunterEyes {
     position: relative;
-    /* This says: be 50% of the screen width, but don't go below 150px or above 300px */
-    width: clamp(180px, 30vw, 300px);
+    width: clamp(180px, 26vw, 360px);
 
     margin-top: 0;
     margin-bottom: 20px;
