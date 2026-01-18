@@ -44,8 +44,8 @@ export default function Home() {
           midtoneColor: isMobile ? 0x080808 : 0x050505,
           lowlightColor: 0x000000,
           baseColor: 0x000000,
-          zoom: isMobile ? 0.5 : 0.8,
-          speed: isMobile ? 0.6 : 0.4
+          zoom: isMobile ? 0.2 : 0.8,
+          speed: isMobile ? 1.2 : 0.4
         });
       });
     }
