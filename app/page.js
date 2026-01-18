@@ -1,11 +1,10 @@
 "use client";
 
-import Head from 'next/head';
-import styles from './styles/Home.module.css';
-import { useState } from "react";
+import Head from "next/head";
+import styles from "./styles/Home.module.css";
+import { useState, useEffect, useRef } from "react";
 import { useIsMobile } from "@/app/hooks/useIsMobile";
-import { useEffect } from "react";
-
+import("vanta/dist/vanta.fog.min");
 
 export default function Home() {
   const [hovering, setHovering] = useState(false);
@@ -22,6 +21,40 @@ export default function Home() {
     }
   }, [isMobile]);
 
+  const vantaRef = useRef(null);
+  const vantaEffect = useRef(null);
+
+  useEffect(() => {
+    if (!vantaEffect.current && vantaRef.current) {
+      Promise.all([
+        import("three"),
+        import("vanta/dist/vanta.fog.min"),
+      ]).then(([THREE, VANTA]) => {
+        vantaEffect.current = VANTA.default({
+          el: vantaRef.current,
+          THREE,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          highlightColor: 0x777777,
+          midtoneColor: 0x050505,
+          lowlightColor: 0x000000,
+          baseColor: 0x000000,
+          speed: 0.6,
+        });
+      });
+    }
+
+    return () => {
+      if (vantaEffect.current) {
+        vantaEffect.current.destroy();
+        vantaEffect.current = null;
+      }
+    };
+  }, []);
+
   return (
     <div className={styles.homePage}>
       <Head>
@@ -32,35 +65,21 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <section className={styles.bannerSection}>
-        <div className={`${styles.fogContainer} ${showEyes ? styles.fogReveal : ""}`}>
-          <div className={`${styles.fogLayer} ${styles.fog}`}></div>
-          <div className={`${styles.fogLayer} ${styles.fog1}`}></div>
-          <div className={`${styles.fogLayer} ${styles.fog2}`}></div>
-
-          <img
-            src="/images/hunter_eyes.png"
-            loading="lazy"
-            decoding="async"
-            alt="Glowing hunter eyes emerging from the fog"
-            className={`${styles.hunterEyes} ${showEyes ? styles.fadeIn : ""}`}
-          />
-
-        </div>
-
-      </section>
-
+      <div ref={vantaRef} className={styles.fogBackground} />
 
       <main className={styles.main}>
-
+        <img
+          src="/images/hunter_eyes.png"
+          loading="lazy"
+          decoding="async"
+          alt="Glowing hunter eyes emerging from the fog"
+          className={`${styles.hunterEyes} ${showEyes ? styles.fadeIn : ""}`}
+        />
         <p className={styles.introText}>
           <span>Many have entered the Wastelands</span>
           <span>None survived</span>
           <span>Now it is your turn</span>
         </p>
-
-
         <a
           href="/game"
           className={styles.discoverButton}
@@ -81,8 +100,6 @@ export default function Home() {
         </a>
 
       </main>
-
-
     </div>
   );
 }

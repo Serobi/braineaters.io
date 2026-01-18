@@ -1,49 +1,34 @@
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ----------- BANNER ----------- */
-
-.bannerSection {
+.homePage {
   position: relative;
   width: 100%;
-  height: 350px;
-  margin-top: 20px;
+  overflow-x: hidden;
+}
+
+.fogBackground {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+
   pointer-events: none;
 }
 
 .hunterEyes {
   position: relative;
-  left: 50%;
-  transform: translateX(-50%) scale(0.9);
-  width: 400px;
-
+  top: 0;
+  transform: scale(0.9);
+  width: 200px;
   opacity: 0;
-  transition: opacity 1s ease, transform 1s ease;
+  margin-bottom: 30px;
+  margin-top: 180px;
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
 
-  filter: drop-shadow(0 0 15px rgba(150, 0, 255, 0.4)) brightness(1.05)
+  filter: drop-shadow(0 0 15px rgba(150, 0, 255, 0.4)) brightness(0.9)
     contrast(1.1);
 
   mix-blend-mode: screen;
   z-index: 3;
-}
-
-.hunterEyes::after {
-  content: "";
-  position: relative;
-  top: -100px;
-  left: 0px;
-  width: 100%;
-  height: 120px;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
-  filter: blur(20px);
 }
 
 .fadeIn {
@@ -56,50 +41,45 @@
 }
 
 .hunterEyes.fadeIn {
-  animation: subtlePulse 4s ease-in-out infinite;
-  transform: translateX(-50%) scale(1);
-}
-@keyframes subtlePulse {
-  0%,
-  100% {
-    filter: drop-shadow(0 0 15px rgba(150, 0, 255, 0.4)) brightness(0.6);
-  }
-  50% {
-    filter: drop-shadow(0 0 25px rgba(150, 0, 255, 0.7)) brightness(1.2);
-  }
+  animation: subtlePulse 6s ease-in-out infinite;
+  transform: scale(1);
 }
 
 .main {
-  margin-top: 40px;
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  padding: 0 20px;
 }
 
 .introText {
   max-width: 750px;
   margin: 0 auto;
   text-align: center;
+  pointer-events: none;
+  margin-bottom: 50px;
 }
 
 .introText span {
-  display: block;
+  display: inline-block;
+  width: 100%;
   font-size: 18px;
   line-height: 1.55;
   font-family: fantasy, "Arial Black", sans-serif;
   margin-bottom: 6px;
 
-  background: linear-gradient(90deg, #0b0b0b 30%, #fff3b0 50%, #0b0b0b 70%);
-  background-size: 200% 100%;
-  background-position: 100% center;
-
-  background-clip: text;
-  -webkit-background-clip: text;
-
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-
+  color: #fff3b0d2;
   opacity: 0;
-  animation: lineShine 15s ease-in-out infinite;
+  filter: blur(8px);
+  text-shadow: 0 0 0px rgba(255, 243, 176, 0.4);
+
+  transform: translateY(-4px) translateZ(0);
+  will-change: opacity, filter, transform;
+
+  animation: cleanReveal 16s ease-in-out infinite;
 }
 
 .introText span:nth-child(1) {
@@ -111,39 +91,6 @@
 .introText span:nth-child(3) {
   animation-delay: 11s;
 }
-
-@keyframes lineShine {
-  0% {
-    opacity: 0;
-    background-position: 100% center;
-  }
-  10% {
-    opacity: 0;
-  }
-
-  20% {
-    opacity: 1;
-  }
-  50% {
-    background-position: -80% center;
-    opacity: 1;
-  }
-
-  60% {
-    opacity: 1;
-  }
-
-  70% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-    background-position: 110% center;
-  }
-}
-
-/* ----------- DISCOVER BUTTON ----------- */
 
 .discoverButton {
   display: inline-block;
@@ -197,36 +144,10 @@
   pointer-events: none;
 }
 
-@keyframes autoShine {
-  0% {
-    left: -150%;
-  }
-  25% {
-    left: 150%;
-  }
-  26%,
-  100% {
-    left: 150%;
-  }
-}
-@keyframes CenterBurst {
-  0% {
-    inset: 50% 50%;
-    opacity: 0.8;
-  }
-  60% {
-    inset: -30% -30%;
-    opacity: 0.15;
-  }
-  100% {
-    inset: 0 0;
-    opacity: 0;
-  }
-}
-
 .discoverButton:hover {
   background: #1a0033;
-  box-shadow: 0 0 14px rgba(168, 85, 247, 0.35),
+  box-shadow:
+    0 0 14px rgba(168, 85, 247, 0.35),
     inset 0 0 8px rgba(168, 85, 247, 0.12);
   transform: scale(1.02);
   border-color: #e9d5ff;
@@ -239,224 +160,27 @@
   animation: CenterBurst 0.6s ease-out forwards;
 }
 
-/* components/FogOverlay.module.css */
-.fogContainer {
-  position: relative;
-  width: 60%;
-  height: 100%;
-  left: 20%;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.fogLayer {
-  position: absolute;
-  width: 140%;
-  height: 140%;
-  top: -20%;
-  left: -20%;
-  z-index: 3;
-
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  will-change: transform;
-  opacity: 0.5;
-  transition: transform 1.4s ease, opacity 1.4s ease;
-}
-
-.fog {
-  background-image: url("/images/Fog/fog_cloud_1.png");
-  animation: fogDriftRight 60s ease-in-out infinite;
-  opacity: 0.6;
-  top: 0px;
-}
-
-.fog1 {
-  background-image: url("/images/Fog/fog_cloud_2.png");
-  animation: fogDriftLeft 80s ease-in-out infinite;
-  opacity: 0.6;
-  top: -20px;
-}
-
-.fog2 {
-  background-image: url("/images/Fog/fog_cloud_3.png");
-  animation: fogDriftDiagonal 60s ease-in-out infinite;
-  opacity: 0.6;
-  top: -30px;
-}
-
-@keyframes fogDriftRight {
-  0% {
-    transform: translate(0%, 0%);
-  }
-  50% {
-    transform: translate(6%, -2%);
-  }
-  100% {
-    transform: translate(0%, 0%);
-  }
-}
-
-@keyframes fogDriftLeft {
-  0% {
-    transform: translate(0%, 0%);
-  }
-  50% {
-    transform: translate(-6%, -2%);
-  }
-  100% {
-    transform: translate(0%, 0%);
-  }
-}
-
-@keyframes fogDriftDiagonal {
-  0% {
-    transform: translate(0%, 0%);
-  }
-  50% {
-    transform: translate(3%, -4%);
-  }
-  100% {
-    transform: translate(0%, 0%);
-  }
-}
-
-.fogReveal .fog {
-  transform: translateX(-30%);
-  opacity: 0.2;
-}
-
-.fogReveal .fog1 {
-  transform: translateX(30%);
-  opacity: 0.2;
-}
-
-.fogReveal .fog2 {
-  transform: translateY(-20%);
-  opacity: 0.2;
-}
-
 @media (max-width: 768px) {
-  .homePage {
-    overflow-x: hidden;
-  }
-
-  .bannerSection {
-    overflow: hidden;
-  }
   .hunterEyes {
-    left: 50%;
-    transform: translateX(-50%) scale(0.9);
-    width: 300px;
-    filter: drop-shadow(0 0 10px rgba(150, 0, 255, 0.3)) brightness(0.9);
+    position: relative;
+    top: 0;
+    transform: scale(0.9);
+    width: 200px;
+    margin-bottom: 30px;
+    margin-top: 100px;
   }
 
   .hunterEyes.fadeIn {
-    transform: translateX(-50%) scale(1);
-    animation: subtlePulse 8s ease-in-out infinite;
-  }
-
-  .fogContainer {
-    width: 100%;
-    left: 0;
-    overflow: hidden;
-  }
-
-  .fogLayer {
-    width: 140%;
-    height: 120%;
-    top: -10%;
-    left: -18%;
-  }
-
-  .fog {
-    animation: fogDriftRight 30s ease-in-out infinite;
-    opacity: 0.6;
-  }
-
-  .fog1 {
-    animation: fogDriftLeft 40s ease-in-out infinite;
-    opacity: 0.6;
-    top: -3%;
-  }
-
-  .fog2 {
-    animation: fogDriftDiagonal 30s ease-in-out infinite;
-    opacity: 0.6;
-    top: -2%;
-  }
-
-  .fogReveal .fog {
-    transform: translateX(-10%);
-    opacity: 0.4;
-  }
-
-  .fogReveal .fog1 {
-    transform: translateX(10%);
-    opacity: 0.4;
-  }
-
-  .fogReveal .fog2 {
-    transform: translateY(-50%);
-    opacity: 0.4;
-  }
-
-  .discoverButton {
-    position: relative;
-    overflow: hidden;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .discoverButton::after {
-    content: "";
-    position: absolute;
-    background: radial-gradient(
-      circle,
-      rgba(168, 85, 247, 0.6) 0%,
-      transparent 70%
-    );
-    border-radius: inherit;
-    pointer-events: none;
-
-    animation: CenterBurst 0.6s ease-out forwards;
-
-    opacity: 0;
-  }
-
-  .discoverButton:active::after {
-    animation: none;
-    opacity: 0;
-    inset: 50% 50%;
+    transform: scale(1);
+    animation: subtlePulse 6s ease-in-out infinite;
   }
 
   .discoverButton:active::before {
     animation: none;
   }
 
-  @keyframes CenterBurst {
-    0% {
-      inset: 50% 50%;
-      opacity: 0.8;
-    }
-    60% {
-      inset: -30% -30%;
-      opacity: 0.15;
-    }
-    100% {
-      inset: 0 0;
-      opacity: 0; /* Parfait pour le nettoyage final */
-    }
-  }
-
-  .main {
-    margin-top: -40px;
-    padding-top: 0;
-  }
-
   .discoverButton {
-    margin-top: 10px;
+    margin-top: 50px;
     min-height: 48px;
     font-size: 16px;
     padding: 12px 24px;
@@ -496,51 +220,6 @@
   .introText span:nth-child(3) {
     animation-delay: 10s;
   }
-
-  @keyframes cleanReveal {
-    0% {
-      opacity: 0;
-      filter: blur(8px);
-      transform: translateY(-4px) translateZ(0);
-    }
-    15% {
-      opacity: 0;
-      filter: blur(8px);
-      transform: translateY(-4px) translateZ(0);
-    }
-
-    25% {
-      opacity: 1;
-      filter: blur(0);
-      transform: translateY(0) translateZ(0);
-    }
-    40% {
-      opacity: 1;
-      filter: blur(0);
-      transform: translateY(0) translateZ(0);
-    }
-
-    50% {
-      opacity: 0;
-      filter: blur(8px);
-      transform: translateY(-4px) translateZ(0);
-    }
-    100% {
-      opacity: 0;
-      filter: blur(8px);
-      transform: translateY(-4px) translateZ(0);
-    }
-  }
-
-  @keyframes subtlePulse {
-    0%,
-    100% {
-      filter: drop-shadow(0 0 15px rgba(150, 0, 255, 0.4)) brightness(0.2);
-    }
-    50% {
-      filter: drop-shadow(0 0 25px rgba(150, 0, 255, 0.7)) brightness(0.9);
-    }
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -549,5 +228,123 @@
     opacity: 1;
     filter: none;
     transform: none;
+  }
+}
+
+@keyframes cleanReveal {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(-4px) translateZ(0);
+  }
+  15% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(-4px) translateZ(0);
+  }
+
+  25% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) translateZ(0);
+  }
+  40% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) translateZ(0);
+  }
+
+  50% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(-4px) translateZ(0);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(-4px) translateZ(0);
+  }
+}
+
+@keyframes lineShine {
+  0% {
+    opacity: 0;
+    background-position: 100% center;
+  }
+  10% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+  50% {
+    background-position: -80% center;
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    background-position: 110% center;
+  }
+}
+
+@keyframes subtlePulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 12px rgba(150, 0, 255, 0.35)) brightness(0.55)
+      blur(0.9px);
+  }
+
+  50% {
+    filter: drop-shadow(0 0 26px rgba(150, 0, 255, 0.75)) brightness(1.05)
+      blur(0.3px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes autoShine {
+  0% {
+    left: -150%;
+  }
+  25% {
+    left: 150%;
+  }
+  26%,
+  100% {
+    left: 150%;
+  }
+}
+
+@keyframes CenterBurst {
+  0% {
+    inset: 50% 50%;
+    opacity: 0.8;
+  }
+  60% {
+    inset: -30% -30%;
+    opacity: 0.15;
+  }
+  100% {
+    inset: 0 0;
+    opacity: 0;
   }
 }
