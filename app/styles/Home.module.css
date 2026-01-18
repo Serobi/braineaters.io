@@ -157,7 +157,7 @@
 
   .hunterEyes {
     position: relative;
-    width: clamp(180px, 26vw, 360px);
+    width: 30%;
 
     margin-top: 0;
     margin-bottom: 20px;
@@ -165,7 +165,6 @@
     transition:
       transform 0.5s ease,
       opacity 0.8s ease;
-    height: auto;
   }
 
   .hunterEyes.fadeIn {
