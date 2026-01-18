@@ -30,39 +30,23 @@ export default function Home() {
         import("three"),
         import("vanta/dist/vanta.fog.min"),
       ]).then(([THREE, VANTA]) => {
-        if (!isMobile) {
-          vantaEffect.current = VANTA.default({
-            el: vantaRef.current,
-            THREE,
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            highlightColor: 0x777777,
-            midtoneColor: 0x050505,
-            lowlightColor: 0x000000,
-            baseColor: 0x000000,
-            speed: 0.6,
-          });
-        }
-        else {
-          vantaEffect.current = VANTA.default({
-            el: vantaRef.current,
-            THREE,
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            highlightColor: 0x777777,
-            midtoneColor: 0x050505,
-            lowlightColor: 0x000000,
-            baseColor: 0x000000,
-            speed: 1.3,
-            zoom: 0.1,
-          });
-        }
+
+        vantaEffect.current = VANTA.default({
+          el: vantaRef.current,
+          THREE,
+          mouseControls: !isMobile,
+          touchControls: false,
+          gyroControls: false,
+          minHeight: 200,
+          minWidth: 200,
+
+          highlightColor: isMobile ? 0x666666 : 0x777777,
+          midtoneColor: isMobile ? 0x080808 : 0x050505,
+          lowlightColor: 0x000000,
+          baseColor: 0x000000,
+          zoom: isMobile ? 0.2 : 0.6,
+          speed: isMobile ? 3 : 1
+        });
       });
     }
 
