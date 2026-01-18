@@ -161,6 +161,18 @@
 }
 
 @media (max-width: 768px) {
+  .homePage {
+    min-height: 100svh;
+  }
+
+  .fogBackground {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+
+    pointer-events: none;
+  }
+
   .hunterEyes {
     position: relative;
     top: 0;
