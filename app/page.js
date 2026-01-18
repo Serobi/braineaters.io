@@ -30,20 +30,39 @@ export default function Home() {
         import("three"),
         import("vanta/dist/vanta.fog.min"),
       ]).then(([THREE, VANTA]) => {
-        vantaEffect.current = VANTA.default({
-          el: vantaRef.current,
-          THREE,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          highlightColor: 0x777777,
-          midtoneColor: 0x050505,
-          lowlightColor: 0x000000,
-          baseColor: 0x000000,
-          speed: 0.6,
-        });
+        if (!isMobile) {
+          vantaEffect.current = VANTA.default({
+            el: vantaRef.current,
+            THREE,
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            highlightColor: 0x777777,
+            midtoneColor: 0x050505,
+            lowlightColor: 0x000000,
+            baseColor: 0x000000,
+            speed: 0.6,
+          });
+        }
+        else {
+          vantaEffect.current = VANTA.default({
+            el: vantaRef.current,
+            THREE,
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            highlightColor: 0x777777,
+            midtoneColor: 0x050505,
+            lowlightColor: 0x000000,
+            baseColor: 0x000000,
+            speed: 1.3,
+            zoom: 0.1,
+          });
+        }
       });
     }
 
@@ -66,7 +85,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div ref={vantaRef} className={styles.fogBackground} />
-
       <main className={styles.main}>
         <img
           src="/images/hunter_eyes.png"
