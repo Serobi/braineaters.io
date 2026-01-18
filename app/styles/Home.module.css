@@ -157,7 +157,7 @@
 
   .hunterEyes {
     position: relative;
-    width: clamp(180px, 35vw, 400px);
+    width: clamp(180px, 35vw, 600px);
 
     margin-top: 0;
     margin-bottom: 20px;
