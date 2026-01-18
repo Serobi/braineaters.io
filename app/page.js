@@ -66,7 +66,7 @@ export default function Home() {
           import("three"),
           import("vanta/dist/vanta.fog.min"),
         ]).then(([THREE, VANTA]) => {
-
+          THREE.WebGLRenderer.prototype.setPixelRatio(1.2);
           vantaEffect.current = VANTA.default({
             el: vantaRef.current,
             THREE,
@@ -80,8 +80,8 @@ export default function Home() {
             midtoneColor: 0x484848,
             lowlightColor: 0x1e1e1e,
             baseColor: 0xf0f0f,
-            zoom: 0.3,
-            speed: 0.6
+            zoom: 0.6,
+            speed: 0.8
           });
         });
       }
