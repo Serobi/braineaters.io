@@ -263,7 +263,7 @@
     0%,
     100% {
       filter: drop-shadow(0 0 0px rgba(150, 0, 255, 0.35)) brightness(0.7)
-        opacity(0.5) blur(1px);
+        opacity(0.2) blur(2px);
     }
 
     50% {
