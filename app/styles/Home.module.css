@@ -4,7 +4,6 @@
   flex-direction: column;
   position: relative;
   width: 100%;
-  background-color: #000000;
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE/Edge legacy */
@@ -22,6 +21,17 @@
   justify-content: center;
   z-index: 2;
 }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
 
 .fogBackground {
   position: absolute;
@@ -31,6 +41,7 @@
   height: 100%;
   z-index: 1;
   pointer-events: none;
+  background-color: #000000;
 }
 
 .hunterEyes {
@@ -224,6 +235,9 @@
     min-height: 48px;
     font-size: 16px;
     padding: 12px 24px;
+  }
+
+  .discoverButton:active {
   }
 
   .introText {

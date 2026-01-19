@@ -121,29 +121,32 @@ export default function Home() {
         <div ref={vantaRef} className={styles.fogBackground} />
       </div>
       <main className={styles.main}>
+        <h1 className="sr-only">Brain Eaters: Cooperative Survival Strategy Game on mobile and PC</h1>
+        <p className="sr-only">Cooperative Survival game. Build, defend, explore, and cooperate in a post-apocalyptic world where every decision matters.</p>
         <div className={`${styles.hunterEyes}`}>
           <img
             src="/images/eyes.png"
             loading="lazy"
             decoding="async"
-            alt="Glowing hunter eyes emerging from the fog"
+            alt="Glowing eyes emerging from the fog"
             className={`${styles.eyes} ${showEyes ? styles.fadeIn : ""}`}
           />
           <img
             src="/images/veins.png"
             loading="lazy"
             decoding="async"
-            alt="Glowing hunter eyes emerging from the fog"
+            alt="Glowing veins around eyes emerging from the fog"
             className={`${styles.veins} ${showEyes ? styles.fadeIn : ""}`}
           />
         </div>
         <p className={styles.introText}>
           <span>Many have entered the Wastelands</span>
-          <span>None survived</span>
+          <span>None of them came back</span>
           <span>Now it is your turn</span>
         </p>
         <a
           href="/game"
+          title="Learn more about Brain Eaters gameplay"
           className={styles.discoverButton}
           onMouseEnter={() => {
             if (!isMobile) {
