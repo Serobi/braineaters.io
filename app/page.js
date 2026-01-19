@@ -121,13 +121,22 @@ export default function Home() {
         <div ref={vantaRef} className={styles.fogBackground} />
       </div>
       <main className={styles.main}>
-        <img
-          src="/images/hunter_eyes.png"
-          loading="lazy"
-          decoding="async"
-          alt="Glowing hunter eyes emerging from the fog"
-          className={`${styles.hunterEyes} ${showEyes ? styles.fadeIn : ""}`}
-        />
+        <div className={`${styles.hunterEyes}`}>
+          <img
+            src="/images/eyes.png"
+            loading="lazy"
+            decoding="async"
+            alt="Glowing hunter eyes emerging from the fog"
+            className={`${styles.eyes} ${showEyes ? styles.fadeIn : ""}`}
+          />
+          <img
+            src="/images/veins.png"
+            loading="lazy"
+            decoding="async"
+            alt="Glowing hunter eyes emerging from the fog"
+            className={`${styles.veins} ${showEyes ? styles.fadeIn : ""}`}
+          />
+        </div>
         <p className={styles.introText}>
           <span>Many have entered the Wastelands</span>
           <span>None survived</span>
