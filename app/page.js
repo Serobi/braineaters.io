@@ -109,14 +109,6 @@ export default function Home() {
 
   return (
     <div className={styles.homePage}>
-      <Head>
-        <title>Brain Eaters | Official Website</title>
-        <meta
-          name="description"
-          content="Brain Eaters is a post-apocalyptic cooperative survival strategy game."
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <div className="fog-wrapper">
         <div ref={vantaRef} className={styles.fogBackground} />
       </div>
