@@ -175,6 +175,15 @@
   pointer-events: none;
 }
 
+.discoverButton:active {
+  transform: scale(0.9);
+}
+
+.discoverButton:active::before {
+  animation-play-state: paused;
+  opacity: 0.6;
+}
+
 @media (max-width: 768px) {
   .homePage {
     padding: 20px;
@@ -235,9 +244,6 @@
     min-height: 48px;
     font-size: 16px;
     padding: 12px 24px;
-  }
-
-  .discoverButton:active {
   }
 
   .introText {
