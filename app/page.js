@@ -77,10 +77,11 @@ export default function Home() {
             minHeight: 200,
             minWidth: 200,
 
-            highlightColor: 0x9a9a9a,
-            midtoneColor: 0x5a5a5a,
-            lowlightColor: 0x242424,
-            baseColor: 0x121212,
+            highlightColor: 0x8a8a8a,
+            midtoneColor: 0x5e5e5e,
+            lowlightColor: 0x2c2c2c,
+            baseColor: 0x1a1a1a,
+
 
             zoom: 0.5,
             speed: 0.6,

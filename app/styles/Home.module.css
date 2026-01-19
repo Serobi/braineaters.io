@@ -169,6 +169,8 @@
     position: absolute;
     width: 180vw;
     height: 140vh;
+    left: -20%;
+    top: -20%;
   }
 
   .hunterEyes {
