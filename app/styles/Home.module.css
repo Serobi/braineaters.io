@@ -5,6 +5,14 @@
   position: relative;
   width: 100%;
   background-color: #000000;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge legacy */
+  user-select: none;
+}
+.homePage img {
+  -webkit-user-drag: none;
+  pointer-events: none;
 }
 
 .main {
