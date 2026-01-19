@@ -167,10 +167,10 @@
 
   .fogBackground {
     position: absolute;
-    width: 120vw;
-    height: 200vh;
-    left: -10%;
-    top: -30%;
+    width: 200vw;
+    height: 150vh;
+    left: 0%;
+    top: -20%;
   }
 
   .hunterEyes {
