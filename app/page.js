@@ -35,17 +35,17 @@ export default function Home() {
           vantaEffect.current = VANTA.default({
             el: vantaRef.current,
             THREE,
-            mouseControls: false,
-            touchControls: false,
+            mouseControls: true,
+            touchControls: true,
             gyroControls: false,
             minHeight: 200,
             minWidth: 200,
 
-            highlightColor: 0x7f7f7f,
-            midtoneColor: 0x484848,
-            lowlightColor: 0x1e1e1e,
-            baseColor: 0xf0f0f,
-            zoom: 0.8,
+            highlightColor: 0x9a9a9a,
+            midtoneColor: 0x5a5a5a,
+            lowlightColor: 0x242424,
+            baseColor: 0x121212,
+            zoom: 0.7,
             speed: 0.6
           });
         });
@@ -66,25 +66,36 @@ export default function Home() {
           import("three"),
           import("vanta/dist/vanta.fog.min"),
         ]).then(([THREE, VANTA]) => {
-          THREE.WebGLRenderer.prototype.setPixelRatio(1.2);
           vantaEffect.current = VANTA.default({
             el: vantaRef.current,
             THREE,
+
             mouseControls: false,
             touchControls: false,
             gyroControls: false,
+
             minHeight: 200,
             minWidth: 200,
 
-            highlightColor: 0x7f7f7f,
-            midtoneColor: 0x484848,
-            lowlightColor: 0x1e1e1e,
-            baseColor: 0xf0f0f,
-            zoom: 0.6,
-            speed: 0.8
+            highlightColor: 0x9a9a9a,
+            midtoneColor: 0x5a5a5a,
+            lowlightColor: 0x242424,
+            baseColor: 0x121212,
+
+            zoom: 0.5,
+            speed: 0.25,
+
+            pixelRatio: 1
           });
+
+          setTimeout(() => {
+            if (vantaEffect.current?.resize) {
+              vantaEffect.current.resize();
+            }
+          }, 100);
         });
       }
+
 
       return () => {
         if (vantaEffect.current) {
