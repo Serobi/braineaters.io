@@ -103,10 +103,10 @@
   font-family: fantasy, "Arial Black", sans-serif;
   margin-bottom: 6px;
 
-  color: #fff3b0d2;
+  color: #fff3b0;
   opacity: 0;
   filter: blur(8px);
-  text-shadow: 0 0 0px rgba(255, 243, 176, 0.4);
+  text-shadow: 0 0 0px rgba(255, 243, 176, 0.6);
 
   transform: translateY(-4px) translateZ(0);
   will-change: opacity, filter, transform;
