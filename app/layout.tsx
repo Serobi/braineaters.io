@@ -20,7 +20,9 @@ export const metadata: Metadata = {
   },
   description:
     "Brain Eaters is a cooperative survival strategy game set in a post-apocalyptic world. Build your city, defend against zombie attacks, explore a mysterious world, and cooperate with other survivors to stay alive.",
-
+  icons: {
+    icon: "/favicon.ico",
+  },
   keywords: [
     "cooperative survival game",
     "post-apocalyptic strategy game",
