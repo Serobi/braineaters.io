@@ -83,7 +83,7 @@ export default function Home() {
             baseColor: 0x121212,
 
             zoom: 0.5,
-            speed: 0.25,
+            speed: 0.6,
 
             pixelRatio: 1
           });
@@ -116,7 +116,9 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div ref={vantaRef} className={styles.fogBackground} />
+      <div className="fog-wrapper">
+        <div ref={vantaRef} className={styles.fogBackground} />
+      </div>
       <main className={styles.main}>
         <img
           src="/images/hunter_eyes.png"

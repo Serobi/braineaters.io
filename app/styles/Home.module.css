@@ -150,10 +150,25 @@
   .homePage {
     padding: 20px;
     justify-content: center;
+    overflow: hidden;
   }
 
   .main {
     max-width: 780px;
+  }
+
+  .fog-wrapper {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .fogBackground {
+    position: absolute;
+    width: 180vw;
+    height: 140vh;
   }
 
   .hunterEyes {
