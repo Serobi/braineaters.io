@@ -83,8 +83,8 @@ export default function Home() {
             baseColor: 0x3e3e3e,
 
 
-            zoom: 0.3,
-            speed: 0.5,
+            zoom: 0.6,
+            speed: 0.3,
 
             pixelRatio: 1
           });
