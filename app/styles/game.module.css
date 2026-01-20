@@ -476,6 +476,16 @@
       border-radius 0.25s ease;
   }
 
+  .ghostPulse {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: rgba(194, 194, 194, 0.3);
+    z-index: 5;
+    animation: ghostPulseMobile 3s infinite;
+  }
+
   .pillar h3 {
     font-size: clamp(0.75rem, 3.2vw, 1.25rem);
     margin: 0;
@@ -660,7 +670,7 @@
     left: -5%;
   }
 
-  @keyframes ghostPulse {
+  @keyframes ghostPulseMobile {
     0% {
       transform: scale(0.5);
       opacity: 1;
