@@ -187,6 +187,8 @@ export default function GamePage() {
           <br />
           Lead your survivor, play with others, and survive as long as you can
           in a world where every decision counts.
+          <br /><br />
+          <strong>Select</strong> a Pillar to begin your journey.
         </p>
       </section>
 
