@@ -84,7 +84,7 @@ export default function Home() {
 
 
             zoom: 0.6,
-            speed: 0.3,
+            speed: 0.25,
 
             pixelRatio: 1
           });

@@ -59,7 +59,7 @@
   position: absolute;
   inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   opacity: 0;
   transform: scale(0.9);
@@ -213,9 +213,10 @@
   }
 
   .hunterEyes {
-    position: relative;
-    width: clamp(180px, 35vw, 300px);
-    margin-top: 0;
+    --size: clamp(130px, 35vw, 200px);
+    width: var(--size);
+    height: var(--size);
+    margin-top: 20px;
     margin-bottom: 20px;
   }
 
