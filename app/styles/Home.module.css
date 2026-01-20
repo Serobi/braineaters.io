@@ -213,7 +213,7 @@
   }
 
   .hunterEyes {
-    --size: clamp(130px, 35vw, 200px);
+    --size: clamp(150px, 35vw, 200px);
     width: var(--size);
     height: var(--size);
     margin-top: 20px;
