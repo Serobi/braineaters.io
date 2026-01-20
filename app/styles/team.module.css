@@ -1,13 +1,18 @@
+.teamPage {
+  justify-content: center;
+  text-align: center;
+}
+
 .teamIntro {
   max-width: 1200px;
-  margin: 40px auto 0;
+  margin: 40px auto 40px;
   padding: 0 24px;
   text-align: center;
 }
 
 .title {
   display: inline-block;
-  font-family: fantasy, 'Arial Black', sans-serif;
+  font-family: fantasy, "Arial Black", sans-serif;
   font-size: 44px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -24,17 +29,46 @@
   animation: shineLeftToRight 6s ease-in-out infinite;
 }
 
-@keyframes shineLeftToRight {
-  0%, 20% { background-position: 120% center; }
-  80%, 100% { background-position: -80% center; }
+.titleBar {
+  display: block;
+  margin: 20px auto 0;
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(90deg, #e8c07a 40%, #fff3b0 50%, #e8c07a 60%);
+  background-size: 200% 100%;
+  background-position: 0% center;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(232, 192, 122, 0.3);
+  animation: shineLeftToRight 6s ease-in-out infinite;
+}
+
+.section {
+  max-width: 1200px;
+  margin: 40px auto 40px;
+
+  animation: fadeUp 0.5s ease-out;
+}
+
+.section h2 {
+  position: relative;
+  text-align: middle;
+  font-size: 34px;
+  color: #ffffff;
+  background: linear-gradient(90deg, #e8c07a 40%, #fff3b0 50%, #e8c07a 60%);
+  background-size: 200% 100%;
+  background-position: 0% center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 @media (max-width: 768px) {
-  .teamIntro { 
-    margin-top: clamp(18px, 5vw, 40px); 
+  .teamIntro {
+    margin-top: clamp(18px, 5vw, 40px);
   }
 
-  .title { 
+  .title {
     font-size: clamp(16px, 5vw, 30px);
     line-height: 1.2;
     text-align: center;
@@ -43,5 +77,16 @@
 
     animation: none;
     background-position: 120% center;
+  }
+}
+
+@keyframes shineLeftToRight {
+  0%,
+  20% {
+    background-position: 120% center;
+  }
+  80%,
+  100% {
+    background-position: -80% center;
   }
 }
