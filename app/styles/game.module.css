@@ -659,6 +659,21 @@
   .imageContainer {
     left: -5%;
   }
+
+  @keyframes ghostPulse {
+    0% {
+      transform: scale(0.7);
+      opacity: 0.8;
+    }
+    30% {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(0.7);
+      opacity: 0;
+    }
+  }
 }
 
 @media (max-width: 320px) {
