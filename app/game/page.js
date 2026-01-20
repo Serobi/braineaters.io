@@ -197,9 +197,13 @@ export default function GamePage() {
         >
           <div className={styles.pillarsGrid}>
             <div
-              className={`${styles.pillar} ${activePillar === "build" ? styles.active : ""}`}
+              className={`${styles.pillar} ${activePillar === "build" ? styles.active : ""
+                }`}
               onClick={() => handlePillarClick("build")}
             >
+              {activePillar === null && (
+                <span className={styles.ghostPulse} />
+              )}
               <h3>Build</h3>
               <p>
                 Build and improve the city.
