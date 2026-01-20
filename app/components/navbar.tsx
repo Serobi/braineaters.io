@@ -27,7 +27,7 @@ export default function Navbar() {
         >
           Game
         </Link>
-
+        {/*
         <Link
           href="/roadmap"
           className={`${styles.navLink} ${
@@ -36,7 +36,7 @@ export default function Navbar() {
         >
           Roadmap
         </Link>
-        {/*
+        
         <Link
           href="/team"
           className={`${styles.navLink} ${
