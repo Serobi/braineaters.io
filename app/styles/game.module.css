@@ -662,7 +662,7 @@
 
   @keyframes ghostPulse {
     0% {
-      transform: scale(0.7);
+      transform: scale(0.5);
       opacity: 0.8;
     }
     30% {
@@ -670,7 +670,7 @@
       opacity: 0;
     }
     100% {
-      transform: scale(0.7);
+      transform: scale(0.5);
       opacity: 0;
     }
   }
