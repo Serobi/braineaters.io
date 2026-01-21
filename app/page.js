@@ -11,6 +11,29 @@ export default function Home() {
   const isMobile = useIsMobile();
   const [showEyes, setShowEyes] = useState(false);
 
+
+  const eyesRef = useRef(null);
+  const veinsRef = useRef(null);
+
+  useEffect(() => {
+    if (showEyes) {
+      // Force animation restart ONLY on show
+      if (eyesRef.current) {
+        eyesRef.current.style.animation = "none";
+        // force reflow
+        void eyesRef.current.offsetHeight;
+        eyesRef.current.style.animation = "";
+      }
+
+      if (veinsRef.current) {
+        veinsRef.current.style.animation = "none";
+        void veinsRef.current.offsetHeight;
+        veinsRef.current.style.animation = "";
+      }
+    }
+  }, [showEyes]);
+
+
   useEffect(() => {
     if (isMobile) {
       const timer = setTimeout(() => {
@@ -115,20 +138,22 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className="sr-only">Brain Eaters: Cooperative Survival Strategy Game on mobile and PC</h1>
         <p className="sr-only">Cooperative Survival game. Build, defend, explore, and cooperate in a post-apocalyptic world where every decision matters.</p>
-        <div className={`${styles.hunterEyes}`}>
+        <div className={`${styles.hunterEyes} ${showEyes ? styles.fadeIn : styles.fadeOut}`}>
           <img
             src="/images/eyes.png"
             loading="lazy"
             decoding="async"
             alt="Glowing eyes emerging from the fog"
-            className={`${styles.eyes} ${showEyes ? styles.fadeIn : ""}`}
+            className={`${styles.eyes}`}
+            ref={eyesRef}
           />
           <img
             src="/images/veins.png"
             loading="lazy"
             decoding="async"
             alt="Glowing veins around eyes emerging from the fog"
-            className={`${styles.veins} ${showEyes ? styles.fadeIn : ""}`}
+            className={`${styles.veins}`}
+            ref={veinsRef}
           />
         </div>
         <p className={styles.introText}>
