@@ -214,10 +214,10 @@
     margin-bottom: 20px;
   }
 
-  .eyes.fadeIn {
+  .eyes {
     animation: subtlePulseEyesMobile 8s ease-in-out infinite;
   }
-  .veins.fadeIn {
+  .veins {
     animation: subtlePulseVeinsMobile 8s ease-in-out infinite;
   }
 
