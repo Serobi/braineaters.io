@@ -63,9 +63,9 @@ export default function Home() {
           minHeight: 200,
           minWidth: 200,
 
-          highlightColor: isMobile ? 0x5e5e5e : 0x9a9a9a,
-          midtoneColor: isMobile ? 0x4e4e4e : 0x5a5a5a,
-          lowlightColor: isMobile ? 0x242424 : 0x3e3e3e,
+          highlightColor: isMobile ? 0x515151 : 0x9a9a9a,
+          midtoneColor: isMobile ? 0x444444 : 0x5a5a5a,
+          lowlightColor: isMobile ? 0x444444 : 0x242424,
           baseColor: isMobile ? 0x3e3e3e : 0x121212,
           zoom: isMobile ? 0.6 : 0.7,
           speed: isMobile ? 0.25 : 0.6
