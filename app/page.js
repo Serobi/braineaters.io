@@ -47,88 +47,45 @@ export default function Home() {
   const vantaRef = useRef(null);
   const vantaEffect = useRef(null);
 
-  if (!isMobile) {
-    useEffect(() => {
-      if (!vantaEffect.current && vantaRef.current) {
-        Promise.all([
-          import("three"),
-          import("vanta/dist/vanta.fog.min"),
-        ]).then(([THREE, VANTA]) => {
+  useEffect(() => {
+    if (!vantaEffect.current && vantaRef.current) {
+      Promise.all([
+        import("three"),
+        import("vanta/dist/vanta.fog.min"),
+      ]).then(([THREE, VANTA]) => {
 
-          vantaEffect.current = VANTA.default({
-            el: vantaRef.current,
-            THREE,
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200,
-            minWidth: 200,
+        vantaEffect.current = VANTA.default({
+          el: vantaRef.current,
+          THREE,
+          mouseControls: !isMobile,
+          touchControls: !isMobile,
+          gyroControls: false,
+          minHeight: 200,
+          minWidth: 200,
 
-            highlightColor: 0x9a9a9a,
-            midtoneColor: 0x5a5a5a,
-            lowlightColor: 0x242424,
-            baseColor: 0x121212,
-            zoom: 0.7,
-            speed: 0.6
-          });
+          highlightColor: isMobile ? 0x5e5e5e : 0x9a9a9a,
+          midtoneColor: isMobile ? 0x4e4e4e : 0x5a5a5a,
+          lowlightColor: isMobile ? 0x242424 : 0x3e3e3e,
+          baseColor: isMobile ? 0x3e3e3e : 0x121212,
+          zoom: isMobile ? 0.6 : 0.7,
+          speed: isMobile ? 0.25 : 0.6
         });
+        setTimeout(() => {
+          if (vantaEffect.current?.resize) {
+            vantaEffect.current.resize();
+          }
+        }, 100);
+      });
+    }
+
+    return () => {
+      if (vantaEffect.current) {
+        vantaEffect.current.destroy();
+        vantaEffect.current = null;
       }
+    };
+  }, []);
 
-      return () => {
-        if (vantaEffect.current) {
-          vantaEffect.current.destroy();
-          vantaEffect.current = null;
-        }
-      };
-    }, []);
-  }
-  if (isMobile) {
-    useEffect(() => {
-      if (!vantaEffect.current && vantaRef.current) {
-        Promise.all([
-          import("three"),
-          import("vanta/dist/vanta.fog.min"),
-        ]).then(([THREE, VANTA]) => {
-          vantaEffect.current = VANTA.default({
-            el: vantaRef.current,
-            THREE,
-
-            mouseControls: false,
-            touchControls: false,
-            gyroControls: false,
-
-            minHeight: 200,
-            minWidth: 200,
-
-            highlightColor: 0x5e5e5e,
-            midtoneColor: 0x4e4e4e,
-            lowlightColor: 0x3e3e3e,
-            baseColor: 0x3e3e3e,
-
-
-            zoom: 0.6,
-            speed: 0.25,
-
-            pixelRatio: 1
-          });
-
-          setTimeout(() => {
-            if (vantaEffect.current?.resize) {
-              vantaEffect.current.resize();
-            }
-          }, 100);
-        });
-      }
-
-
-      return () => {
-        if (vantaEffect.current) {
-          vantaEffect.current.destroy();
-          vantaEffect.current = null;
-        }
-      };
-    }, []);
-  }
 
   return (
     <div className={styles.homePage}>
