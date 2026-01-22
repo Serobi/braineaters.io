@@ -168,28 +168,37 @@
     padding: 20px 25px; /* moins de padding pour les petits écrans */
   }
 
+  .sectionCard.openCard {
+    border-left: 2px solid #e8c07a;
+  }
+
   .sectionTitle {
-    font-size: 1.5rem; /* titre un peu plus petit */
+    font-size: clamp(14px, 6vw, 30px);
   }
 
   .subTitle {
-    font-size: 1rem;
+    font-size: clamp(14px, 5vw, 28px);
     margin-top: 20px;
     margin-bottom: 15px;
   }
 
+  .content p {
+    font-size: clamp(10px, 3vw, 16px);
+  }
   .intro {
-    font-size: 16px;
+    font-size: clamp(10px, 3.5vw, 16px);
     max-width: 100%;
     margin: 30px auto 20px;
   }
 
   .title {
-    font-size: 32px;
+    font-size: clamp(14px, 6vw, 34px);
   }
 
   .titleBar {
-    width: 280px;
+    width: 40%;
+    height: 2px;
+    margin: clamp(8px, 4vw, 20px) auto clamp(8px, 4vw, 20px);
   }
 }
 
