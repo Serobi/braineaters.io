@@ -32,7 +32,7 @@ export default function Team() {
                 <p className={styles.intro}>
                     From game design to code, systems, visuals, lore and website, Brain Eaters is built entirely by a solo developer.
                     <br /><br />
-                    The project is driven by goal : <br />
+                    The project is driven by a goal : <br />
                     Build a world where social interactions are the core of its gameplay,
                     offering a true survival experience where players have to work together, or die alone.<br />
                 </p>
