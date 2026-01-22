@@ -32,9 +32,9 @@ export default function Team() {
                 <p className={styles.intro}>
                     From game design to code, systems, visuals, lore and website, Brain Eaters is built entirely by a solo developer.
                     <br /><br />
-                    The project is driven by a long-term vision : <br />
+                    The project is driven by goal : <br />
                     Build a world where social interactions are the core of its gameplay,
-                    offering a true survival experience where players must work together, or die alone.<br />
+                    offering a true survival experience where players have to work together, or die alone.<br />
                 </p>
             </section>
             <div className={styles.contentWrapper}>
@@ -50,7 +50,7 @@ export default function Team() {
                             Vision
                         </h2>
                         <div className={`${styles.content} ${openSections.vision ? styles.open : ''}`} onClick={(e) => e.stopPropagation()}>
-                            <p>Brain Eaters is built around a single, long-term vision :<br />
+                            <p>Brain Eaters is built around a clear long-term vision :<br />
                                 Create a fair, social, and replayable survival experience
                                 where players shape the world as much as the systems do.
                             </p>
