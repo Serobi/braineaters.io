@@ -154,6 +154,9 @@
 
 /* Mobile / Tablet Adaptation */
 @media (max-width: 768px) {
+  .teamIntro {
+    margin: clamp(30px, 4vw, 60px) auto 0;
+  }
   .contentWrapper {
     width: 90%; /* prend presque toute la largeur */
     padding: 20px 0;
@@ -198,7 +201,7 @@
   .titleBar {
     width: 40%;
     height: 2px;
-    margin: clamp(8px, 4vw, 20px) auto clamp(8px, 4vw, 20px);
+    margin: clamp(8px, 4vw, 20px) auto 0;
   }
 }
 
