@@ -58,13 +58,19 @@
 }
 
 .intro {
-  font-size: 19px;
-  line-height: 1.6;
+  font-size: 18px;
   color: #cfcfcf;
   max-width: 780px;
   margin: 48px auto 22px;
 }
 
+.intro p + p {
+  margin-top: 10px;
+}
+
+.contentSection p + p {
+  margin-top: 10px;
+}
 .intro strong {
   color: #ffffff;
   font-weight: 700;
@@ -90,14 +96,41 @@
   background: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
+  border-left: 2px solid transparent;
+  cursor: pointer;
+  position: relative;
   transition:
-    transform 0.3s ease,
-    background 0.3s ease;
+    border-left 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* shadow léger par défaut */
 }
 
 .sectionCard:hover {
-  background: rgba(0, 0, 0, 0.5);
-  transform: translateY(-5px);
+  border-left: 2px solid #e8c07a;
+  box-shadow: 0 2px 4px rgba(232, 192, 122, 0.2); /* hover shadow */
+}
+
+.sectionCard.openCard {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* shadow léger même ouvert */
+}
+
+.sectionCard.openCard:hover {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* pas de shadow supplémentaire au hover quand ouvert */
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.5s ease,
+    padding 0.3s ease;
+  padding: 0;
+  cursor: default;
+}
+
+.content.open {
+  max-height: 2000px;
+  padding: 20px 0;
 }
 
 .sectionTitle {
@@ -106,6 +139,14 @@
   color: #e8c07a;
   border-bottom: 1px solid #e8c07ad2;
   padding-bottom: 5px;
+}
+
+.subTitle {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .teamVision {
@@ -118,4 +159,45 @@
 
 .teamFuture {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2));
+}
+
+/* Mobile / Tablet Adaptation */
+@media (max-width: 768px) {
+  .contentWrapper {
+    width: 90%; /* prend presque toute la largeur */
+    padding: 20px 0;
+  }
+
+  .contentSection {
+    width: 100%;
+    gap: 25px;
+  }
+
+  .sectionCard {
+    padding: 20px 25px; /* moins de padding pour les petits écrans */
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem; /* titre un peu plus petit */
+  }
+
+  .subTitle {
+    font-size: 1rem;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+
+  .intro {
+    font-size: 16px;
+    max-width: 100%;
+    margin: 30px auto 20px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .titleBar {
+    width: 280px;
+  }
 }
