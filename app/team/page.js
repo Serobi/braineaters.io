@@ -84,9 +84,8 @@ export default function Team() {
                         <h2 className={styles.sectionTitle}>
                             Founder
                         </h2>
-                        <div className={`${styles.content} ${openSections.founder ? styles.open : ''}`}>
+                        <div className={`${styles.content} ${openSections.founder ? styles.open : ''}`} onClick={(e) => e.stopPropagation()}>
                             <h3 className={styles.subTitle}>Who am I ?</h3>
-
                             <p>
                                 My name is Paul Nelaton, also known as Serobi.
                                 I'm a 32-year-old French developer, and I've been playing games
@@ -144,7 +143,7 @@ export default function Team() {
                         <h2 className={styles.sectionTitle}>
                             Team Future
                         </h2>
-                        <div className={`${styles.content} ${openSections.future ? styles.open : ''}`}>
+                        <div className={`${styles.content} ${openSections.future ? styles.open : ''}`} onClick={(e) => e.stopPropagation()}>
                             <p>
                                 My plan for the team's future is simple : hire key talents who complement my skills,
                                 mainly in design, 3D, animation, VFX and marketing. <br />
