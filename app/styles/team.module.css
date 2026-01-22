@@ -105,17 +105,8 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* shadow léger par défaut */
 }
 
-.sectionCard:hover {
-  border-left: 2px solid #e8c07a;
-  box-shadow: 0 2px 4px rgba(232, 192, 122, 0.2); /* hover shadow */
-}
-
 .sectionCard.openCard {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* shadow léger même ouvert */
-}
-
-.sectionCard.openCard:hover {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* pas de shadow supplémentaire au hover quand ouvert */
 }
 
 .content {
@@ -199,5 +190,15 @@
 
   .titleBar {
     width: 280px;
+  }
+}
+
+@media (hover: hover) {
+  .sectionCard:hover {
+    border-left: 2px solid #e8c07a;
+    box-shadow: 0 2px 4px rgba(232, 192, 122, 0.2); /* hover shadow */
+  }
+  .sectionCard.openCard:hover {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* pas de shadow supplémentaire au hover quand ouvert */
   }
 }
