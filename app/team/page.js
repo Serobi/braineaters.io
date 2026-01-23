@@ -31,7 +31,7 @@ export default function Team() {
             title: "Fair free to Play",
             descLines: [
                 "A free-to-play respecting players and gameplay.",
-                "No pay-to-win mechanics, monetisation is only cosmetics for city and quality of life functionalities.",
+                "No pay-to-win mechanics. Monetization is limited to cosmetics, city customization, and quality-of-life features.",
                 "It is very important for us to deliver a real gaming experience without overmonetising it."
             ]
         },
@@ -40,7 +40,11 @@ export default function Team() {
             label: "Social Core",
             title: "Social Core",
             descLines: [
-                "Reputation matters. Build lasting relationships or survive the consequences of betrayal."
+                "In most games, cooperation means sharing a world while playing mostly side by side.",
+                "In Brain Eaters, cooperation is the core gameplay, not an option.",
+                "The game is designed around collective organization, leadership, and decision-making at the scale of a city.",
+                "Survival depends on coordination, shared responsibilities, and collective choices.",
+                "The long term vision will feature deeper social systems such as governance, politic, specializations and diplomacy, making the world entirely shaped by players."
             ]
         },
         replay: {
@@ -48,7 +52,9 @@ export default function Team() {
             label: "Replayability",
             title: "Replayability",
             descLines: [
-                "Procedural maps and dynamic events ensure that every playthrough feels like a new story."
+                "Replayability is a key feature that ensures Brain Eaters is built to last.",
+                "Dynamic events, Procedural map, Players decisions, characters to unlock.",
+                "These different parameters ensure every game offers infinite combinations and limitless possibilities to explore and experience."
             ]
         },
         freedom: {
@@ -56,7 +62,10 @@ export default function Team() {
             label: "Roleplay",
             title: "Roleplay",
             descLines: [
-                "Total player freedom to shape the narrative, the economy, and the fate of the city."
+                "The world of Brain Eaters is entirely designed to offer players a complete freedom.",
+                "What would be cooperation without the freedom to betray his allies ?",
+                "What would happen if someone decided to open the city gates right before zombies attacked ?",
+                "These are questions you'll probably find an answer to, maybe sooner than you think."
             ]
         }
     };
