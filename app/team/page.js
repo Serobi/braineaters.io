@@ -133,56 +133,50 @@ export default function Team() {
                             Founder
                         </h2>
                         <div className={`${styles.content} ${openSections.founder ? styles.open : ''}`} onClick={(e) => e.stopPropagation()}>
-                            <h3 className={styles.subTitle}>Who am I ?</h3>
-                            <p>
-                                My name is Paul Nelaton, also known as Serobi.
-                                I'm a 32-year-old French developer, and I've been playing games
-                                for as long as I can remember.
-                            </p>
+                            <div className={styles.founderGrid} onClick={(e) => e.stopPropagation()}>
 
-                            <p>
-                                My first game was Age of Empires II, and it shaped my whole gaming journey.<br />
-                                I've always been drawn to strategy, systems, and games where choices actually matter.
-                                I loved the idea that players could shape their own experience,
-                                especially through community creativity and emergent gameplay.
-                            </p>
+                                <div className={styles.founderSidebar}>
+                                    <div className={styles.profileBadge}>
+                                        <div className={styles.avatarPlaceholder}>SN</div>
+                                        <h3>Paul Nelaton</h3>
+                                        <span className={styles.alias}>"Serobi"</span>
+                                        <p className={styles.mainTitle}>Lead Engineer & Founder</p>
+                                    </div>
 
-                            <p>
-                                Role-playing and story-driven games also played an important part in my journey,
-                                highlighting the importance of story, character evolution,
-                                and the impact of choices on shaping a world.
-                            </p>
+                                    <div className={styles.statBox}>
+                                        <div className={styles.statItem}><strong>5+</strong> <span>Software</span></div>
+                                        <div className={styles.statItem}><strong>5+</strong> <span>CyberSecurity</span></div>
+                                    </div>
 
-                            <p>
-                                As a developer, I've always approached games differently.<br />
-                                Beyond playing them, I naturally analyze how they work,
-                                what makes them engaging or frustrating,
-                                and how their systems could be improved.<br />
-                                This habit of observation and iteration has shaped both
-                                how I play games and how I design them.
-                            </p>
-                            <p>
-                                Some of the games that influenced me include
-                                Warcraft III, The Witcher 3, The Last of Us, Frostpunk,
-                                The Forest, 7 Days to Die, Divinity: Original Sin I & II ...
-                                and the list is far too long.
-                            </p>
-                            <h3 className={styles.subTitle}>Background</h3>
-                            <p>
-                                I'm a Full-Stack Engineer with a 5-year engineering degree and years of experience building robust, scalable software. <br />
-                                I cover the full stack, from smooth responsive frontends to performant backends, across web, desktop, and mobile. <br />
-                                I also have 5 years of experience in cybersecurity, systems, networks and devops, ensuring solid, automated and reliable foundations.
-                            </p>
-                            <p>
-                                Moreover, I bring creative and design skills to the table : UI/UX, game systems, and interactive experiences,
-                                allowing me to craft polished, engaging products with a real focus on player/user experience.
-                            </p>
-                            <p>
-                                Thanks to this blend of technical depth and creative vision, I can handle every part of a project like Brain Eaters,
-                                from architecture to mechanics, visuals and user experience.<br />
-                                My core strengths are code, systems, vision, and UI/UX, so in the future I plan to recruit a designer to focus on areas where I thrive the most.<br />
-                                This lets me dedicate myself fully to building and shaping the heart of the game.
-                            </p>
+                                    <div className={styles.techStack}>
+                                        <h4>Core Mastery</h4>
+                                        <div className={styles.tagCloud}>
+                                            <span>Full-Stack</span> <span>DevOps</span> <span>Architecture</span> <span>UI/UX</span> <span>C# Unity</span> <span>Cybersecurity</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className={styles.founderBio}>
+                                    <section className={styles.bioSection}>
+                                        <h4>Background</h4>
+                                        <p>Full-Stack Engineer with a 5-year degree from Thales University (French national defense).<br />
+                                            I specialize in building robust, scalable software across web, desktop, and mobile.<br />
+                                            My background in <strong>Cybersecurity and DevOps</strong> ensures that Brain Eaters is built on a solid, automated, modular and secure foundation.</p>
+                                    </section>
+
+                                    <section className={styles.bioSection}>
+                                        <h4>Execution Strategy</h4>
+                                        <p>I bridge the gap between technical depth and creative vision. <br />
+                                            By managing architecture, mechanics, and UI/UX myself,
+                                            I ensure a cohesive product and rapid iteration, faithfully translating my creative vision into reality.</p>
+                                    </section>
+
+                                    <section className={styles.influenceBox}>
+                                        <h4>DNA</h4>
+                                        <p>Influenced by the strategy of <em>AoE II</em>, the story and universe of <em>The Last of Us</em>, and the complex social survival of <em>Frostpunk</em>.</p>
+                                    </section>
+                                </div>
+                            </div>
                         </div>
                     </section>
 

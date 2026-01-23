@@ -313,6 +313,131 @@
 
 @media (max-width: 768px) {
   .pillarGrid {
-    grid-template-columns: 1fr 1fr; /* 2x2 on mobile */
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.founderGrid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.founderSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(30, 30, 30, 0.4);
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  height: fit-content;
+}
+
+.profileBadge {
+  text-align: center;
+}
+
+.avatarPlaceholder {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #e8c07a, #b38a4d);
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.alias {
+  color: #e8c07a;
+  font-size: 0.9rem;
+  font-family: "Oswald";
+}
+
+.mainTitle {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 5px;
+}
+
+/* Power Stats for Investors */
+.statBox {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statItem strong {
+  font-size: 1.4rem;
+  color: #e8c07a;
+}
+
+.statItem span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+.tagCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tagCloud span {
+  background: rgba(232, 192, 122, 0.1);
+  color: #e8c07a;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(232, 192, 122, 0.2);
+}
+
+/* Bio Content */
+.founderBio {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.bioSection h4,
+.influenceBox h4 {
+  color: #e8c07a;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bioSection p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #cfcfcf;
+  margin: 0 !important;
+}
+
+.influenceBox {
+  padding: 15px;
+  background: rgba(232, 192, 122, 0.03);
+  border-left: 2px solid #e8c07a;
+  border-radius: 0 8px 8px 0;
+}
+
+@media (max-width: 900px) {
+  .founderGrid {
+    grid-template-columns: 1fr;
   }
 }
