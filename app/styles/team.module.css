@@ -68,9 +68,6 @@
   margin-top: 10px;
 }
 
-.contentSection p + p {
-  margin-top: 10px;
-}
 .intro strong {
   color: #ffffff;
   font-weight: 700;
@@ -286,7 +283,17 @@
 
 .pillarDetail h4 {
   color: #fff3b0;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.detailLine {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #cfcfcf;
+  margin-bottom: 5px;
+}
+.detailLine:last-child {
+  margin-bottom: 0;
 }
 
 .fadeIn {
