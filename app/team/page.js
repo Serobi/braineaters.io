@@ -37,8 +37,8 @@ export default function Team() {
         },
         social: {
             icon: "🤝",
-            label: "Social Core",
-            title: "Social Core",
+            label: "Community",
+            title: "Community",
             descLines: [
                 "In most games, cooperation means sharing a world while playing mostly side by side.",
                 "In Brain Eaters, cooperation is the core gameplay, not an option.",
