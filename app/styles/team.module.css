@@ -93,8 +93,8 @@
 
 .sectionCard {
   padding: 30px 40px;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(20, 20, 20, 0.55);
+  border: 1px solid rgba(232, 192, 122, 0.18);
   border-radius: 20px;
   border-left: 2px solid transparent;
   cursor: pointer;
@@ -102,11 +102,17 @@
   transition:
     border-left 0.3s ease,
     box-shadow 0.3s ease;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* shadow léger par défaut */
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.2),
+    inset 0 0 20px rgba(168, 152, 124, 0.03);
 }
 
 .sectionCard.openCard {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* shadow léger même ouvert */
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.2),
+    inset 0 0 20px rgba(168, 152, 124, 0.03);
+  background: rgba(10, 10, 10, 0.4);
+  cursor: default;
 }
 
 .content {
@@ -212,5 +218,94 @@
   }
   .sectionCard.openCard:hover {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* pas de shadow supplémentaire au hover quand ouvert */
+  }
+}
+
+.visionContainer {
+  width: 100%;
+}
+
+.pillarGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.pillarItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(232, 192, 122, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pillarItem:hover {
+  background: rgba(232, 192, 122, 0.05);
+  border-color: rgba(232, 192, 122, 0.3);
+}
+
+.activePillar {
+  background: rgba(232, 192, 122, 0.1);
+  border-color: #e8c07a;
+  box-shadow: 0 0 15px rgba(232, 192, 122, 0.1);
+  cursor: default;
+}
+
+.activePillar:hover {
+  background: rgba(232, 192, 122, 0.1);
+  border-color: #e8c07a;
+  box-shadow: 0 0 15px rgba(232, 192, 122, 0.1);
+}
+
+.pillarIcon {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.pillarLabel {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #e8c07a;
+  font-weight: 600;
+}
+
+.pillarDetail {
+  min-height: 100px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(232, 192, 122, 0.1);
+  border-radius: 12px;
+  position: relative;
+}
+
+.pillarDetail h4 {
+  color: #fff3b0;
+  margin-bottom: 10px;
+}
+
+.fadeIn {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .pillarGrid {
+    grid-template-columns: 1fr 1fr; /* 2x2 on mobile */
   }
 }

@@ -14,12 +14,52 @@ export default function Team() {
     });
 
     const toggleSection = (section) => {
-        setOpenSections(prev => ({
-            ...prev,
-            [section]: !prev[section]
-        }));
+        setOpenSections({
+            vision: false,
+            founder: false,
+            future: false,
+            [section]: true
+        });
     };
 
+    const [activePillar, setActivePillar] = useState('fair');
+
+    const pillars = {
+        fair: {
+            icon: "⚖️",
+            label: "Free to Play",
+            title: "Fair free to Play",
+            descLines: [
+                "A free-to-play respecting players and gameplay.",
+                "No pay-to-win mechanics, monetisation is only cosmetics for city and quality of life functionalities.",
+                "It is very important for us to deliver a real gaming experience without overmonetising it."
+            ]
+        },
+        social: {
+            icon: "🤝",
+            label: "Social Core",
+            title: "Social Core",
+            descLines: [
+                "Reputation matters. Build lasting relationships or survive the consequences of betrayal."
+            ]
+        },
+        replay: {
+            icon: "🔄",
+            label: "Replayability",
+            title: "Replayability",
+            descLines: [
+                "Procedural maps and dynamic events ensure that every playthrough feels like a new story."
+            ]
+        },
+        freedom: {
+            icon: "🎭",
+            label: "Roleplay",
+            title: "Roleplay",
+            descLines: [
+                "Total player freedom to shape the narrative, the economy, and the fate of the city."
+            ]
+        }
+    };
 
     return (
 
@@ -50,32 +90,31 @@ export default function Team() {
                             Vision
                         </h2>
                         <div className={`${styles.content} ${openSections.vision ? styles.open : ''}`} onClick={(e) => e.stopPropagation()}>
-                            <p>Brain Eaters is built around a clear long-term vision :<br />
-                                Create a fair, social, and replayable survival experience
-                                where players shape the world as much as the systems do.
-                            </p>
-                            <p>
-                                • Fair Free-to-Play <br />
-                                A true free-to-play experience built on fairness, with no pay-to-win mechanics
-                                and monetization that respects both the game and its players.
-                            </p>
-                            <p>
-                                • Community at the Core <br />
-                                Community, cooperation, and social dynamics are central to gameplay, every decision can impact the entire city.
-                            </p>
-                            <p>
-                                • Infinite Replayability <br />
-                                Every game is different, through procedural map, dynamic events, players actions and choices.
-                            </p>
-                            <p>
-                                • Meaningful Social Interaction <br />
-                                Brain Eaters aims to restore real social interaction in online games,
-                                where reputation matters, relationships persist, and every player leaves a mark.</p>
-                            <p>
-                                • Roleplay and player freedom <br />
-                                Roleplay plays an important part, giving players the freedom to form relationships,
-                                make choices, and even betray each other.
-                            </p>
+                            <section className={styles.visionContainer}>
+                                <div className={styles.pillarGrid}>
+                                    {Object.entries(pillars).map(([key, pillar]) => (
+                                        <div
+                                            key={key}
+                                            className={`${styles.pillarItem} ${activePillar === key ? styles.activePillar : ''}`}
+                                            onClick={() => setActivePillar(key)}
+                                        >
+                                            <span className={styles.pillarIcon}>{pillar.icon}</span>
+                                            <span className={styles.pillarLabel}>{pillar.label}</span>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <div className={styles.pillarDetail}>
+                                    <div key={activePillar} className={styles.fadeIn}>
+                                        <h4>{pillars[activePillar].title}</h4>
+                                        {pillars[activePillar].descLines.map((line, index) => (
+                                            <p key={index} className={styles.detailLine}>
+                                                {line}
+                                            </p>
+                                        ))}
+                                    </div>
+                                </div>
+                            </section>
                         </div>
                     </section>
 
