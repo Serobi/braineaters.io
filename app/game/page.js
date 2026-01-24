@@ -182,8 +182,7 @@ export default function GamePage() {
           <span className={styles.titleBar}></span>
         </h1>
         <p className={styles.description}>
-          <strong>Brain Eaters</strong> is the first game to combine survival,
-          strategy, and cooperation into a single experience.
+          <strong>Brain Eaters</strong> is a survival game where the biggest threat isn't zombies but what people do when the wall starts to crack.
           <br />
           Lead your survivor, play with others, and survive as long as you can
           in a world where every decision counts.
