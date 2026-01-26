@@ -422,6 +422,8 @@
 
   .founderGrid {
     grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 5px 0;
   }
 
   .tagCloud {
