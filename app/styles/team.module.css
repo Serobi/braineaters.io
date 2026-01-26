@@ -296,6 +296,10 @@
   border: 1px solid rgba(232, 192, 122, 0.2);
 }
 
+.tagCloud span:hover {
+  background: rgba(232, 192, 122, 0.25);
+}
+
 .founderBio {
   display: flex;
   flex-direction: column;
@@ -414,6 +418,26 @@
 
   .founderGrid {
     grid-template-columns: 1fr;
+  }
+
+  .tagCloud {
+    gap: 6px;
+    margin-top: 5px;
+  }
+
+  .tagCloud span {
+    font-size: clamp(9px, 2.4vw, 14px);
+  }
+
+  .statItem strong {
+    font-size: clamp(16px, 5vw, 24px);
+    color: #e8c07a;
+  }
+
+  .statItem span {
+    font-size: clamp(9px, 2.3vw, 12px);
+    text-transform: uppercase;
+    color: #aaa;
   }
 }
 
