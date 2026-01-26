@@ -61,12 +61,12 @@
 .contentWrapper {
   display: flex;
   justify-content: center;
-  width: 50%;
+  width: clamp(600px, 95vw, 900px);
   padding: 40px 0;
 }
 
 .contentSection {
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   display: flex;
   flex-direction: column;
@@ -126,7 +126,7 @@
 
 .pillarGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 15px;
   margin-bottom: 20px;
 }
@@ -135,6 +135,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 0;
   padding: 20px 10px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(232, 192, 122, 0.1);
@@ -330,31 +331,41 @@
 }
 
 @media (max-width: 768px) {
-  .pillarGrid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 900px) {
   .teamIntro {
     margin: clamp(30px, 4vw, 60px) auto 0;
   }
+
   .contentWrapper {
-    width: 90%; /* prend presque toute la largeur */
-    padding: 20px 0;
+    width: 95%;
+    padding: 10px 0;
   }
 
   .contentSection {
     width: 100%;
-    gap: 15px;
+    gap: 10px;
   }
 
   .sectionCard {
-    padding: 20px 25px; /* moins de padding pour les petits écrans */
+    padding: 20px 8px;
+    border-radius: 20px;
   }
 
   .sectionCard.openCard {
     border-left: 2px solid #e8c07a;
+  }
+
+  .pillarGrid {
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  }
+
+  .pillarLabel {
+    font-size: clamp(8px, 2.2vw, 12px);
+  }
+
+  .pillarItem {
+    padding: 14px 8px;
+    border-radius: 10px;
   }
 
   .sectionTitle {

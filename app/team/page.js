@@ -2,10 +2,12 @@
 
 import styles from '../styles/team.module.css';
 import { useState } from "react";
-
+import { useIsMobile } from "@/app/hooks/useIsMobile";
 
 
 export default function Team() {
+
+    const isMobile = useIsMobile();
 
     const [openSections, setOpenSections] = useState({
         vision: true,
@@ -27,7 +29,7 @@ export default function Team() {
     const pillars = {
         fair: {
             icon: "⚖️",
-            label: "Free to Play",
+            label: isMobile ? "F2P" : "Free to Play",
             title: "Fair free to Play",
             descLines: [
                 "A free-to-play respecting players and gameplay.",
