@@ -29,7 +29,7 @@ export default function Team() {
     const pillars = {
         fair: {
             icon: "⚖️",
-            label: isMobile ? "F2P" : "Free to Play",
+            label: isMobile ? "Fair" : "Free to Play",
             title: "Fair free to Play",
             descLines: [
                 "A free-to-play respecting players and gameplay.",
@@ -51,7 +51,7 @@ export default function Team() {
         },
         replay: {
             icon: "🔄",
-            label: "Replayability",
+            label: "Replayable",
             title: "Replayability",
             descLines: [
                 "Replayability is a key feature that ensures Brain Eaters is built to last.",
