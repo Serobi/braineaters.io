@@ -52,13 +52,22 @@ export default function RoadmapPage() {
                     Roadmap
                     <span className={styles.titleBar}></span>
                 </h1>
+                <p className={styles.intro}>
+                    Brain Eaters is built with long-term vision in mind : <br />
+                    A deep, replayable social survival game that evolves with its community.<br />
+                    This roadmap outlines the major milestones from prototype to full launch and beyond, grounded in realistic solo-dev pacing.
+                </p>
             </section>
 
             <section className={styles.timelineSection}>
                 <div className={styles.timelineContainer}>
 
                     {/* Timeline base line */}
-                    <div className={styles.mainLineZombie}>
+                    <div className={styles.mainLineZombie}
+                        style={{
+                            '--progress': `${(currentStepIndex / (steps.length - 1)) * 100}%`,
+                        }}
+                    >
                         <div
                             className={styles.progressFillGold}
                             style={{
