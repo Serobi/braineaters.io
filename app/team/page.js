@@ -163,7 +163,7 @@ export default function Team() {
                                         <h4>Background</h4>
                                         <p>Full-Stack Engineer with a 5-year degree from Thales University (French national defense).<br />
                                             I specialize in building robust, scalable software across web, desktop, and mobile.<br />
-                                            My background in <strong>Cybersecurity and DevOps</strong> ensures that Brain Eaters is built on a solid, automated, modular and secure foundation.</p>
+                                            My background in Cybersecurity and DevOps ensures that Brain Eaters is built on a solid, automated, modular and secure foundation.</p>
                                     </section>
 
                                     <section className={styles.bioSection}>
