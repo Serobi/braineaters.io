@@ -106,7 +106,7 @@
   left: 30px; /* half node */
   width: calc(100% - 60px); /* full node */
   height: 2px;
-  background: rgba(75, 0, 130, 0.25);
+  background: rgba(104, 0, 179, 0.6);
   overflow: hidden;
   z-index: 1;
 }
@@ -119,7 +119,7 @@
   background: linear-gradient(
     90deg,
     transparent 45%,
-    rgb(140, 108, 255),
+    rgb(163, 137, 255),
     transparent 55%
   );
   animation: zombieFlow 4s linear infinite;
@@ -177,6 +177,9 @@
   color: rgba(255, 255, 255, 0.3);
 }
 
+.stepInfo {
+  text-align: center;
+}
 /* Infos textuelles timeline */
 .stepTitle {
   display: block;
