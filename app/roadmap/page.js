@@ -124,26 +124,26 @@ export default function RoadmapPage() {
                 <div className={styles.pillarContent}>
                     <div className={styles.contentLayout}>
                         <div className={styles.subMenu}>
-                            {['city', 'map'].map((cat) => (
+                            {['overview'].map((cat) => (
                                 <button
                                     key={cat}
                                     className={`${styles.subMenuItem} ${activeCategory === cat ? styles.active : ""}`}
                                     onClick={() => setActiveCategory(cat)}
                                 >
-                                    {cat === 'city' ? '🏗️ City Building' : '🗺️ World Map'}
+                                    {cat === 'overview' ? 'overview' : 'overview'}
                                 </button>
                             ))}
                         </div>
 
                         <div className={styles.buildContent}>
                             <h2 className={styles.titleShine}>
-                                {activeStep.toUpperCase()} : {activeCategory === 'city' ? "City Building" : "World Map"}
+                                {activeStep.toUpperCase()} : {activeCategory === 'overview' ? "overview" : "overview"}
                             </h2>
 
                             <div className={styles.description}>
                                 <p>Status: <strong>{activeStep === 'present' ? 'In Development' : activeStep === 'past' ? 'Completed' : 'Planned'}</strong></p>
                                 <p>
-                                    {roadmapContent[activeStep]?.[activeCategory] || "Content being finalized for this phase."}
+                                    {roadmapContent[activeStep]?.[activeCategory] || "Content coming soon."}
                                 </p>
                             </div>
 
