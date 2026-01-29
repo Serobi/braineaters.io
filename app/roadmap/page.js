@@ -52,10 +52,15 @@ export default function RoadmapPage() {
                     Roadmap
                     <span className={styles.titleBar}></span>
                 </h1>
+                {/*
                 <p className={styles.intro}>
                     Brain Eaters is built with long-term vision in mind : <br />
                     A deep, replayable social survival game that evolves with its community.<br />
-                    This roadmap outlines the major milestones from prototype to full launch and beyond, grounded in realistic solo-dev pacing.
+                    This roadmap outlines the major milestones from prototype to full launch and beyond, grounded in realistic solo-dev pacing. <br />
+                </p>
+                */}
+                <p className={styles.intro}>
+                    The Roadmap is still work in progress, everything will improve upcoming days, this is just to give you a little taste of what is coming.
                 </p>
             </section>
 
