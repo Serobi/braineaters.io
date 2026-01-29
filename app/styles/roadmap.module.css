@@ -405,6 +405,12 @@
     height: 2px;
     margin: clamp(8px, 4vw, 20px) auto 0;
   }
+
+  .intro {
+    font-size: clamp(10px, 3vw, 16px);
+    max-width: 100%;
+    margin: 30px auto 20px;
+  }
 }
 
 @media (hover: hover) {
