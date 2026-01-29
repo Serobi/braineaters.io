@@ -103,7 +103,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  height: 6px;
+  height: 5px;
   width: 100%;
   overflow: hidden;
 
@@ -113,13 +113,12 @@
 .progressFillZombieEffect {
   position: absolute;
   top: 50%;
-  left: 20px;
-  right: 20px;
-  height: 6px;
   transform: translateY(-50%);
+  height: 6px;
+  width: 100%;
   pointer-events: none;
   z-index: 2;
-
+  overflow: hidden;
   mask-image: linear-gradient(
     90deg,
     transparent 0%,
@@ -129,41 +128,39 @@
   );
 }
 
-.progressFillGoldEffect::after {
-  content: "";
-  position: absolute;
-  inset: -6px 0;
-
-  background: linear-gradient(
-    90deg,
-    transparent 40%,
-    rgba(255, 243, 176, 0.25) 47%,
-    rgba(255, 243, 176, 0.9) 50%,
-    rgba(255, 243, 176, 0.25) 53%,
-    transparent 60%
-  );
-
-  filter: blur(4px);
-  opacity: 1;
-
-  animation: humanFlow 4s ease-in-out infinite;
-}
-
+.progressFillGoldEffect::after,
 .progressFillZombieEffect::after {
   content: "";
   position: absolute;
-  inset: -6px 0;
+  inset: 0;
+  animation-duration: 4s;
+  animation-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  animation-iteration-count: infinite;
+}
 
+.progressFillGoldEffect::after {
   background: linear-gradient(
     90deg,
-    transparent 54%,
-    rgba(163, 137, 255, 0.9),
-    transparent 57%
+    transparent 40%,
+    rgba(255, 243, 176, 0.3) 45%,
+    #fff3b0 50%,
+    rgba(255, 243, 176, 0.3) 55%,
+    transparent 60%
   );
+  filter: brightness(1.5);
+  animation-name: humanFlow;
+}
 
-  filter: blur(4px);
-  opacity: 0.8;
-
+.progressFillZombieEffect::after {
+  background: linear-gradient(
+    90deg,
+    transparent 45%,
+    rgba(139, 108, 255, 0.4) 50%,
+    rgba(104, 0, 179, 1) 55%,
+    transparent 65%
+  );
+  filter: blur(2px) drop-shadow(0 16px 16px rgba(104, 0, 179, 0.9));
+  opacity: 0.9;
   animation: zombieFlow 4s linear infinite;
 }
 
@@ -177,20 +174,6 @@
   background: rgba(104, 0, 179, 0.6);
   overflow: hidden;
   z-index: 1;
-}
-
-@keyframes corruptionPulse {
-  0%,
-  100% {
-    box-shadow:
-      0 0 4px rgba(163, 137, 255, 0.3),
-      0 0 10px rgba(104, 0, 179, 0.2);
-  }
-  50% {
-    box-shadow:
-      0 0 6px rgba(163, 137, 255, 0.45),
-      0 0 14px rgba(104, 0, 179, 0.3);
-  }
 }
 
 .stepsWrapper {
@@ -535,14 +518,9 @@
 @keyframes humanFlow {
   0% {
     transform: translateX(-100%);
-    opacity: 0;
-  }
-  40% {
-    opacity: 1;
   }
   100% {
     transform: translateX(100%);
-    opacity: 0;
   }
 }
 
