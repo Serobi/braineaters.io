@@ -110,6 +110,25 @@
   pointer-events: none;
 }
 
+.progressFillZombieEffect {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  height: 6px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 2;
+
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent var(--progress),
+    black calc(var(--progress) + 1%),
+    black 100%
+  );
+}
+
 .progressFillGoldEffect::after {
   content: "";
   position: absolute;
@@ -130,24 +149,6 @@
   animation: humanFlow 4s ease-in-out infinite;
 }
 
-.progressFillZombieEffect {
-  position: absolute;
-  top: 50%;
-  left: 20px;
-  right: 20px;
-  height: 6px;
-  transform: translateY(-50%);
-  pointer-events: none;
-
-  mask-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    transparent var(--progress),
-    black calc(var(--progress) + 1%),
-    black 100%
-  );
-}
-
 .progressFillZombieEffect::after {
   content: "";
   position: absolute;
@@ -157,11 +158,11 @@
     90deg,
     transparent 54%,
     rgba(163, 137, 255, 0.9),
-    transparent 58%
+    transparent 57%
   );
 
-  filter: blur(6px);
-  opacity: 0.9;
+  filter: blur(4px);
+  opacity: 0.8;
 
   animation: zombieFlow 4s linear infinite;
 }
