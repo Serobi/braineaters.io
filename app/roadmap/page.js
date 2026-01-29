@@ -60,7 +60,7 @@ export default function RoadmapPage() {
                 </p>
                 */}
                 <p className={styles.intro}>
-                    The Roadmap is still work in progress, everything will improve upcoming days, this is just to give you a little taste of what is coming.
+                    The roadmap is still a work in progress. This is just a first look at what’s coming.
                 </p>
             </section>
 
