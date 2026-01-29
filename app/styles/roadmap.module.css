@@ -60,11 +60,27 @@
   max-width: 1100px;
   margin: 60px auto 100px;
   padding: 0 40px;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge legacy */
+  user-select: none;
 }
 
 .timelineContainer {
   position: relative;
   width: 100%;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  padding: 100px 0;
+  scrollbar-width: none;
+  border-radius: 40px;
+  background: rgba(10, 10, 10, 1);
+  box-shadow: 0 2px 4px rgba(232, 192, 122, 0.12);
+  border: 1px solid rgba(232, 192, 122, 0.6);
+}
+.timelineContainer::-webkit-scrollbar {
+  display: none;
 }
 
 .mainLineZombie {
@@ -102,9 +118,10 @@
 
 .mainLineZombie {
   position: absolute;
-  top: 30px;
-  left: 30px; /* half node */
-  width: calc(100% - 60px); /* full node */
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+  right: 20px;
   height: 2px;
   background: rgba(104, 0, 179, 0.6);
   overflow: hidden;
@@ -135,16 +152,26 @@
 .stepsWrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center; /* Aligne le centre des stepNode sur la ligne */
+  width: 100%;
+  height: 100%;
+  top: -10px;
+  min-width: max-content;
   position: relative;
   z-index: 2;
+
+  /* On définit une hauteur qui englobe les cercles + de la marge pour le survol */
 }
 
 .stepNode {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
   width: 140px;
+  height: 100%;
+  position: relative;
   transition: transform 0.3s ease;
 }
 
@@ -157,7 +184,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
+  margin: 0;
+  flex-shrink: 0;
   position: relative;
   z-index: 2;
   transition:
@@ -178,8 +206,14 @@
 }
 
 .stepInfo {
+  position: absolute;
+  /* top: 100% place le texte juste au bord bas du stepNode (donc sous le cercle) */
+  top: 70px;
   text-align: center;
+  width: 160px;
+  pointer-events: none;
 }
+
 /* Infos textuelles timeline */
 .stepTitle {
   display: block;
@@ -370,21 +404,6 @@
     width: 40%;
     height: 2px;
     margin: clamp(8px, 4vw, 20px) auto 0;
-  }
-
-  .contentLayout {
-    grid-template-columns: 1fr;
-  }
-  .stepsWrapper {
-    overflow-x: auto;
-    gap: 20px;
-    padding-bottom: 20px;
-  }
-  .stepNode {
-    min-width: 100px;
-  }
-  .mainLineZombie {
-    width: 200%;
   }
 }
 

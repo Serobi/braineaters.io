@@ -62,22 +62,20 @@ export default function RoadmapPage() {
             <section className={styles.timelineSection}>
                 <div className={styles.timelineContainer}>
 
-                    {/* Timeline base line */}
-                    <div className={styles.mainLineZombie}
-                        style={{
-                            '--progress': `${(currentStepIndex / (steps.length - 1)) * 100}%`,
-                        }}
-                    >
-                        <div
-                            className={styles.progressFillGold}
-                            style={{
-                                width: `${(currentStepIndex / (steps.length - 1)) * 100}%`,
-                            }}
-                        />
-                    </div>
-
                     {/* Timeline steps */}
                     <div className={styles.stepsWrapper}>
+                        <div className={styles.mainLineZombie}
+                            style={{
+                                '--progress': `${(currentStepIndex / (steps.length - 1)) * 100}%`,
+                            }}
+                        >
+                            <div
+                                className={styles.progressFillGold}
+                                style={{
+                                    width: `${(currentStepIndex / (steps.length - 1)) * 100}%`,
+                                }}
+                            />
+                        </div>
                         {steps.map((step, index) => {
                             const isCurrent = index === currentStepIndex;
                             const isPast = index < currentStepIndex;
