@@ -13,7 +13,7 @@ export default function RoadmapPage() {
 
     const steps = [
         { id: "past", title: "Prototype", sub: "2025" },
-        { id: "present", title: "Current", sub: "Actual" },
+        { id: "present", title: "Current", sub: "Now" },
         { id: "demo", title: "Demo", sub: "mid 2026" },
         { id: "v1", title: "Launch V1", sub: "Late 2026" },
         { id: "v2", title: "Expansion", sub: "TBA" },
