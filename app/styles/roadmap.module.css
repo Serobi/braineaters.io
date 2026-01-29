@@ -150,7 +150,7 @@
   filter: brightness(1.5);
   animation-name: humanFlow;
 }
-
+/*
 .progressFillZombieEffect::after {
   background: linear-gradient(
     90deg,
@@ -163,6 +163,7 @@
   opacity: 0.9;
   animation: zombieFlow 4s linear infinite;
 }
+*/
 
 .mainLineZombie {
   position: absolute;
