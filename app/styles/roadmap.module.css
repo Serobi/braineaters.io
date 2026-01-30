@@ -366,7 +366,7 @@
 
   .timelineSection {
     margin: 30px auto 30px;
-    padding: 0 16px;
+    padding: 0 8px;
   }
 
   .timelineContainer {
@@ -383,13 +383,20 @@
   }
 
   .stepNode {
-    width: clamp(80px, 10vw, 140px);
+    width: clamp(100px, 10vw, 140px);
+    --node-size: clamp(45px, 10vw, 60px);
+    scroll-snap-align: center;
   }
 
   .nodeCircle {
-    width: clamp(40px, 10vw, 50px);
-    height: clamp(40px, 10vw, 50px);
+    width: var(--node-size);
+    height: var(--node-size);
     border-width: 1.5px;
+  }
+
+  .stepInfo {
+    top: calc(var(--node-size) + clamp(14px, 3vw, 28px));
+    width: clamp(110px, 6vw, 160px);
   }
 
   .progressFillGoldEffect {
@@ -408,23 +415,14 @@
     scroll-snap-type: x mandatory;
   }
 
-  .stepNode {
-    scroll-snap-align: center;
-  }
-
   .nodeNumber {
     font-size: 0.85rem;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.35);
   }
 
-  .stepInfo {
-    top: 56px;
-    width: clamp(110px, 10vw, 160px);
-  }
-
   .stepTitle {
-    font-size: clamp(10px, 2.5vw, 16px);
+    font-size: clamp(10px, 2vw, 15px);
     letter-spacing: 0.8px;
     white-space: nowrap;
     overflow: hidden;
@@ -432,8 +430,8 @@
   }
 
   .stepDate {
-    font-size: clamp(9px, 2.5vw, 14px);
-    margin-top: 2px;
+    font-size: clamp(9px, 2vw, 14px);
+    margin-top: 1px;
     color: rgba(255, 255, 255, 0.35);
   }
 }
