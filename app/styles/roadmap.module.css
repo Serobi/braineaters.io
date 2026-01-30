@@ -124,51 +124,10 @@
     transparent 60%
   );
   filter: blur(1.3px) brightness(1.4);
-  animation: humanFlow 4s cubic-bezier(0.4, 0.2, 0.4, 1) infinite;
+  animation: humanFlow 4s cubic-bezier(0.4, 0, 0.4, 1) infinite;
   mix-blend-mode: screen;
   pointer-events: none;
 }
-
-@keyframes humanFlow {
-  0% {
-    transform: translateX(-110%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-.progressFillZombieEffect {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 6px;
-  width: 100%;
-  pointer-events: none;
-  z-index: 2;
-  overflow: hidden;
-  mask-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    transparent var(--progress),
-    black calc(var(--progress) + 1%),
-    black 100%
-  );
-}
-/*
-.progressFillZombieEffect::after {
-  background: linear-gradient(
-    90deg,
-    transparent 45%,
-    rgba(139, 108, 255, 0.4) 50%,
-    rgba(104, 0, 179, 1) 55%,
-    transparent 65%
-  );
-  filter: blur(2px) drop-shadow(0 16px 16px rgba(104, 0, 179, 0.9));
-  opacity: 0.9;
-  animation: zombieFlow 4s linear infinite;
-}
-*/
 
 .mainLineZombie {
   position: absolute;
@@ -238,14 +197,12 @@
 
 .stepInfo {
   position: absolute;
-  /* top: 100% place le texte juste au bord bas du stepNode (donc sous le cercle) */
   top: 70px;
   text-align: center;
   width: 160px;
   pointer-events: none;
 }
 
-/* Infos textuelles timeline */
 .stepTitle {
   display: block;
   text-transform: uppercase;
@@ -324,24 +281,6 @@
   animation: nodePulse 2.4s ease-in-out infinite;
 }
 
-@keyframes nodePulse {
-  0% {
-    box-shadow:
-      0 0 6px rgba(var(--pulse-color), 0.35),
-      0 0 12px rgba(var(--pulse-color), 0.2);
-  }
-  50% {
-    box-shadow:
-      0 0 12px rgba(var(--pulse-color), 0.7),
-      0 0 20px rgba(var(--pulse-color), 0.4);
-  }
-  100% {
-    box-shadow:
-      0 0 6px rgba(var(--pulse-color), 0.35),
-      0 0 12px rgba(var(--pulse-color), 0.2);
-  }
-}
-
 .stepNode.clicked .nodeCircle::after {
   content: "";
   position: absolute;
@@ -367,49 +306,6 @@
 .stepNode.future.clicked .nodeCircle::after {
   border-color: #8b6cff;
   box-shadow: 0 0 14px rgba(139, 108, 255, 0.6);
-}
-
-/* ----------- BLOC DE CONTENU (PILLAR DETAIL) ----------- */
-.pillarDetailSection {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.pillarContent {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 40px;
-}
-
-.contentLayout {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 40px;
-}
-
-.subMenu {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.subMenuItem {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.5);
-  padding: 12px;
-  text-align: left;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.subMenuItem.active {
-  border-color: #e8c07a;
-  color: #e8c07a;
-  background: rgba(232, 192, 122, 0.05);
 }
 
 .pulseRing {
@@ -440,6 +336,79 @@
     font-size: clamp(10px, 3vw, 16px);
     max-width: 100%;
     margin: 30px auto 20px;
+  }
+
+  .timelineSection {
+    margin: 30px auto 30px;
+    padding: 0 16px;
+  }
+
+  .timelineContainer {
+    padding: 64px 0;
+    border-radius: 24px;
+
+    background: radial-gradient(
+      120% 80% at 50% 50%,
+      rgba(232, 192, 122, 0.035),
+      rgba(10, 10, 10, 1) 75%
+    );
+
+    border: 1px solid rgba(232, 192, 122, 0.35);
+  }
+
+  .stepNode {
+    width: 110px;
+  }
+
+  .nodeCircle {
+    width: 48px;
+    height: 48px;
+    border-width: 1.5px;
+  }
+
+  .progressFillGoldEffect {
+    opacity: 0.8;
+  }
+
+  .progressFillGoldEffect::after {
+    filter: blur(1px) brightness(1.25);
+  }
+
+  .mainLineZombie {
+    opacity: 0.75;
+  }
+
+  .stepsWrapper {
+    scroll-snap-type: x mandatory;
+  }
+
+  .stepNode {
+    scroll-snap-align: center;
+  }
+
+  .nodeNumber {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .stepInfo {
+    top: 56px;
+    width: 120px;
+  }
+
+  .stepTitle {
+    font-size: 0.8rem;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .stepDate {
+    font-size: 0.7rem;
+    margin-top: 2px;
+    color: rgba(255, 255, 255, 0.35);
   }
 }
 
@@ -509,11 +478,29 @@
   }
 }
 
-@keyframes zombieFlow {
+@keyframes humanFlow {
   0% {
-    transform: translateX(100%);
+    transform: translateX(-140%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(100%);
+  }
+}
+
+@keyframes nodePulse {
+  0% {
+    box-shadow:
+      0 0 6px rgba(var(--pulse-color), 0.35),
+      0 0 12px rgba(var(--pulse-color), 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 12px rgba(var(--pulse-color), 0.7),
+      0 0 20px rgba(var(--pulse-color), 0.4);
+  }
+  100% {
+    box-shadow:
+      0 0 6px rgba(var(--pulse-color), 0.35),
+      0 0 12px rgba(var(--pulse-color), 0.2);
   }
 }

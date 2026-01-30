@@ -88,12 +88,6 @@ export default function RoadmapPage() {
                                 width: `${(currentStepIndex / (steps.length - 1)) * 100}%`,
                             }}
                         />
-                        <div
-                            className={styles.progressFillZombieEffect}
-                            style={{
-                                '--progress': `${(currentStepIndex / (steps.length - 1)) * 100}%`,
-                            }}
-                        />
                         {steps.map((step, index) => {
                             const isCurrent = index === currentStepIndex;
                             const isPast = index < currentStepIndex;
