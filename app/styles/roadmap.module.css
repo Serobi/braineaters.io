@@ -101,6 +101,7 @@
 .progressFillGoldEffect {
   position: absolute;
   top: 50%;
+  left: 20px;
   transform: translateY(-50%);
   height: 6px;
   width: 100%;
@@ -218,22 +219,22 @@
 }
 
 .stepNode.past .nodeCircle {
-  background: #e8c07a;
-  border-color: #fff3b0;
+  background: #cbb06a; /* doré désaturé */
+  border-color: #e6d9a8;
 }
 
 .stepNode.past .nodeNumber {
-  color: #000;
+  color: #2a2a2a;
 }
 
 .stepNode.current .nodeCircle {
   background: #0b0b0b;
-  border: 2px solid #e8c07a;
-  box-shadow: 0 0 8px rgba(232, 192, 122, 0.4);
+  border: 2px solid #d6b86a;
+  box-shadow: 0 0 6px rgba(232, 192, 122, 0.35);
 }
 
 .stepNode.current .nodeNumber {
-  color: #e8c07a;
+  color: #d6b86a;
 }
 
 .stepNode.current .pulseRing {
@@ -241,24 +242,14 @@
 }
 
 .stepNode.future .nodeCircle {
-  background: #140a22;
-  border-color: rgba(139, 108, 255, 0.7);
+  background: #140a22; /* solid, hides line */
+  border: 2px solid rgba(139, 108, 255, 0.6);
+  box-shadow: 0 0 6px rgba(139, 108, 255, 0.25);
   overflow: visible;
 }
 
-.stepNode.clicked .nodeCircle::after {
-  content: "";
-  position: absolute;
-  inset: -4px;
-  border-radius: 50%;
-  border: 2px solid currentColor;
-  animation: selectPulse 0.4s ease-out;
-  z-index: 5;
-  pointer-events: none;
-}
-
 .stepNode.future .nodeNumber {
-  color: #8b6cff;
+  color: rgba(139, 108, 255, 0.85);
 }
 
 .stepNode.selected .nodeCircle {
@@ -270,13 +261,48 @@
   --pulse-color: 232, 192, 122;
 }
 
+.stepNode.past.selected .nodeCircle {
+  background: #e1c676;
+  border-color: #fff3b0;
+  box-shadow:
+    0 0 6px rgba(232, 192, 122, 0.35),
+    0 0 12px rgba(232, 192, 122, 0.25);
+}
+
+.stepNode.past.selected .nodeNumber {
+  color: #000;
+}
+
 .stepNode.current.selected {
   --pulse-color: 255, 243, 176;
+}
+
+.stepNode.current.selected .nodeCircle {
+  border-color: #fff3b0;
+  box-shadow:
+    0 0 10px rgba(255, 243, 176, 0.6),
+    0 0 18px rgba(232, 192, 122, 0.45);
+}
+
+.stepNode.current.selected .nodeNumber {
+  color: #fff3b0;
 }
 
 .stepNode.future.selected {
   --pulse-color: 139, 108, 255;
 }
+
+.stepNode.future.selected .nodeCircle {
+  border-color: #8b6cff;
+  box-shadow:
+    0 0 10px rgba(139, 108, 255, 0.6),
+    0 0 18px rgba(139, 108, 255, 0.4);
+}
+
+.stepNode.future.selected .nodeNumber {
+  color: #c0b0ff;
+}
+
 .stepNode.selected .nodeCircle {
   animation: nodePulse 2.4s ease-in-out infinite;
 }
@@ -357,12 +383,12 @@
   }
 
   .stepNode {
-    width: 110px;
+    width: clamp(80px, 10vw, 140px);
   }
 
   .nodeCircle {
-    width: 48px;
-    height: 48px;
+    width: clamp(40px, 10vw, 50px);
+    height: clamp(40px, 10vw, 50px);
     border-width: 1.5px;
   }
 
@@ -394,11 +420,11 @@
 
   .stepInfo {
     top: 56px;
-    width: 120px;
+    width: clamp(110px, 10vw, 160px);
   }
 
   .stepTitle {
-    font-size: 0.8rem;
+    font-size: clamp(10px, 2.5vw, 16px);
     letter-spacing: 0.8px;
     white-space: nowrap;
     overflow: hidden;
@@ -406,7 +432,7 @@
   }
 
   .stepDate {
-    font-size: 0.7rem;
+    font-size: clamp(9px, 2.5vw, 14px);
     margin-top: 2px;
     color: rgba(255, 255, 255, 0.35);
   }
