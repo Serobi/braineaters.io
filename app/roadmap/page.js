@@ -1,7 +1,7 @@
 "use client";
 
 import styles from '../styles/roadmap.module.css';
-import React, { useState } from 'react';
+import { useRef, useEffect, useState } from "react";
 
 export default function RoadmapPage() {
 
@@ -9,6 +9,7 @@ export default function RoadmapPage() {
     const [activeStep, setActiveStep] = useState(CURRENT_STEP_ID);
     const [activeCategory, setActiveCategory] = useState("city");
     const [clickedStep, setClickedStep] = useState(null);
+    const stepRefs = useRef({});
 
 
     const steps = [
@@ -43,6 +44,17 @@ export default function RoadmapPage() {
             setClickedStep(null);
         }, 400); // matches your pulse timing
     };
+
+    useEffect(() => {
+        const el = stepRefs.current[activeStep];
+        if (!el) return;
+
+        el.scrollIntoView({
+            behavior: "smooth",
+            inline: "center",
+            block: "nearest",
+        });
+    }, [activeStep]);
 
 
     return (
@@ -98,6 +110,7 @@ export default function RoadmapPage() {
                             return (
                                 <div
                                     key={step.id}
+                                    ref={(el) => (stepRefs.current[step.id] = el)}
                                     className={[
                                         styles.stepNode,
                                         isPast && styles.past,
