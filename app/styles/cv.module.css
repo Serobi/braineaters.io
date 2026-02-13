@@ -1,3 +1,13 @@
+@page:first {
+  margin: 0;
+  margin: 0mm 0mm 10mm 0mm;
+}
+
+@page {
+  size: A4;
+  margin: 20mm 0mm 20mm 0mm;
+}
+
 .cvContainer {
   --thales-blue: #0c0c80; /* Le bleu officiel Thales */
   --thales-accent: #5dbfd5; /* Le bleu clair de leurs éléments tech */
@@ -13,14 +23,14 @@
   padding: 40px 60px;
   color: var(--slate-text);
   font-family: "Inter", sans-serif;
-  line-height: 1.6;
+  line-height: 1.45;
   box-sizing: border-box;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 30px;
   background: var(--thales-blue); /* Bleu Marine Thales de l'image */
   color: #ffffff; /* Texte blanc sur fond bleu */
@@ -35,7 +45,6 @@
   font-size: 2rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 2px;
   color: #f8f8f8;
 }
 
@@ -60,15 +69,6 @@
   max-width: 90%;
   margin: 0;
   text-align: justify;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 30px;
-  background: var(--thales-blue);
-  color: white;
 }
 
 .rightHeader {
@@ -100,18 +100,13 @@
   gap: 5%;
 }
 
-/* --- Sidebar (Left Column) --- */
-.sidebar {
-}
-
 .section {
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 }
 
 .section h3 {
   font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
   font-weight: 800;
   color: var(--thales-blue);
   background: var(--light-gray);
@@ -225,7 +220,6 @@
   margin-top: 0;
   margin-bottom: 25px;
   text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .timeline {
@@ -310,22 +304,41 @@
 @media print {
   :global(body) {
     background: white !important;
+    margin: 0 !important;
   }
 
   .cvContainer {
-    width: 100% !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
     margin: 0 !important;
-    padding: 10mm !important;
+    padding: 15mm 18mm !important;
     box-shadow: none !important;
     border: none !important;
   }
 
-  /* Version "pure" pour le réglage des couleurs à l'impression */
   .cvContainer * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
-  .header {
-    background: var(--thales-blue) !important;
+
+  .section h3,
+  .mainTitle {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .sidebar {
+    margin-bottom: 20px;
+  }
+
+  .expCard,
+  .section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .section:nth-of-type(3) {
+    page-break-before: always;
+    break-before: page;
   }
 }

@@ -1,7 +1,7 @@
-
+"use client"; // Obligatoire pour utiliser useRef et le bouton d'impression
+import React, { useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
 import styles from '../styles/cv.module.css';
-import React from 'react';
-
 
 export const paulCV = {
     identity: {
@@ -78,12 +78,6 @@ export const paulCV = {
             ]
         }
     ],
-    environments: [
-        "Environnements OIV",
-        "Production 24/7",
-        "Contraintes de sécurité élevées",
-        "Documentation en anglais",
-    ],
     formations: [
         { year: "2016", title: "Admin Systèmes & Sécurité", school: "AFTI (Orsay)" },
         { year: "2015", title: "Licence Informatique", school: "Univ. Franche-Comté" },
@@ -96,9 +90,10 @@ export const paulCV = {
     ]
 };
 
-export default function Cv({ data = paulCV }) {
+const CvTemplate = React.forwardRef(({ data }, ref) => {
     return (
-        <div className={styles.cvContainer}>
+
+        <div ref={ref} className={styles.cvContainer}>
             <header className={styles.header}>
                 <div className={styles.identityBlock}>
                     <h1 className={styles.name}>{data.identity.name}</h1>
@@ -108,7 +103,6 @@ export default function Cv({ data = paulCV }) {
                 </div>
 
                 <div className={styles.rightHeader}>
-                    {/* <img src="/photo.jpg" className={styles.photo} /> */}
                     <div className={styles.contactInfo}>
                         <span>{data.identity.contact.email}</span>
                         <span>{data.identity.contact.phone}</span>
@@ -121,14 +115,13 @@ export default function Cv({ data = paulCV }) {
                 {/* --- LEFT: SKILLS & TECHNICAL --- */}
                 <aside className={styles.sidebar}>
 
-                    {/* Visual Stats (Barres de compétence style "Jauge") */}
+                    {/* Stats */}
                     <section className={styles.section}>
                         <h3>Domaines d'intervention</h3>
                         <div className={styles.statsContainer}>
                             {data.stats.map((stat, i) => (
                                 <div key={i} className={styles.statItem}>
                                     <span className={styles.statLabel}>{stat.label}</span>
-                                    {/* On garde la barre visuelle, ça rend bien même en pro */}
                                     <div className={styles.statBarBg}>
                                         <div
                                             className={styles.statBarFill}
@@ -145,7 +138,6 @@ export default function Cv({ data = paulCV }) {
                         <h3>Compétences Techniques</h3>
                         {Object.entries(data.skillTrees).map(([key, skills]) => (
                             <div key={key} className={styles.skillGroup}>
-                                {/* On met des titres plus jolis via CSS capitalize ou mapping */}
                                 <h4 className={styles.skillCategory}>
                                     {key === 'security' ? 'Sécurité & Infra' :
                                         key === 'systems' ? 'Systèmes & Virtu' : 'Dev & Automatisation'}
@@ -157,7 +149,7 @@ export default function Cv({ data = paulCV }) {
                         ))}
                     </section>
 
-                    {/* Formations & Certifs */}
+                    {/* Formations */}
                     <section className={styles.section}>
                         <h3>Formation & Certifications</h3>
                         <div className={styles.eduList}>
@@ -210,8 +202,47 @@ export default function Cv({ data = paulCV }) {
                         ))}
                     </div>
                 </main>
-
             </div>
         </div>
     );
+});
+
+CvTemplate.displayName = "CvTemplate";
+
+export default function Cv({ data = paulCV }) {
+
+    const componentRef = useRef(null);
+
+    const handlePrint = useReactToPrint({
+        contentRef: componentRef, // <--- C'est ici que ça change
+        documentTitle: `CV_Paul_NELATON_${new Date().getFullYear()}`,
+        onAfterPrint: () => console.log("Impression terminée"),
+    });
+
+    return (
+        <div>
+            {/* Bouton d'export (Style rapide pour qu'il soit propre) */}
+            <div style={{ textAlign: 'center', padding: '20px', background: '#333' }}>
+                <button
+                    onClick={handlePrint}
+                    style={{
+                        padding: '10px 20px',
+                        fontSize: '16px',
+                        cursor: 'pointer',
+                        background: '#00aff0',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '4px',
+                        fontWeight: 'bold'
+                    }}
+                >
+                    Générer PDF (Version Thales)
+                </button>
+            </div>
+
+            {/* Le CV lui-même, relié par la Ref */}
+            <CvTemplate ref={componentRef} data={data} />
+        </div>
+    );
+
 }
