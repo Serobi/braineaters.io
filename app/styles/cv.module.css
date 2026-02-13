@@ -1,0 +1,299 @@
+.cvContainer {
+  --thales-blue: #00005c; /* Le bleu officiel Thales */
+  --thales-accent: #00aff0; /* Le bleu clair de leurs éléments tech */
+  --slate-text: #1e293b;
+  --light-gray: #f8fafc;
+  --grey-text: #252526;
+
+  background: #ffffff;
+  width: 100%;
+  max-width: 210mm;
+  min-height: 297mm;
+  margin: 20px auto;
+  padding: 40px 60px;
+  color: var(--slate-text);
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  background: var(--thales-blue); /* Bleu Marine Thales de l'image */
+  color: #ffffff; /* Texte blanc sur fond bleu */
+  margin: -40px -60px 30px -60px; /* On fait déborder le bandeau sur les bords du CV */
+}
+
+.identityBlock {
+  flex: 1;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #f8f8f8;
+}
+
+.role {
+  color: #f8f8f8;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.target {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f8f8f8;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.summary {
+  font-size: 0.95rem;
+  color: #f8f8f8;
+  max-width: 90%;
+  margin: 0;
+  text-align: justify;
+}
+
+.contactInfo {
+  text-align: right;
+  color: #f8f8f8;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 500;
+  min-width: 200px;
+}
+
+/* --- Grid Layout --- */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 32% 63%; /* Colonne gauche plus large pour aérer */
+  gap: 5%;
+}
+
+/* --- Sidebar (Left Column) --- */
+.sidebar {
+}
+
+.section {
+  margin-bottom: 35px;
+}
+
+.section h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 800;
+  color: var(--thales-blue);
+  background: var(--light-gray);
+  padding: 8px 12px;
+  border-left: 4px solid var(--thales-blue);
+  margin-bottom: 20px;
+}
+
+/* Stats / Jauges */
+.statItem {
+  margin-bottom: 12px;
+}
+
+.statLabel {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--grey-text);
+  margin-bottom: 4px;
+}
+
+.statBarBg {
+  background: #e2e8f0;
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.statBarFill {
+  height: 100%;
+  border-radius: 3px;
+}
+
+.skillGroup {
+  margin-bottom: 14px;
+}
+
+.skillCategory {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--grey-text);
+  margin: 0 0 4px 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  background: #eff6ff; /* Fond bleu très pâle */
+  color: var(--thales-blue);
+  padding: 3px 10px;
+  border-radius: 0px; /* Thales est très "carré", évite les arrondis */
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 8px;
+  border: 1px solid var(--thales-blue);
+  text-transform: uppercase;
+}
+
+.tag:hover {
+  background: var(--thales-blue);
+  color: #ffffff;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+/* Formations & Langues */
+.eduItem {
+  margin-bottom: 8px;
+}
+
+.year {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--grey-text);
+  font-weight: 600;
+}
+
+.eduDetail strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--grey-text);
+}
+
+.eduDetail span {
+  font-size: 0.85rem;
+  color: var(--grey-text);
+}
+
+.langList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.langList li {
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  color: var(--grey-text);
+}
+
+/* --- Main Content (Experience) --- */
+.mainTitle {
+  font-size: 1.4rem;
+  color: #0f172a;
+  border-left: 5px solid var(--thales-blue);
+  padding-left: 15px;
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  border-left: 2px solid #e2e8f0; /* Ligne verticale timeline */
+  padding-left: 20px;
+  margin-left: 5px;
+}
+
+.expCard {
+  position: relative;
+}
+
+/* Petit point sur la timeline */
+.expCard::before {
+  content: "";
+  position: absolute;
+  left: -26px; /* Ajustement pour centrer sur la ligne */
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border: 2px solid var(--thales-blue);
+  border-radius: 50%;
+}
+
+.expHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.expTitleGroup h4 {
+  font-size: 1.15rem;
+  color: var(--thales-blue);
+  font-weight: 700;
+  margin: 0;
+}
+
+.company {
+  font-size: 0.8rem;
+  color: var(--thales-blue);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.expHeader .period {
+  font-size: 0.85rem;
+  color: var(--grey-text);
+  font-style: italic;
+  white-space: nowrap; /* Empêche la date de se couper */
+}
+
+.description {
+  font-size: 0.9rem;
+  color: var(--grey-text);
+  margin: 0;
+  text-align: justify;
+}
+
+:global(body) {
+  background-color: #f1f5f9; /* Un gris léger pour faire ressortir le CV */
+  margin: 0;
+}
+
+@media print {
+  :global(body) {
+    background: white !important;
+  }
+
+  .cvContainer {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 10mm !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Version "pure" pour le réglage des couleurs à l'impression */
+  .cvContainer * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .header {
+    background: #242b75 !important;
+  }
+}

@@ -22,14 +22,28 @@ export default function RoadmapPage() {
 
     const roadmapContent = {
         past: {
-            city: "...",
-            map: "..."
+            title: "The Foundation",
+            city: {
+                label: "Urban Infrastructure",
+                items: ["Modular building system", "Traffic & pathfinding logic", "Day/Night cycle"]
+            },
+            map: {
+                label: "World Tech",
+                items: ["Procedural terrain gen", "Biome system v0.1", "Initial fog of war"]
+            }
         },
         present: {
-            city: "...",
-            map: "..."
+            title: "The Awakening",
+            city: {
+                label: "Survival Mechanics",
+                items: ["Dynamic infection spread", "Resource management UI", "First survivor NPCs"]
+            },
+            map: {
+                label: "Exploration",
+                items: ["Looting system", "Combat prototype", "Weather impact on gameplay"]
+            }
         },
-        // later
+        // Ajoute les autres étapes sur le même modèle...
     };
 
     const currentStepIndex = steps.findIndex(
@@ -138,8 +152,37 @@ export default function RoadmapPage() {
                     </div>
                 </div>
             </section>
+            {/*
+            <section className={styles.contentSection} key={activeStep}>
+                <div className={styles.contentHeader}>
+                    <h2 className={styles.contentTitle}>{roadmapContent[activeStep]?.title || "Upcoming Milestone"}</h2>
+                    <div className={styles.categoryTabs}>
+                        <button
+                            className={`${styles.tab} ${activeCategory === 'city' ? styles.activeTab : ''}`}
+                            onClick={() => setActiveCategory('city')}
+                        >
+                            Development
+                        </button>
+                        <button
+                            className={`${styles.tab} ${activeCategory === 'map' ? styles.activeTab : ''}`}
+                            onClick={() => setActiveCategory('map')}
+                        >
+                            Gameplay
+                        </button>
+                    </div>
+                </div>
 
-
+                <div className={styles.detailsGrid}>
+                    <div className={styles.detailsCard}>
+                        <h3>{roadmapContent[activeStep]?.[activeCategory]?.label}</h3>
+                        <ul>
+                            {roadmapContent[activeStep]?.[activeCategory]?.items.map((item, i) => (
+                                <li key={i}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </section>*/}
         </div>
     );
 }
