@@ -13,41 +13,38 @@ export const paulCV = {
             phone: "+55 48 988117655",
         }
     },
-    // On remplace les "Stats RPG" par une répartition macro des compétences
     stats: [
         { label: "Sécurité Systèmes & Réseaux", value: 90, color: "#00005c" },
         { label: "Automatisation & DevOps", value: 88, color: "#21219b" },
-        { label: "Système & Infrastructures", value: 85, color: "#3b82f6" },
+        { label: "Architecture & Industrialisation", value: 85, color: "#3b82f6" },
         { label: "Ingénierie Logicielle", value: 80, color: "#60a5fa" }
     ],
     skillTrees: {
-        security: ["CyberArk (PAM)", "Qualys", "Checkpoint / Fortinet", "Secu AD / ALSID", "SOC / ELK"],
-        systems: ["Windows Server", "Linux (Debian/RHEL)", "VMware ESXi", "SCCM"],
-        dev_automation: ["C# / .NET", "PowerShell", "Python", "Ansible", "Git"]
+        security: ["CyberArk", "Qualys", "Firewall", "AD", "SOC / ELK", "McAfee EDR", "Proxy", "DNS"],
+        systems: ["Windows Server", "Linux", "Windows", "VMware ESXi", "SCCM"],
+        dev_automation: ["C# / .NET", "PowerShell", "Python", "Ansible", "Git", "React / NextJs"]
     },
-    // "Quests" devient "Experience"
     experience: [
         {
-            period: "2024 – Présent",
+            period: "2024 - Présent",
             company: "Projet Indépendant",
             role: "Architecte Logiciel & Développeur",
-            // Ici on "corporate-ise" le projet Unity : on parle d'algo et d'architecture
-            desc: "Conception d'un système modulaire complexe en C# (.NET). Développement de moteurs procéduraux, gestion de la mémoire et optimisation de performance. Architecture événementielle et pattern de conception."
+            desc: "Conception d'un système modulaire complexe en C# (.NET). Développement de moteurs procéduraux, gestion de la mémoire et optimisation de performance. Architecture événementielle et pattern de conception.",
         },
         {
-            period: "2019 – 2024",
+            period: "2019 - 2024",
             company: "ESCOTA (Vinci Autoroutes)",
             role: "Chargé de Sécurité Opérationnelle",
-            desc: "Maintien en conditions opérationnelles (MCO) d'infrastructures critiques. Gestion des vulnérabilités (Qualys), durcissement OS, et déploiement PAM (CyberArk). Automatisation des contrôles de sécurité et reportings de conformité."
+            desc: "Maintien en conditions opérationnelles (MCO) d'infrastructures critiques. Gestion des vulnérabilités (Qualys), durcissement OS, déploiement PAM (CyberArk) et Endpoint McAfee EDR. Automatisation des contrôles de sécurité et reportings de conformité."
         },
         {
             period: "2018",
             company: "BT (British Telecom)",
             role: "Ingénieur Cybersécurité & DevOps",
-            desc: "Automatisation des flux de détection et d'escalade via intégration API. Intégration SIEM et interconnexion entre RTIR, TheHive et ELK pour le ticketing et réponse à incidents. Rédaction de documentation technique (Anglais)."
+            desc: "Automatisation des flux de détection et d'escalade via intégration API. Intégration SIEM et interconnexion entre RTIR, TheHive et ELK pour le ticketing et réponse à incidents. Automatisation de compliance des équipements sécurité et réseau avec Ansible. Rédaction de documentation technique (Anglais)."
         },
         {
-            period: "2017 – 2018",
+            period: "2017 - 2018",
             company: "Orange Cyberdefense",
             role: "Ingénieur Sécurité Réseau",
             desc: "Administration Firewalls (Checkpoint, Cisco, Fortinet et Palo Alto), Proxy (Zscaler) et DNS (F5). Gestion d'incidents N1/N2 et support sur périmètre international."
