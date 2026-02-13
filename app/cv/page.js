@@ -15,10 +15,10 @@ export const paulCV = {
     },
     // On remplace les "Stats RPG" par une répartition macro des compétences
     stats: [
-        { label: "Sécurité & Réseaux", value: 90, color: "#1e3a8a" }, // Bleu Thales
-        { label: "Système & Infras", value: 85, color: "#3b82f6" },
-        { label: "Ingénierie Logicielle", value: 80, color: "#60a5fa" },
-        { label: "Automatisation", value: 75, color: "#93c5fd" }
+        { label: "Sécurité Systèmes & Réseaux", value: 90, color: "#00005c" },
+        { label: "Automatisation & DevOps", value: 88, color: "#21219b" },
+        { label: "Système & Infrastructures", value: 85, color: "#3b82f6" },
+        { label: "Ingénierie Logicielle", value: 80, color: "#60a5fa" }
     ],
     skillTrees: {
         security: ["CyberArk (PAM)", "Qualys", "Checkpoint / Fortinet", "Secu AD / ALSID", "SOC / ELK"],
@@ -38,19 +38,19 @@ export const paulCV = {
             period: "2019 – 2024",
             company: "ESCOTA (Vinci Autoroutes)",
             role: "Chargé de Sécurité Opérationnelle",
-            desc: "Maintien en conditions opérationnelles (MCO) d'infrastructures critiques. Gestion des vulnérabilités (Qualys), durcissement OS, et déploiement PAM (CyberArk). Automatisation du reporting sécurité."
+            desc: "Maintien en conditions opérationnelles (MCO) d'infrastructures critiques. Gestion des vulnérabilités (Qualys), durcissement OS, et déploiement PAM (CyberArk). Automatisation des contrôles de sécurité et reportings de conformité."
         },
         {
             period: "2018",
             company: "BT (British Telecom)",
             role: "Ingénieur Cybersécurité & DevOps",
-            desc: "Mise en place d'un CySOC. Intégration SIEM et interconnexion API pour le ticketing. Rédaction de documentation technique (Anglais)."
+            desc: "Automatisation des flux de détection et d'escalade via intégration API. Intégration SIEM et interconnexion entre RTIR, TheHive et ELK pour le ticketing et réponse à incidents. Rédaction de documentation technique (Anglais)."
         },
         {
             period: "2017 – 2018",
             company: "Orange Cyberdefense",
             role: "Ingénieur Sécurité Réseau",
-            desc: "Administration Firewalls (Checkpoint), gestion d'incidents N2/N3 et support sur périmètre international."
+            desc: "Administration Firewalls (Checkpoint, Cisco, Fortinet et Palo Alto), Proxy (Zscaler) et DNS (F5). Gestion d'incidents N1/N2 et support sur périmètre international."
         }
     ],
     environments: [

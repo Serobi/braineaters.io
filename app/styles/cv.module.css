@@ -149,7 +149,6 @@
   border-radius: 0px; /* Thales est très "carré", évite les arrondis */
   font-size: 0.75rem;
   font-weight: 700;
-  border-radius: 8px;
   border: 1px solid var(--thales-blue);
   text-transform: uppercase;
 }
@@ -294,6 +293,6 @@
     print-color-adjust: exact !important;
   }
   .header {
-    background: #242b75 !important;
+    background: var(--thales-blue) !important;
   }
 }
