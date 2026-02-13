@@ -29,25 +29,52 @@ export const paulCV = {
             period: "2024 - Présent",
             company: "Projet Indépendant",
             role: "Architecte Logiciel & Développeur",
-            desc: "Conception d'un système modulaire complexe en C# (.NET). Développement de moteurs procéduraux, gestion de la mémoire et optimisation de performance. Architecture événementielle et pattern de conception.",
+            desc: [
+                "Conception et développement d'une architecture logicielle modulaire en C# (.NET / Unity).",
+                "Développement d'un moteur de génération procédurale multi-couches paramétrable (règles, contraintes, priorités).",
+                "Implémentation d'algorithmes de distribution et de logique événementielle complexe.",
+                "Optimisation des performances et gestion des dépendances systèmes.",
+                "Structuration complète de l'architecture.",
+                "Développement d'une interface web full stack(React / Next.js) intégrée à l'écosystème du projet."
+            ]
         },
         {
             period: "2019 - 2024",
             company: "ESCOTA (Vinci Autoroutes)",
-            role: "Chargé de Sécurité Opérationnelle",
-            desc: "Maintien en conditions opérationnelles (MCO) d'infrastructures critiques. Gestion des vulnérabilités (Qualys), durcissement OS, déploiement PAM (CyberArk) et Endpoint McAfee EDR. Automatisation des contrôles de sécurité et reportings de conformité."
+            role: "Ingénieur Sécurité Opérationnelle",
+            desc: [
+                "MCO d'infrastructures critiques (OIV).",
+                "Rémédiation et investigation des vulnérabilités (Qualys).",
+                "Durcissement Windows Server, Windows 10 et ESXi.",
+                "Remédiation AD (ALSID) et gestion du patching via SCCM.",
+                "Déploiement et administration PAM (CyberArk).",
+                "Centralisation et exploitation des logs via ELK (SOC).",
+                "Automatisation des contrôles de sécurité et reporting MCO."
+            ]
+
         },
         {
             period: "2018",
             company: "BT (British Telecom)",
             role: "Ingénieur Cybersécurité & DevOps",
-            desc: "Automatisation des flux de détection et d'escalade via intégration API. Intégration SIEM et interconnexion entre RTIR, TheHive et ELK pour le ticketing et réponse à incidents. Automatisation de compliance des équipements sécurité et réseau avec Ansible. Rédaction de documentation technique (Anglais)."
+            desc: [
+                "Automatisation des flux de détection et d'escalade via intégration API.",
+                "Intégration SIEM et interconnexion entre RTIR, TheHive et ELK pour réponse à incidents et ticketing.",
+                "Automatisation de compliance des équipements sécurité et réseau avec Ansible.",
+                "Étude et intégration de solution PAM.",
+                "Réalisation de maquettes techniques et rédaction de documentation en anglais."
+            ]
         },
         {
             period: "2017 - 2018",
             company: "Orange Cyberdefense",
             role: "Ingénieur Sécurité Réseau",
-            desc: "Administration Firewalls (Checkpoint, Cisco, Fortinet et Palo Alto), Proxy (Zscaler) et DNS (F5). Gestion d'incidents N1/N2 et support sur périmètre international."
+            desc: [
+                "MCO sur le périmètre mondial de Air Liquide incluant :",
+                "Administration firewalls (Checkpoint, Cisco ASA, Fortinet, Palo Alto).",
+                "Gestion proxy (Zscaler) et solutions DNS / sécurité F5.",
+                "Gestion d'incidents N1/N2 en environnement multi-sites mondial."
+            ]
         }
     ],
     environments: [
@@ -59,7 +86,7 @@ export const paulCV = {
     formations: [
         { year: "2016", title: "Admin Systèmes & Sécurité", school: "AFTI (Orsay)" },
         { year: "2015", title: "Licence Informatique", school: "Univ. Franche-Comté" },
-        { year: "Certifs", title: "Zscaler ZCCA/ZCCP, F5 LTM/ASM", school: "Certifications Pro" }
+        { year: "", title: "Certifications", school: "Zscaler ZCCA/ZCCP" }
     ],
     languages: [
         { name: "Français", level: "Langue maternelle" },
@@ -161,6 +188,7 @@ export default function Cv({ data = paulCV }) {
                 {/* --- RIGHT: EXPERIENCE --- */}
                 <main className={styles.content}>
                     <h3 className={styles.mainTitle}>Expérience Professionnelle</h3>
+
                     <div className={styles.timeline}>
                         {data.experience.map((exp, i) => (
                             <div key={i} className={styles.expCard}>
@@ -171,11 +199,17 @@ export default function Cv({ data = paulCV }) {
                                     </div>
                                     <span className={styles.period}>{exp.period}</span>
                                 </div>
-                                <p className={styles.description}>{exp.desc}</p>
+
+                                <ul className={styles.expList}>
+                                    {exp.desc.map((line, index) => (
+                                        <li key={index}>{line}</li>
+                                    ))}
+                                </ul>
                             </div>
                         ))}
                     </div>
                 </main>
+
             </div>
         </div>
     );
