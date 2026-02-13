@@ -22,7 +22,7 @@ export const paulCV = {
     skillTrees: {
         security: ["CyberArk", "Qualys", "Firewall", "AD", "SOC / ELK", "McAfee EDR", "Proxy", "DNS"],
         systems: ["Windows Server", "Linux", "Windows", "VMware ESXi", "SCCM"],
-        dev_automation: ["C# / .NET", "PowerShell", "Python", "Ansible", "Git", "React / NextJs"]
+        dev_automation: ["C# / .NET", "PowerShell", "Python", "Ansible", "REST API", "Git", "React / NextJs"]
     },
     experience: [
         {
@@ -79,10 +79,13 @@ export default function Cv({ data = paulCV }) {
                     <p className={styles.summary}>{data.identity.summary}</p>
                 </div>
 
-                <div className={styles.contactInfo}>
-                    <span>{data.identity.contact.email}</span>
-                    <span>{data.identity.contact.phone}</span>
-                    <span>{data.identity.contact.linkedin}</span>
+                <div className={styles.rightHeader}>
+                    {/* <img src="/photo.jpg" className={styles.photo} /> */}
+                    <div className={styles.contactInfo}>
+                        <span>{data.identity.contact.email}</span>
+                        <span>{data.identity.contact.phone}</span>
+                        <span>{data.identity.contact.linkedin}</span>
+                    </div>
                 </div>
             </header>
 

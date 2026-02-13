@@ -1,5 +1,5 @@
 .cvContainer {
-  --thales-blue: #00005c; /* Le bleu officiel Thales */
+  --thales-blue: #0c0c80; /* Le bleu officiel Thales */
   --thales-accent: #00aff0; /* Le bleu clair de leurs éléments tech */
   --slate-text: #1e293b;
   --light-gray: #f8fafc;
@@ -62,21 +62,41 @@
   text-align: justify;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px;
+  background: var(--thales-blue);
+  color: white;
+}
+
+.rightHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.photo {
+  width: 110px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 0px;
+  border: 2px solid #ffffff;
+}
+
 .contactInfo {
   text-align: right;
-  color: #f8f8f8;
   font-size: 0.8rem;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  font-weight: 500;
-  min-width: 200px;
+  gap: 4px;
 }
 
-/* --- Grid Layout --- */
 .mainGrid {
   display: grid;
-  grid-template-columns: 32% 63%; /* Colonne gauche plus large pour aérer */
+  grid-template-columns: 32% 63%;
   gap: 5%;
 }
 
@@ -147,7 +167,7 @@
   color: var(--thales-blue);
   padding: 3px 10px;
   border-radius: 0px; /* Thales est très "carré", évite les arrondis */
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 700;
   border: 1px solid var(--thales-blue);
   text-transform: uppercase;
