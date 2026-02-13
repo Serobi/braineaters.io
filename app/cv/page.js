@@ -7,7 +7,7 @@ export const paulCV = {
         name: "Paul NELATON",
         role: "Ingénieur Sécurité Systèmes et Réseaux",
         target: "Mobilité Toulouse / France",
-        summary: "Ingénieur spécialisé en sécurité des infrastructures critiques (OIV) avec 6+ ans d'expérience. Expertise en MCO, durcissement système et environnements à fortes contraintes (Vinci, Orange, BT).",
+        summary: "Ingénieur cybersécurité spécialisé dans la sécurisation d'infrastructures critiques, avec plus de six ans d'expérience en environnements à fortes contraintes de disponibilité.",
         contact: {
             email: "paul.nelaton@gmail.com",
             phone: "+55 48 988117655",
