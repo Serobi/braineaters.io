@@ -220,28 +220,21 @@ export default function Cv({ data = paulCV }) {
     });
 
     return (
-        <div>
-            {/* Bouton d'export (Style rapide pour qu'il soit propre) */}
-            <div style={{ textAlign: 'center', padding: '20px', background: '#333' }}>
+        <div className={styles.cvPageWrapper}>
+
+            {/* Barre d’actions */}
+            <div className={styles.cvActions}>
                 <button
                     onClick={handlePrint}
-                    style={{
-                        padding: '10px 20px',
-                        fontSize: '16px',
-                        cursor: 'pointer',
-                        background: '#00aff0',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                        fontWeight: 'bold'
-                    }}
+                    className={styles.cvButton}
                 >
-                    Générer PDF (Version Thales)
+                    Générer PDF Design
                 </button>
             </div>
 
-            {/* Le CV lui-même, relié par la Ref */}
+            {/* Le CV */}
             <CvTemplate ref={componentRef} data={data} />
+
         </div>
     );
 

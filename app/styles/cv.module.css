@@ -32,9 +32,9 @@
   justify-content: space-between;
   align-items: flex-start;
   padding: 30px;
-  background: var(--thales-blue); /* Bleu Marine Thales de l'image */
-  color: #ffffff; /* Texte blanc sur fond bleu */
-  margin: -40px -60px 30px -60px; /* On fait déborder le bandeau sur les bords du CV */
+  background: var(--thales-blue);
+  color: #ffffff;
+  margin: -40px -60px 30px -60px;
 }
 
 .identityBlock {
@@ -341,4 +341,37 @@
     page-break-before: always;
     break-before: page;
   }
+
+  .cvActions {
+    display: none;
+  }
+}
+
+.cvPageWrapper {
+  width: 100%;
+}
+
+.cvActions {
+  position: fixed;
+  right: 50px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 0;
+}
+
+.cvButton {
+  padding: 8px 18px;
+  font-size: 14px;
+  cursor: pointer;
+  background: #00aff0;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.cvButton:hover {
+  background: #008dc5;
+  transform: translateY(-1px);
 }
