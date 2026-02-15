@@ -355,7 +355,9 @@
   position: fixed;
   right: 50px;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column; /* 👈 les met en colonne */
+  gap: 12px; /* 👈 espace entre les boutons */
+  align-items: flex-end; /* garde l’alignement à droite */
   padding: 20px 0;
 }
 

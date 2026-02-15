@@ -90,9 +90,47 @@ export const paulCV = {
     ]
 };
 
-const CvTemplate = React.forwardRef(({ data }, ref) => {
+const CvATS = React.forwardRef(({ data }, ref) => {
     return (
+        <div ref={ref} className={styles.cvATS}>
+            <h1>{data.identity.name}</h1>
+            <h2>{data.identity.role}</h2>
 
+            <p>{data.identity.summary}</p>
+
+            <h3>Compétences techniques</h3>
+            {Object.values(data.skillTrees).flat().join(" • ")}
+
+            <h3>Expérience professionnelle</h3>
+            {data.experience.map((exp, i) => (
+                <div key={i}>
+                    <strong>{exp.role}</strong> – {exp.company} ({exp.period})
+                    <ul>
+                        {exp.desc.map((d, j) => <li key={j}>{d}</li>)}
+                    </ul>
+                </div>
+            ))}
+
+            <h3>Formation</h3>
+            {data.formations.map((f, i) => (
+                <p key={i}>
+                    {f.year} – {f.title} – {f.school}
+                </p>
+            ))}
+
+            <h3>Langues</h3>
+            {data.languages.map(l => (
+                <p key={l.name}>
+                    {l.name} : {l.level}
+                </p>
+            ))}
+        </div>
+    );
+});
+CvATS.displayName = "CvATS";
+
+const CvDesign = React.forwardRef(({ data }, ref) => {
+    return (
         <div ref={ref} className={styles.cvContainer}>
             <header className={styles.header}>
                 <div className={styles.identityBlock}>
@@ -148,7 +186,6 @@ const CvTemplate = React.forwardRef(({ data }, ref) => {
                             </div>
                         ))}
                     </section>
-
                     {/* Formations */}
                     <section className={styles.section}>
                         <h3>Formation & Certifications</h3>
@@ -207,16 +244,21 @@ const CvTemplate = React.forwardRef(({ data }, ref) => {
     );
 });
 
-CvTemplate.displayName = "CvTemplate";
+CvDesign.displayName = "CvDesign";
 
 export default function Cv({ data = paulCV }) {
 
-    const componentRef = useRef(null);
+    const designRef = useRef(null);
+    const atsRef = useRef(null);
 
-    const handlePrint = useReactToPrint({
-        contentRef: componentRef, // <--- C'est ici que ça change
-        documentTitle: `CV_Paul_NELATON_${new Date().getFullYear()}`,
-        onAfterPrint: () => console.log("Impression terminée"),
+    const handlePrintDesign = useReactToPrint({
+        contentRef: designRef,
+        documentTitle: `CV_Paul_NELATON_Design_${new Date().getFullYear()}`
+    });
+
+    const handlePrintATS = useReactToPrint({
+        contentRef: atsRef,
+        documentTitle: `CV_Paul_NELATON_ATS_${new Date().getFullYear()}`
     });
 
     return (
@@ -225,16 +267,26 @@ export default function Cv({ data = paulCV }) {
             {/* Barre d’actions */}
             <div className={styles.cvActions}>
                 <button
-                    onClick={handlePrint}
+                    onClick={handlePrintDesign}
                     className={styles.cvButton}
                 >
                     Générer PDF Design
                 </button>
+                <button
+                    onClick={handlePrintATS}
+                    className={styles.cvButton}
+                >
+                    Générer PDF ATS
+                </button>
             </div>
 
             {/* Le CV */}
-            <CvTemplate ref={componentRef} data={data} />
+            <CvDesign ref={designRef} data={data} />
 
+            {/* Caché mais présent dans le DOM */}
+            <div style={{ display: "none" }}>
+                <CvATS ref={atsRef} data={data} />
+            </div>
         </div>
     );
 
