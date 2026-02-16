@@ -63,6 +63,15 @@
   display: block;
 }
 
+.profilePic {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 3px solid #f3f4f6;
+  margin-left: 50px;
+}
+
 .summary {
   font-size: 0.95rem;
   color: #f8f8f8;
