@@ -31,9 +31,9 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 30px;
   background: var(--thales-blue);
   color: #ffffff;
+  padding: 20px 60px;
   margin: -40px -60px 30px -60px;
 }
 
@@ -64,12 +64,12 @@
 }
 
 .profilePic {
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   object-fit: cover;
+
   border-radius: 5px;
   border: 3px solid #f3f4f6;
-  margin-left: 50px;
 }
 
 .summary {
@@ -83,19 +83,12 @@
 .rightHeader {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   gap: 12px;
 }
 
-.photo {
-  width: 110px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 0px;
-  border: 2px solid #ffffff;
-}
-
 .contactInfo {
+  align-items: flex-end;
+  justify-content: flex-start;
   text-align: right;
   font-size: 0.8rem;
   display: flex;
@@ -109,8 +102,17 @@
   gap: 5%;
 }
 
+.sidebar {
+  margin-left: -15px;
+}
+
 .section {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: -25px;
+  background: rgb(248, 248, 248);
 }
 
 .section h3 {
@@ -121,7 +123,7 @@
   background: var(--light-gray);
   padding: 8px 12px;
   border-left: 4px solid var(--thales-blue);
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 /* Stats / Jauges */
@@ -167,14 +169,13 @@
 }
 
 .tag {
-  background: #eff6ff; /* Fond bleu très pâle */
-  color: var(--thales-blue);
-  padding: 3px 10px;
-  border-radius: 0px; /* Thales est très "carré", évite les arrondis */
-  font-size: 0.65rem;
-  font-weight: 700;
-  border: 1px solid var(--thales-blue);
-  text-transform: uppercase;
+  color: #1f2937;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  background: linear-gradient(90deg, #f8fafc, #eef2ff);
+  border: 1px solid #e5e7eb;
 }
 
 .tag:hover {
@@ -234,21 +235,27 @@
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  border-left: 2px solid #e2e8f0; /* Ligne verticale timeline */
+  gap: 14px;
+  border-left: 1.5px solid #dbe2ea;
+
   padding-left: 20px;
   margin-left: 5px;
 }
 
 .expCard {
   position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: rgb(248, 248, 248);
 }
 
 /* Petit point sur la timeline */
 .expCard::before {
   content: "";
   position: absolute;
-  left: -26px; /* Ajustement pour centrer sur la ligne */
+  left: -27px; /* Ajustement pour centrer sur la ligne */
   top: 6px;
   width: 10px;
   height: 10px;

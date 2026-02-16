@@ -14,6 +14,7 @@ export const CVData = {
                 contact: {
                     email: "paul.nelaton@gmail.com",
                     phone: "+55 48 988117655",
+                    linkedin: "linkedin.com/in/paul-nelaton"
                 }
             },
             stats: [
@@ -81,7 +82,7 @@ export const CVData = {
                 }
             ],
             formations: [
-                { year: "2016", title: "Admin Systèmes & Sécurité", school: "AFTI (Orsay)" },
+                { year: "2016", title: "Ingénieur Systèmes, réseaux et sécurité", school: "AFTI (Orsay)" },
                 { year: "2015", title: "Licence Informatique", school: "Univ. Franche-Comté" },
                 { year: "2014", title: "DUT Informatique", school: "IUT de Belfort" },
                 { year: "", title: "Certifications", school: "Zscaler ZCCA/ZCCP" }
@@ -101,41 +102,100 @@ export const CVData = {
                 },
                 education: "Formation & Certifications",
                 languages: "Langues",
-                experience: "Expérience Professionnelle"
+                experience: "Expérience Professionnelle",
+                additional: "Informations complémentaires",
+                downloadNote: "CV professionnel (version design, Français/Anglais – Développement/Cybersécurité) disponible sur :"
             },
         },
         dev: {
             identity: {
                 name: "Paul NELATON",
-                role: "Développeur Full Stack / DevOps",
-                mobility: "Mobilité Toulouse / France / Suisse / Europe",
-                summary: "Ingénieur logiciel orienté backend, automatisation et architecture, avec une forte culture DevOps.",
+                role: "Ingénieur Logiciel & Web Full Stack",
+                mobility: "Mobilité France / Suisse / Europe",
+                summary: "Spécialisé en développement backend C#/.NET, automatisation et conception d'architectures modulaires orientées performance, scalabilité et maintenabilité.",
                 contact: {
                     email: "paul.nelaton@gmail.com",
                     phone: "+55 48 988117655",
+                    linkedin: "linkedin.com/in/paul-nelaton"
                 }
             },
-            stats: [],
+            stats: [
+                { label: "Ingénierie Logicielle", value: 90, color: "#1e40af" },
+                { label: "Full Stack Web", value: 80, color: "#3b82f6" },
+                { label: "Automatisation & DevOps", value: 85, color: "#2563eb" },
+                { label: "Sécurité & Infrastructure", value: 90, color: "#1e40af" }
+            ],
             skillTrees: {
-                security: [],
-                systems: [],
-                dev_automation: []
+                software: ["C#", ".NET / .NET Core", "ASP.NET", "APIs", "SQL", "Algorithmique", "SOLID"],
+                frontend: ["React", "Next.js", "HTML/CSS", "TypeScript", "Tailwind CSS"],
+                devops: ["PowerShell", "Python", "Ansible", "REST API", "Git", "CI/CD", "Automatisation"],
             },
-            experience: [],
-            formations: [],
-            languages: [],
-            labels: {
-                domains: "",
-                technicalSkills: "",
-                skillCategories: {
-                    security: "",
-                    systems: "",
-                    dev_automation: ""
+
+            experience: [
+                {
+                    period: "2024 - Présent",
+                    company: "Projet Indépendant",
+                    role: "Ingénieur Logiciel C#",
+                    desc: [
+                        "Conception et développement d'une architecture backend modulaire en C# (.NET / .NET Core).",
+                        "Développement d'un moteur de génération procédurale paramétrable (gestion de règles, contraintes et priorités).",
+                        "Implémentation d'algorithmes de distribution, logique événementielle et gestion d'états complexes.",
+                        "Optimisation des performances mémoire et CPU.",
+                        "Structuration de l'architecture projet (séparation des responsabilités, modularité, maintenabilité).",
+                        "Développement d'une interface web full stack (React / Next.js).",
+                        "Portfolio : https://braineatersgame.com/",
+                    ]
                 },
-                education: "",
-                languages: "",
-                experience: ""
-            }
+                {
+                    period: "2019 - 2024",
+                    company: "ESCOTA (Vinci Autoroutes)",
+                    role: "Ingénieur Automatisation et Sécurité",
+                    desc: [
+                        "Automatisation des contrôles de sécurité et reporting via scripts PowerShell.",
+                        "Industrialisation du patch management et du durcissement système.",
+                        "Développement d'outils internes pour remédiation et suivi de conformité.",
+                        "Collection et exploitation de données via ELK.",
+                        "MCO sur périmètre critique à haute disponibilité."
+                    ]
+                },
+                {
+                    period: "2018",
+                    company: "BT (British Telecom)",
+                    role: "Ingénieur DevOps & Automatisation",
+                    desc: [
+                        "Automatisation des flux de détection et d'escalade via intégration d'API REST.",
+                        "Interconnexion et intégration SIEM (RTIR, TheHive, ELK).",
+                        "Automatisation de la compliance réseau avec Ansible.",
+                        "Développement de scripts d'orchestration et outils internes.",
+                        "Rédaction technique en environnement international."
+                    ]
+                },
+            ],
+            formations: [
+                { year: "2016", title: "Ingénieur Systèmes, réseaux et sécurité", school: "AFTI (Orsay)" },
+                { year: "2015", title: "Licence Informatique", school: "Univ. Franche-Comté" },
+                { year: "2014", title: "DUT Informatique", school: "IUT de Belfort" },
+                { year: "", title: "Certifications", school: "Zscaler ZCCA/ZCCP" }
+            ],
+            languages: [
+                { name: "Français", level: "Langue maternelle" },
+                { name: "Anglais", level: "Courant professionnel" },
+                { name: "Portugais", level: "Courant" }
+            ],
+            labels: {
+                domains: "Domaines d'intervention",
+                technicalSkills: "Compétences Techniques",
+                skillCategories: {
+                    software: "Software & Backend",
+                    frontend: "Front End",
+                    devops: "DevOps",
+                },
+                education: "Formation & Certifications",
+                languages: "Langues",
+                experience: "Expérience Professionnelle",
+                additional: "Informations complémentaires",
+                downloadNote: "CV professionnel (version design, Français/Anglais - Développement/Cybersécurité) disponible sur :"
+            },
         }
 
     },
@@ -150,6 +210,7 @@ export const CVData = {
                 contact: {
                     email: "paul.nelaton@gmail.com",
                     phone: "+55 48 988117655",
+                    linkedin: "linkedin.com/in/paul-nelaton"
                 }
             },
 
@@ -220,7 +281,7 @@ export const CVData = {
             ],
 
             formations: [
-                { year: "2016", title: "Systems & Security Administration", school: "AFTI (Orsay)" },
+                { year: "2016", title: "Networks, systems and security engineer", school: "AFTI (Orsay)" },
                 { year: "2015", title: "Bachelor's Degree in Computer Science", school: "University of Franche-Comté" },
                 { year: "2014", title: "DUT Computer Science", school: "IUT of Belfort" },
                 { year: "", title: "Certifications", school: "Zscaler ZCCA / ZCCP" }
@@ -241,13 +302,107 @@ export const CVData = {
                 },
                 education: "Education & Certifications",
                 languages: "Languages",
-                experience: "Professional Experience"
-            }
+                experience: "Professional Experience",
+                additional: "Additional Information",
+                downloadNote: "Professional CV (design version, English/French - Software/Cybersecurity) available at:"
+            },
         },
-    },
-    dev: {
+        dev: {
+            identity: {
+                name: "Paul NELATON",
+                role: "Software Engineer & Full Stack Web Developer",
+                mobility: "Mobility France / Switzerland / Europe",
+                summary: "Specialized in C#/.NET backend development, automation, and modular architecture design focused on performance, scalability, and maintainability.",
+                contact: {
+                    email: "paul.nelaton@gmail.com",
+                    phone: "+55 48 988117655",
+                    linkedin: "linkedin.com/in/paul-nelaton"
+                }
+            },
 
-    },
+            stats: [
+                { label: "Software Engineering", value: 90, color: "#1e40af" },
+                { label: "Full Stack Web Development", value: 80, color: "#3b82f6" },
+                { label: "Automation & DevOps", value: 85, color: "#2563eb" },
+                { label: "Security & Infrastructure", value: 90, color: "#1e40af" }
+            ],
+
+            skillTrees: {
+                software: ["C#", ".NET / .NET Core", "ASP.NET", "APIs", "SQL", "Algorithms", "SOLID Principles"],
+                frontend: ["React", "Next.js", "HTML/CSS", "TypeScript", "Tailwind CSS"],
+                devops: ["PowerShell", "Python", "Ansible", "REST APIs", "Git", "CI/CD", "Automation"]
+            },
+
+            experience: [
+                {
+                    period: "2024 - Present",
+                    company: "Independent Project",
+                    role: "C# Software Engineer",
+                    desc: [
+                        "Designed and developed a modular backend architecture using C# (.NET / .NET Core).",
+                        "Developed a configurable procedural generation engine (rules, constraints, priorities).",
+                        "Implemented distribution algorithms, event-driven logic, and complex state management.",
+                        "Optimized memory usage and CPU performance.",
+                        "Structured the overall project architecture (separation of concerns, modularity, maintainability).",
+                        "Developed a full-stack web interface using React / Next.js.",
+                        "Portfolio: https://braineatersgame.com/"
+                    ]
+                },
+                {
+                    period: "2019 - 2024",
+                    company: "ESCOTA (Vinci Autoroutes)",
+                    role: "Automation & Security Engineer",
+                    desc: [
+                        "Automated security controls and reporting using PowerShell scripts.",
+                        "Industrialized patch management and system hardening processes.",
+                        "Developed internal tools for remediation and compliance tracking.",
+                        "Collected and analyzed data using ELK stack.",
+                        "Maintained critical high-availability environments."
+                    ]
+                },
+                {
+                    period: "2018",
+                    company: "BT (British Telecom)",
+                    role: "DevOps & Automation Engineer",
+                    desc: [
+                        "Automated detection and escalation workflows via REST API integrations.",
+                        "Integrated and interconnected SIEM platforms (RTIR, TheHive, ELK).",
+                        "Automated network compliance using Ansible.",
+                        "Developed orchestration scripts and internal tooling.",
+                        "Produced technical documentation in an international environment."
+                    ]
+                }
+            ],
+
+            formations: [
+                { year: "2016", title: "Networks, systems and security engineer", school: "AFTI (Orsay)" },
+                { year: "2015", title: "Bachelor's Degree in Computer Science", school: "University of Franche-Comté" },
+                { year: "2014", title: "DUT Computer Science", school: "IUT of Belfort" },
+                { year: "", title: "Certifications", school: "Zscaler ZCCA/ZCCP" }
+            ],
+
+            languages: [
+                { name: "French", level: "Native" },
+                { name: "English", level: "Professional proficiency" },
+                { name: "Portuguese", level: "Fluent" }
+            ],
+
+            labels: {
+                domains: "Core Competencies",
+                technicalSkills: "Technical Skills",
+                skillCategories: {
+                    software: "Software & Backend",
+                    frontend: "Front End",
+                    devops: "DevOps"
+                },
+                education: "Education & Certifications",
+                languages: "Languages",
+                experience: "Professional Experience",
+                additional: "Additional Information",
+                downloadNote: "Professional CV (design version, English/French - Software/Cybersecurity) available at:"
+            }
+        }
+    }
 };
 
 const CvATS = React.forwardRef(({ data }, ref) => {
@@ -284,6 +439,12 @@ const CvATS = React.forwardRef(({ data }, ref) => {
                     {l.name} : {l.level}
                 </p>
             ))}
+            <h3>{data.labels.additional}</h3>
+            <p>
+                {data.labels.downloadNote}
+                https://braineaters.com/cv
+            </p>
+
         </div>
     );
 });
@@ -305,7 +466,15 @@ const CvDesign = React.forwardRef(({ data }, ref) => {
                         <img src="/images/cv/profile2.png" alt="profile" className={styles.profilePic} />
                         <span>{data.identity.contact.email}</span>
                         <span>{data.identity.contact.phone}</span>
-                        <span>{data.identity.contact.linkedin}</span>
+                        <span>
+                            <a
+                                href="https://www.linkedin.com/in/paul-nelaton-791721aa/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {data.identity.contact.linkedin}
+                            </a>
+                        </span>
                     </div>
                 </div>
             </header>
@@ -338,9 +507,9 @@ const CvDesign = React.forwardRef(({ data }, ref) => {
                         {Object.entries(data.skillTrees).map(([key, skills]) => (
                             <div key={key} className={styles.skillGroup}>
                                 <h4 className={styles.skillCategory}>
-                                    {key === 'security' ? data.labels.skillCategories.security :
-                                        key === 'systems' ? data.labels.skillCategories.systems : data.labels.skillCategories.dev_automation}
+                                    {data.labels.skillCategories[key]}
                                 </h4>
+
                                 <div className={styles.tags}>
                                     {skills.map(s => <span key={s} className={styles.tag}>{s}</span>)}
                                 </div>
@@ -412,7 +581,7 @@ export default function Cv() {
     const [lang, setLang] = useState("fr");
     const [mode, setMode] = useState("security");
 
-    const data = CVData[lang][mode] || CVData[lang].security;
+    const data = CVData[lang][mode];
 
     const designRef = useRef(null);
     const atsRef = useRef(null);
