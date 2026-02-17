@@ -643,7 +643,7 @@ CvDesign.displayName = "CvDesign";
 export default function Cv() {
 
     const [lang, setLang] = useState("fr");
-    const [mode, setMode] = useState("security");
+    const [mode, setMode] = useState("dev");
 
     const data = CVData[lang][mode];
 
