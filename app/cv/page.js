@@ -58,7 +58,7 @@ export const CVData = {
 
                 },
                 {
-                    period: "2018",
+                    period: "2018 - 2019",
                     company: "BT (British Telecom)",
                     role: "Ingénieur Cybersécurité & DevOps",
                     desc: [
@@ -159,7 +159,7 @@ export const CVData = {
                     ]
                 },
                 {
-                    period: "2018",
+                    period: "2018 - 2019",
                     company: "BT (British Telecom)",
                     role: "Ingénieur DevOps & Automatisation",
                     desc: [
@@ -256,7 +256,7 @@ export const CVData = {
                     ]
                 },
                 {
-                    period: "2018",
+                    period: "2018 - 2019",
                     company: "BT (British Telecom)",
                     role: "Cybersecurity & DevOps Engineer",
                     desc: [
@@ -361,7 +361,7 @@ export const CVData = {
                     ]
                 },
                 {
-                    period: "2018",
+                    period: "2018 - 2019",
                     company: "BT (British Telecom)",
                     role: "DevOps & Automation Engineer",
                     desc: [
@@ -665,20 +665,52 @@ export default function Cv() {
 
             {/* Barre d’actions */}
             <div className={styles.cvActions}>
-                <button
-                    onClick={() => setLang(lang === "fr" ? "en" : "fr")}
-                    className={styles.cvButton}
-                >
-                    {lang === "fr" ? "Switch to English" : "Passer en Français"}
-                </button>
-                <button
-                    onClick={() => setMode(mode === "security" ? "dev" : "security")}
-                    className={styles.cvButton}
-                >
-                    {mode === "security"
-                        ? (lang === "fr" ? "Version Développeur" : "Developer Version")
-                        : (lang === "fr" ? "Version Sécurité" : "Security Version")}
-                </button>
+                <div className={styles.langWrapper}>
+                    <span className={styles.langLabel}>
+                        {lang === "fr" ? "Langue :" : "Language:"}
+                    </span>
+
+                    <div className={styles.langSwitch}>
+                        <button
+                            onClick={() => setLang("fr")}
+                            className={`${styles.langButton} ${lang === "fr" ? styles.active : ""}`}
+                            aria-label="Français"
+                        >
+                            FR
+                        </button>
+
+                        <button
+                            onClick={() => setLang("en")}
+                            className={`${styles.langButton} ${lang === "en" ? styles.active : ""}`}
+                            aria-label="English"
+                        >
+                            EN
+                        </button>
+                    </div>
+                </div>
+
+                <div className={styles.modeWrapper}>
+                    <span className={styles.modeLabel}>
+                        {lang === "fr" ? "Profil :" : "Profile:"}
+                    </span>
+
+                    <div className={styles.modeSwitch}>
+                        <button
+                            onClick={() => setMode("dev")}
+                            className={`${styles.modeButton} ${mode === "dev" ? styles.active : ""}`}
+                        >
+                            💻 {lang === "fr" ? "Dev" : "Dev"}
+                        </button>
+
+                        <button
+                            onClick={() => setMode("security")}
+                            className={`${styles.modeButton} ${mode === "security" ? styles.active : ""}`}
+                        >
+                            🔐 {lang === "fr" ? "Sec" : "Sec"}
+                        </button>
+                    </div>
+                </div>
+
                 <button onClick={handlePrintDesign} className={styles.cvButton}>
                     {lang === "fr" ? "Générer PDF Design" : "Generate Design PDF"}
                 </button>
@@ -686,7 +718,6 @@ export default function Cv() {
                 <button onClick={handlePrintATS} className={styles.cvButton}>
                     {lang === "fr" ? "Générer PDF ATS" : "Generate ATS PDF"}
                 </button>
-
             </div>
 
             {/* Le CV */}

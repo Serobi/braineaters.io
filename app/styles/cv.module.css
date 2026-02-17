@@ -404,3 +404,75 @@
   background: #008dc5;
   transform: translateY(-1px);
 }
+
+.langSwitch {
+  display: inline-flex;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.langButton {
+  padding: 8px 14px;
+  border: none;
+  background: white;
+  color: black;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.langButton:not(:last-child) {
+  border-right: 1px solid #ddd;
+}
+
+.langButton.active {
+  background: #008dc5;
+  color: white;
+}
+
+.langWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.langLabel {
+  font-weight: 500;
+  font-size: 14px;
+  color: #f0f0f0;
+}
+
+.modeWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modeLabel {
+  font-weight: 500;
+  font-size: 14px;
+  color: #f0f0f0;
+}
+
+.modeSwitch {
+  display: inline-flex;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.modeButton {
+  padding: 8px 14px;
+  border: none;
+  background: white;
+  color: black;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.active {
+  background: #008dc5;
+  color: white;
+}
