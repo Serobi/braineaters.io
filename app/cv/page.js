@@ -407,47 +407,111 @@ export const CVData = {
 
 const CvATS = React.forwardRef(({ data }, ref) => {
     return (
-        <div ref={ref} className={styles.cvATS}>
-            <h1>{data.identity.name}</h1>
-            <h2>{data.identity.role}</h2>
+        <div ref={ref} className={`${styles.cvContainer} ${styles.cvATS}`}>
 
-            <p>{data.identity.summary}</p>
-
-            <h3>{data.labels.domains}</h3>
-            {Object.values(data.skillTrees).flat().join(" • ")}
-
-            <h3>{data.labels.experience}</h3>
-            {data.experience.map((exp, i) => (
-                <div key={i}>
-                    <strong>{exp.role}</strong> – {exp.company} ({exp.period})
-                    <ul>
-                        {exp.desc.map((d, j) => <li key={j}>{d}</li>)}
-                    </ul>
+            {/* HEADER SIMPLIFIÉ */}
+            <header className={styles.header}>
+                <div className={styles.identityBlock}>
+                    <h1 className={styles.name}>{data.identity.name}</h1>
+                    <h2 className={styles.role}>{data.identity.role}</h2>
+                    <p className={styles.target}>{data.identity.mobility}</p>
+                    <p className={styles.summary}>{data.identity.summary}</p>
                 </div>
-            ))}
 
-            <h3>{data.labels.education}</h3>
-            {data.formations.map((f, i) => (
-                <p key={i}>
-                    {f.year} – {f.title} – {f.school}
-                </p>
-            ))}
+                <div className={styles.rightHeader}>
+                    <div className={styles.contactInfo}>
+                        <img src="/images/cv/profile2.png" alt="profile" className={styles.profilePic} />
+                        <span>{data.identity.contact.email}</span>
+                        <span>{data.identity.contact.phone}</span>
+                        <span>{data.identity.contact.linkedin}</span>
+                    </div>
+                </div>
+            </header>
 
-            <h3>{data.labels.languages}</h3>
-            {data.languages.map(l => (
-                <p key={l.name}>
-                    {l.name} : {l.level}
-                </p>
-            ))}
-            <h3>{data.labels.additional}</h3>
-            <p>
-                {data.labels.downloadNote}
-                https://braineaters.com/cv
-            </p>
 
+            {/* CONTENU MONO COLONNE */}
+            <div className={styles.atsContent}>
+
+                {/* FORMATION */}
+                <section className={styles.section}>
+                    <h3>{data.labels.education}</h3>
+
+                    {data.formations.map((f, i) => (
+                        <div key={i} className={styles.eduItem}>
+                            <span className={styles.year}>{f.year}</span>
+                            <div className={styles.eduDetail}>
+                                <strong>{f.title}</strong>
+                                <span>{f.school}</span>
+                            </div>
+                        </div>
+                    ))}
+                </section>
+                {/* EXPERIENCE EN PREMIER */}
+                <main className={styles.content}>
+                    <h3 className={styles.mainTitle}>{data.labels.experience}</h3>
+
+                    <div className={styles.timeline}>
+                        {data.experience.map((exp, i) => (
+                            <div key={i} className={styles.expCard}>
+                                <div className={styles.expHeader}>
+                                    <div className={styles.expTitleGroup}>
+                                        <h4>{exp.role}</h4>
+                                        <span className={styles.company}>{exp.company}</span>
+                                    </div>
+                                    <span className={styles.period}>{exp.period}</span>
+                                </div>
+
+                                <ul className={styles.expList}>
+                                    {exp.desc.map((line, index) => (
+                                        <li key={index}>{line}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                </main>
+
+
+                {/* COMPÉTENCES */}
+                <section className={styles.section}>
+                    <h3>{data.labels.technicalSkills}</h3>
+
+                    {Object.entries(data.skillTrees).map(([key, skills]) => (
+                        <div key={key} className={styles.skillGroup}>
+                            <h4 className={styles.skillCategory}>
+                                {data.labels.skillCategories[key]}
+                            </h4>
+
+                            <div className={styles.tags}>
+                                {skills.map(skill => (
+                                    <span key={skill} className={styles.tag}>
+                                        {skill}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </section>
+
+
+                {/* LANGUES */}
+                <section className={styles.section}>
+                    <h3>{data.labels.languages}</h3>
+
+                    <ul className={styles.langList}>
+                        {data.languages.map(lang => (
+                            <li key={lang.name}>
+                                <strong>{lang.name} :</strong> {lang.level}
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+
+            </div>
         </div>
     );
 });
+
 CvATS.displayName = "CvATS";
 
 const CvDesign = React.forwardRef(({ data }, ref) => {

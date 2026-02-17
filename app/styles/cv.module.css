@@ -317,6 +317,12 @@
   margin: 0;
 }
 
+.cvATS .atsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 @media print {
   :global(body) {
     background: white !important;
@@ -360,6 +366,11 @@
 
   .cvActions {
     display: none;
+  }
+
+  .cvATS.section:nth-of-type(3) {
+    page-break-before: auto;
+    break-before: page;
   }
 }
 
