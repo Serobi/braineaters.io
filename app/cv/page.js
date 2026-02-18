@@ -104,7 +104,7 @@ export const CVData = {
                 languages: "Langues",
                 experience: "Expérience Professionnelle",
                 additional: "Informations complémentaires",
-                downloadNote: "CV professionnel (version design, Français/Anglais – Développement/Cybersécurité) disponible sur :"
+                downloadNote: "CV professionnel (version design, Français/Anglais - Développement/Cybersécurité) disponible sur :"
             },
         },
         dev: {
