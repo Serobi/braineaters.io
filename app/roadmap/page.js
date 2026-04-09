@@ -7,10 +7,12 @@ export default function RoadmapPage() {
 
     const CURRENT_STEP_ID = "present";
     const [activeStep, setActiveStep] = useState(CURRENT_STEP_ID);
-    const [activeCategory, setActiveCategory] = useState("city");
     const [clickedStep, setClickedStep] = useState(null);
     const stepRefs = useRef({});
-
+    const milestoneListRef = useRef(null);
+    const isDraggingList = useRef(false);
+    const dragStartY = useRef(0);
+    const startScrollTop = useRef(0);
 
     const steps = [
         { id: "past", title: "Prototype", sub: "2025" },
@@ -22,28 +24,60 @@ export default function RoadmapPage() {
 
     const roadmapContent = {
         past: {
+            status: "completed",
             title: "The Foundation",
-            city: {
-                label: "Urban Infrastructure",
-                items: ["Modular building system", "Traffic & pathfinding logic", "Day/Night cycle"]
-            },
-            map: {
-                label: "World Tech",
-                items: ["Procedural terrain gen", "Biome system v0.1", "Initial fog of war"]
-            }
+            summary: "The first pillars of Brain Eaters were established, shaping the project's direction and core gameplay vision.",
+            items: [
+                { label: "Core gameplay structure defined" },
+                { label: "First city systems implemented" },
+                { label: "Exploration foundations created" },
+                { label: "Inventory and crafting systems introduced" }
+            ]
         },
         present: {
+            status: "inProgress",
             title: "The Awakening",
-            city: {
-                label: "Survival Mechanics",
-                items: ["Dynamic infection spread", "Resource management UI", "First survivor NPCs"]
-            },
-            map: {
-                label: "Exploration",
-                items: ["Looting system", "Combat prototype", "Weather impact on gameplay"]
-            }
+            summary: "The project is evolving into a more playable and immersive survival experience.",
+            items: [
+                { label: "Map generation expanded", status: "completed" },
+                { label: "Fog of war implementation" },
+                { label: "World visuals improvement" },
+                { label: "Exploration systems refinement", status: "planned" }
+            ]
         },
-        // Ajoute les autres étapes sur le même modèle...
+        demo: {
+            status: "planned",
+            title: "Playable Demo",
+            summary: "The next milestone is a first playable version showcasing the core survival loop.",
+            items: [
+                { label: "Deliver a stable gameplay slice" },
+                { label: "Show exploration and looting systems" },
+                { label: "Introduce early survival tension" },
+                { label: "Prepare a first public-facing demo" }
+            ]
+        },
+        v1: {
+            status: "planned",
+            title: "Launch V1",
+            summary: "The goal is to deliver the first full version of Brain Eaters with a solid and replayable survival experience.",
+            items: [
+                { label: "Release the first complete game version" },
+                { label: "Expand progression and replayability" },
+                { label: "Polish the main gameplay loop" },
+                { label: "Improve overall content depth" }
+            ]
+        },
+        v2: {
+            status: "planned",
+            title: "Expansion",
+            summary: "After launch, Brain Eaters will continue to grow with new systems, content and long-term improvements.",
+            items: [
+                { label: "Add major new features" },
+                { label: "Expand the world and possibilities" },
+                { label: "Deepen strategy and survival systems" },
+                { label: "Continue long-term post-launch evolution" }
+            ]
+        }
     };
 
     const currentStepIndex = steps.findIndex(
@@ -70,6 +104,36 @@ export default function RoadmapPage() {
         });
     }, [activeStep]);
 
+    const handleListMouseDown = (e) => {
+        const list = milestoneListRef.current;
+        if (!list) return;
+
+        isDraggingList.current = true;
+        dragStartY.current = e.clientY;
+        startScrollTop.current = list.scrollTop;
+
+        list.classList.add(styles.dragging);
+    };
+
+    const handleListMouseMove = (e) => {
+        const list = milestoneListRef.current;
+        if (!list || !isDraggingList.current) return;
+
+        const deltaY = e.clientY - dragStartY.current;
+        list.scrollTop = startScrollTop.current - deltaY;
+    };
+
+    const handleListMouseUp = () => {
+        const list = milestoneListRef.current;
+        isDraggingList.current = false;
+        if (list) list.classList.remove(styles.dragging);
+    };
+
+    const handleListMouseLeave = () => {
+        const list = milestoneListRef.current;
+        isDraggingList.current = false;
+        if (list) list.classList.remove(styles.dragging);
+    };
 
     return (
         <div className={styles.roadmapPage}>
@@ -152,37 +216,54 @@ export default function RoadmapPage() {
                     </div>
                 </div>
             </section>
-            {/*
-            <section className={styles.contentSection} key={activeStep}>
+            <section
+                className={`${styles.contentSection} ${styles[roadmapContent[activeStep]?.status || "planned"]}`}
+                key={activeStep}
+            >
+                <div className={styles.contentGlow}></div>
+
                 <div className={styles.contentHeader}>
-                    <h2 className={styles.contentTitle}>{roadmapContent[activeStep]?.title || "Upcoming Milestone"}</h2>
-                    <div className={styles.categoryTabs}>
-                        <button
-                            className={`${styles.tab} ${activeCategory === 'city' ? styles.activeTab : ''}`}
-                            onClick={() => setActiveCategory('city')}
-                        >
-                            Development
-                        </button>
-                        <button
-                            className={`${styles.tab} ${activeCategory === 'map' ? styles.activeTab : ''}`}
-                            onClick={() => setActiveCategory('map')}
-                        >
-                            Gameplay
-                        </button>
-                    </div>
+                    <span
+                        className={`${styles.statusBadge} ${styles[`status_${roadmapContent[activeStep]?.status || "planned"}`]}`}
+                    >
+                        {roadmapContent[activeStep]?.status === "completed" && "Completed"}
+                        {roadmapContent[activeStep]?.status === "inProgress" && "In Progress"}
+                        {roadmapContent[activeStep]?.status === "planned" && "Planned"}
+                    </span>
+
+                    <h2 className={styles.contentTitle}>
+                        {roadmapContent[activeStep]?.title || "Upcoming Milestone"}
+                    </h2>
+
+                    <p className={styles.contentSummary}>
+                        {roadmapContent[activeStep]?.summary || "More details about this milestone will be revealed soon."}
+                    </p>
                 </div>
 
-                <div className={styles.detailsGrid}>
-                    <div className={styles.detailsCard}>
-                        <h3>{roadmapContent[activeStep]?.[activeCategory]?.label}</h3>
-                        <ul>
-                            {roadmapContent[activeStep]?.[activeCategory]?.items.map((item, i) => (
-                                <li key={i}>{item}</li>
-                            ))}
-                        </ul>
-                    </div>
+                <div
+                    ref={milestoneListRef}
+                    className={styles.milestoneList}
+                    onMouseDown={handleListMouseDown}
+                    onMouseMove={handleListMouseMove}
+                    onMouseUp={handleListMouseUp}
+                    onMouseLeave={handleListMouseLeave}
+                >
+                    {roadmapContent[activeStep]?.items?.map((item, i) => {
+                        const itemStatus = item.status || roadmapContent[activeStep]?.status || "planned";
+
+                        return (
+                            <div
+                                key={i}
+                                className={`${styles.milestoneItem} ${styles[`item_${itemStatus}`]}`}
+                                style={{ animationDelay: `${i * 90}ms` }}
+                            >
+                                <span className={`${styles.itemDot} ${styles[`dot_${itemStatus}`]}`}></span>
+                                <span className={styles.itemText}>{item.label}</span>
+                            </div>
+                        );
+                    })}
                 </div>
-            </section>*/}
+            </section>
         </div>
     );
 }
