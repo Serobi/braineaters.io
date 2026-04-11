@@ -5,7 +5,7 @@ import { useRef, useEffect, useState } from "react";
 
 export default function RoadmapPage() {
 
-    const CURRENT_STEP_ID = "present";
+    const CURRENT_STEP_ID = "demo";
     const [activeStep, setActiveStep] = useState(CURRENT_STEP_ID);
     const [clickedStep, setClickedStep] = useState(null);
     const stepRefs = useRef({});
@@ -15,67 +15,79 @@ export default function RoadmapPage() {
     const startScrollTop = useRef(0);
 
     const steps = [
-        { id: "past", title: "Prototype", sub: "2025" },
-        { id: "present", title: "Current", sub: "Now" },
-        { id: "demo", title: "Demo", sub: "mid 2026" },
-        { id: "v1", title: "Launch V1", sub: "Late 2026" },
-        { id: "v2", title: "Expansion", sub: "TBA" },
+        { id: "prototype", title: "Prototype", sub: "2025" },
+        { id: "demo", title: "Demo", sub: "Q4 2026" },
+        { id: "beta", title: "Closed Beta", sub: "2027" },
+        { id: "launch", title: "Launch", sub: "TBA" },
+        { id: "future", title: "Future", sub: "TBA" },
     ];
 
     const roadmapContent = {
-        past: {
+        prototype: {
             status: "completed",
             title: "The Foundation",
-            summary: "The first pillars of Brain Eaters were established, shaping the project's direction and core gameplay vision.",
+            summary: "The core systems of Brain Eaters have been implemented, establishing a playable survival foundation.",
             items: [
-                { label: "Core gameplay structure defined" },
-                { label: "First city systems implemented" },
-                { label: "Exploration foundations created" },
-                { label: "Inventory and crafting systems introduced" }
-            ]
-        },
-        present: {
-            status: "inProgress",
-            title: "The Awakening",
-            summary: "The project is evolving into a more playable and immersive survival experience.",
-            items: [
-                { label: "Map generation expanded", status: "completed" },
-                { label: "Fog of war implementation" },
-                { label: "World visuals improvement" },
-                { label: "Exploration systems refinement", status: "planned" }
+                { label: "Inventory and item management systems" },
+                { label: "Crafting system and recipes" },
+                { label: "Building mechanics and upgrades" },
+                { label: "City building, placement and customization" },
+                { label: "Procedural map generation with multiple biomes" },
+                { label: "Looting and resource gathering" },
+                { label: "Basic combat system" },
+                { label: "Character management and equipment system" },
+                { label: "Game UI and user experience" },
             ]
         },
         demo: {
-            status: "planned",
+            status: "inProgress",
             title: "Playable Demo",
-            summary: "The next milestone is a first playable version showcasing the core survival loop.",
+            summary: "Brain Eaters is evolving into a playable and immersive survival experience, bringing the world to life.",
             items: [
-                { label: "Deliver a stable gameplay slice" },
-                { label: "Show exploration and looting systems" },
-                { label: "Introduce early survival tension" },
-                { label: "Prepare a first public-facing demo" }
+                { label: "Expanded item system with new resources and items", status: "completed" },
+                { label: "Building systems refined with modular structures", status: "completed" },
+                { label: "Main building visuals for levels 1-2", status: "completed" },
+                { label: "City building with ground, textures and decoration customization", status: "completed" },
+                { label: "Improved procedural world generation", status: "completed" },
+                { label: "Fog of war and vision systems", status: "completed" },
+                { label: "World visuals for wastelands and forests", status: "completed" },
+                { label: "Zombies roaming and hunting survivors on the map", status: "inProgress" },
+                { label: "UI and user experience improvements", status: "planned" },
+                { label: "Core gameplay experience refinement", status: "planned" },
+                { label: "Zombie attacks on the city", status: "planned" },
             ]
         },
-        v1: {
+        beta: {
+            status: "planned",
+            title: "Closed Beta",
+            summary: "Brain Eaters will open to early players, focusing on stability, balance and core gameplay experience.",
+            items: [
+                { label: "Stable game with all core mechanics" },
+                { label: "Multiplayer gameplay experience" },
+                { label: "Polished visuals and improved immersion" },
+                { label: "Character system, skills and progression" },
+                { label: "Expanded world with new biomes and locations" },
+                { label: "Cosmetic customization (decorations, building skins, survivor heroes)" },
+                { label: "Early supporter rewards and exclusive content" }
+            ]
+        },
+        launch: {
             status: "planned",
             title: "Launch V1",
-            summary: "The goal is to deliver the first full version of Brain Eaters with a solid and replayable survival experience.",
+            summary: "The time has come to explore the wastelands. Brain Eaters reaches its first full and stable release.",
             items: [
-                { label: "Release the first complete game version" },
-                { label: "Expand progression and replayability" },
-                { label: "Polish the main gameplay loop" },
-                { label: "Improve overall content depth" }
+                { label: "Complete and fully playable survival experience" },
+                { label: "Stabilized gameplay systems and overall balance" },
+                { label: "Optimized performance and smooth experience" },
+                { label: "Ready to support a growing player base" }
             ]
         },
-        v2: {
+        future: {
             status: "planned",
-            title: "Expansion",
+            title: "What's Next",
             summary: "After launch, Brain Eaters will continue to grow with new systems, content and long-term improvements.",
             items: [
-                { label: "Add major new features" },
-                { label: "Expand the world and possibilities" },
-                { label: "Deepen strategy and survival systems" },
-                { label: "Continue long-term post-launch evolution" }
+                { label: "Details coming soon" },
             ]
         }
     };
