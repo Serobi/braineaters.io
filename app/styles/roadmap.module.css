@@ -739,11 +739,11 @@
 
   .milestoneList {
     gap: 10px;
-    max-height: 240px;
+    /*max-height: 240px;*/
     padding-right: 2px;
-    cursor: default;
+    /*cursor: default;
     -webkit-overflow-scrolling: touch;
-    touch-action: pan-y;
+    touch-action: pan-y;*/
   }
 
   .milestoneList.dragging {
