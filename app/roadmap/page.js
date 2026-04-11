@@ -69,6 +69,7 @@ export default function RoadmapPage() {
                 { label: "Character system, skills and progression" },
                 { label: "Expanded world with new biomes and locations" },
                 { label: "Cosmetic customization (decorations, building skins, survivor heroes)" },
+                { label: "Game audio, music and sound effects" },
                 { label: "Early supporter rewards and exclusive content" }
             ]
         },
