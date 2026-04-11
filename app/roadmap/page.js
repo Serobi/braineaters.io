@@ -55,6 +55,7 @@ export default function RoadmapPage() {
                 { label: "UI and user experience improvements", status: "planned" },
                 { label: "Core gameplay experience refinement", status: "planned" },
                 { label: "Zombie attacks on the city", status: "planned" },
+                { label: "Living and animated world with characters and visual effects", status: "planned" },
             ]
         },
         beta: {
