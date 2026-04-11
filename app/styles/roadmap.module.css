@@ -745,10 +745,10 @@
     -webkit-overflow-scrolling: touch;
     touch-action: pan-y;*/
   }
-
+  /*
   .milestoneList.dragging {
     cursor: default;
-  }
+  }*/
 
   .milestoneItem {
     gap: 12px;
